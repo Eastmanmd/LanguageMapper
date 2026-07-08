@@ -1,0 +1,120 @@
+{
+  "words": [
+    { "id": "one", "en": "one" },
+    { "id": "ten", "en": "ten" },
+    { "id": "man", "en": "man" },
+    { "id": "woman", "en": "woman" },
+    { "id": "people", "en": "people" },
+    { "id": "head", "en": "head" },
+    { "id": "mouth", "en": "mouth" },
+    { "id": "nose", "en": "nose" },
+    { "id": "ear", "en": "ear" },
+    { "id": "water", "en": "water" },
+    { "id": "rain", "en": "rain" },
+    { "id": "name", "en": "name" }
+  ],
+  "languages": {
+    "hausa": {
+      "name": "Hausa",
+      "words": {
+        "one": "ɗaya",
+        "ten": "goma",
+        "man": "mutum",
+        "woman": "mace",
+        "people": "mutane",
+        "head": "kai",
+        "mouth": "baki",
+        "nose": "hanci",
+        "ear": "kunne",
+        "water": "ruwa",
+        "rain": "ruwan sama",
+        "name": "suna"
+      }
+    },
+    "yoruba": {
+      "name": "Yoruba",
+      "words": {
+        "one": "ọ̀kan",
+        "ten": "ẹ̀wá",
+        "man": "ọkùnrin",
+        "woman": "obìnrin",
+        "people": "ènìyàn",
+        "head": "orí",
+        "mouth": "ẹnu",
+        "nose": "imú",
+        "ear": "etí",
+        "water": "omi",
+        "rain": "òjò",
+        "name": "orúkọ"
+      }
+    },
+    "igbo": {
+      "name": "Igbo",
+      "words": {
+        "one": "otu",
+        "ten": "ìri",
+        "man": "nwoke",
+        "woman": "nwanyị",
+        "people": "ndị mmadụ",
+        "head": "isi",
+        "mouth": "ọnụ",
+        "nose": "imi",
+        "ear": "ntị",
+        "water": "mmiri",
+        "rain": "mmiri ozuzo",
+        "name": "aha"
+      }
+    },
+    "fulfulde": {
+      "name": "Fulani (Fulfulde)",
+      "words": {
+        "one": "gooto",
+        "ten": "sappo",
+        "man": "gorko",
+        "woman": "debbo",
+        "people": "yimɓe",
+        "head": "hoore",
+        "mouth": "hunnduko",
+        "nose": "hinere",
+        "ear": "nowru",
+        "water": "ndiyam",
+        "rain": "toɓo",
+        "name": "innde"
+      }
+    },
+    "edo": {
+      "name": "Edo",
+      "words": {
+        "one": "ọkpa",
+        "ten": "igbe",
+        "man": "okpia",
+        "woman": "okhuo",
+        "people": "emwan",
+        "head": "uhunmwu",
+        "mouth": "unu",
+        "nose": "ihue",
+        "ear": "ehọ",
+        "water": "amẹ",
+        "rain": "amẹ nọrhọ",
+        "name": "eni"
+      }
+    },
+    "idoma": {
+      "name": "Idoma",
+      "words": {
+        "one": "eye",
+        "ten": "igwo",
+        "man": null,
+        "woman": "ene",
+        "people": null,
+        "head": "eyi",
+        "mouth": "okonu",
+        "nose": "enwu",
+        "ear": "aho",
+        "water": "enkpo",
+        "rain": "oowor",
+        "name": null
+      }
+    }
+  }
+}

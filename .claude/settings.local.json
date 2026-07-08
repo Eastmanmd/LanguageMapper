@@ -43,7 +43,25 @@
       "Bash(python3 build_out4.py)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/)",
       "Bash(python3 harvest_language_profiles.py --slugs recovery_slugs.json --out raw_recovery_facts.json)",
-      "Bash(grep -q \"\\\\.db$\" /Users/aoku/Desktop/ClaudeCode/LanguageMap/.gitignore)"
+      "Bash(grep -q \"\\\\.db$\" /Users/aoku/Desktop/ClaudeCode/LanguageMap/.gitignore)",
+      "Bash(curl -s --max-time 20 \"https://en.wiktionary.org/w/api.php?action=parse&page=Appendix%3ANiger-Congo%20Swadesh%20lists&format=json&formatversion=2&prop=wikitext\" -o /tmp/nc_swadesh.json)",
+      "Bash(curl -s --max-time 20 \"https://en.wiktionary.org/w/api.php?action=parse&page=Appendix%3AHausa%20Swadesh%20list&format=json&formatversion=2&prop=text\" -o /tmp/hausa_rendered.json)",
+      "Bash(curl -s --max-time 20 \"https://en.wiktionary.org/w/api.php?action=parse&page=ten%2Ftranslations&format=json&formatversion=2&prop=wikitext\" -o /tmp/ten_trans.json)",
+      "Bash(curl -s --max-time 15 \"https://en.wiktionary.org/w/api.php?action=query&format=json&formatversion=2&list=search&srlimit=5&srsearch=Idoma%20language%20code%20ISO\")",
+      "Bash(curl -s --max-time 15 \"https://www.wikidata.org/w/api.php?action=wbsearchentities&search=Idoma%20language&language=en&format=json\")",
+      "Bash(curl -s --max-time 15 \"https://en.wiktionary.org/w/api.php?action=query&format=json&formatversion=2&list=categorymembers&cmtitle=Category:Idoma%20lemmas&cmlimit=50\")",
+      "WebSearch",
+      "WebFetch(domain:asjp.clld.org)",
+      "Bash(curl -s --max-time 20 \"https://asjp.clld.org/languages/IDOMA\" -o /tmp/idoma_asjp.html)",
+      "Bash(curl -s --max-time 20 -H \"Accept: application/json\" \"https://asjp.clld.org/languages/IDOMA\" -o /tmp/idoma_asjp.json)",
+      "WebFetch(domain:archive.phonetics.ucla.edu)",
+      "WebFetch(domain:www.omniglot.com)",
+      "WebFetch(domain:glosbe.com)",
+      "Bash(curl -sL --max-time 30 \"https://archive.org/stream/MelzianAConciseDictionaryOfTheBiniLanguageOfSouthernNigeria1937/Melzian+-+A+Concise+Dictionary+of+the+Bini+Language+of+Southern+Nigeria+\\(1937\\)_djvu.txt\" -o /tmp/melzian.txt)",
+      "Bash(curl -s --max-time 20 \"https://en.wiktionary.org/w/api.php?action=parse&page=aha&format=json&formatversion=2&prop=wikitext\" -o /tmp/aha.json)",
+      "WebFetch(domain:idomavoice.com)",
+      "WebFetch(domain:www.idomaland.org)",
+      "WebFetch(domain:lughayangu.com)"
     ]
   }
 }

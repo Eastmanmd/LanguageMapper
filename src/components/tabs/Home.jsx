@@ -16,8 +16,9 @@ const FEATURES = [
   },
   {
     title: 'Compare languages',
-    description: 'Put two or more languages side by side to see how they relate.',
-    badge: 'Coming soon',
+    description:
+      'Put two or more languages side by side, compare 12 basic words, and see a similarity tree.',
+    badge: null,
   },
   {
     title: 'Blog',
