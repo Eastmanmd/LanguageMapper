@@ -61,7 +61,17 @@
       "Bash(curl -s --max-time 20 \"https://en.wiktionary.org/w/api.php?action=parse&page=aha&format=json&formatversion=2&prop=wikitext\" -o /tmp/aha.json)",
       "WebFetch(domain:idomavoice.com)",
       "WebFetch(domain:www.idomaland.org)",
-      "WebFetch(domain:lughayangu.com)"
+      "WebFetch(domain:lughayangu.com)",
+      "Bash(curl -s --max-time 20 \"https://en.wiktionary.org/w/api.php?action=parse&page=Appendix%3ATivoid%20word%20lists&format=json&formatversion=2&prop=wikitext\" -o /tmp/tivoid.json)",
+      "Bash(curl -s --max-time 20 -H \"Accept: application/json\" \"https://asjp.clld.org/languages/IBIBIO\" -o /tmp/ibibio_asjp.json)",
+      "Bash(curl -s --max-time 20 \"https://en.wiktionary.org/w/api.php?action=parse&page=Appendix%3AAnaang%20word%20list&format=json&formatversion=2&prop=wikitext\" -o /tmp/anaang.json)",
+      "WebFetch(domain:kwekudee-tripdownmemorylane.blogspot.com)",
+      "Bash(curl -s --max-time 20 -H \"Accept: application/json\" \"https://asjp.clld.org/languages/IZON\" -o /tmp/izon_asjp.json)",
+      "WebFetch(domain:en.wikivoyage.org)",
+      "Bash(curl -s --max-time 20 -H \"Accept: application/json\" \"https://asjp.clld.org/languages/IKWERE\" -o /tmp/ikwerre_asjp.json)",
+      "WebFetch(domain:www.nairaland.com)",
+      "WebFetch(domain:www.globalacademicstar.com)",
+      "Bash(pip install *)"
     ]
   }
 }

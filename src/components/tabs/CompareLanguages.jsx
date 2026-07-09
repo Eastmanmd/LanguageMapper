@@ -3,7 +3,18 @@ import wordData from '../../data/wordComparison.json'
 import PhylogeneticTree from './PhylogeneticTree'
 import { languageSimilarity, buildTree } from '../../utils/phylogenetics'
 
-const AVAILABLE = ['hausa', 'igbo', 'yoruba', 'fulfulde', 'edo', 'idoma']
+const AVAILABLE = [
+  'hausa',
+  'igbo',
+  'yoruba',
+  'fulfulde',
+  'edo',
+  'idoma',
+  'ibibio',
+  'ijaw',
+  'tiv',
+  'ikwerre',
+]
 const WORD_IDS = wordData.words.map((w) => w.id)
 
 export default function CompareLanguages() {
@@ -41,7 +52,8 @@ export default function CompareLanguages() {
         Compare languages
       </h1>
       <p className="mt-2 max-w-2xl text-sm leading-relaxed text-gray-500">
-        Select two or more languages to compare 12 basic words side by side,
+        Select two or more languages to compare 20 basic words (numbers one to
+        ten, plus 10 everyday words) side by side,
         and see a tree built from how similar those words are across the
         languages you pick.
       </p>
@@ -118,7 +130,7 @@ export default function CompareLanguages() {
               Similarity tree
             </h2>
             <p className="mt-2 max-w-2xl text-sm text-gray-500">
-              Built by comparing the spelling of these 12 words across your
+              Built by comparing the spelling of these 20 words across your
               selected languages (closer word forms cluster together first).
               This is a simple lexical-similarity illustration, not a
               rigorous historical-linguistic classification.
