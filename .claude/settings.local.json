@@ -74,7 +74,12 @@
       "Bash(pip install *)",
       "WebFetch(domain:en.wiktionary.org)",
       "WebFetch(domain:wold.clld.org)",
-      "Bash(node -e ' *)"
+      "Bash(node -e ' *)",
+      "WebFetch(domain:talkingdictionary.swarthmore.edu)",
+      "WebFetch(domain:archive.org)",
+      "WebFetch(domain:letslearnedo.ng)",
+      "WebFetch(domain:grokipedia.com)",
+      "WebFetch(domain:nkowaokwu.com)"
     ]
   }
 }

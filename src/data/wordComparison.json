@@ -79,6 +79,18 @@
     {
       "id": "name",
       "en": "name"
+    },
+    {
+      "id": "come",
+      "en": "come"
+    },
+    {
+      "id": "go",
+      "en": "go"
+    },
+    {
+      "id": "speak",
+      "en": "speak"
     }
   ],
   "languages": {
@@ -104,7 +116,10 @@
         "ear": "kunne",
         "water": "ruwa",
         "rain": "ruwan sama",
-        "name": "suna"
+        "name": "suna",
+        "come": "zo",
+        "go": "tafi",
+        "speak": "yi magana"
       }
     },
     "yoruba": {
@@ -129,7 +144,10 @@
         "ear": "etí",
         "water": "omi",
         "rain": "òjò",
-        "name": "orúkọ"
+        "name": "orúkọ",
+        "come": "wá",
+        "go": "lọ",
+        "speak": "sọ̀rọ̀"
       }
     },
     "igbo": {
@@ -154,7 +172,10 @@
         "ear": "ntị",
         "water": "mmiri",
         "rain": "mmiri ozuzo",
-        "name": "aha"
+        "name": "aha",
+        "come": "bịa",
+        "go": "gaa",
+        "speak": "kwuo"
       }
     },
     "fulfulde": {
@@ -179,7 +200,8 @@
         "ear": "nowru",
         "water": "ndiyam",
         "rain": "toɓo",
-        "name": "innde"
+        "name": "innde",
+        "speak": "wowlude"
       }
     },
     "edo": {
@@ -204,7 +226,10 @@
         "ear": "ehọ",
         "water": "amẹ",
         "rain": "amẹ nọrhọ",
-        "name": "eni"
+        "name": "eni",
+        "come": "do",
+        "go": "ghìan",
+        "speak": "ta"
       }
     },
     "idoma": {
@@ -229,7 +254,10 @@
         "ear": "aho",
         "water": "enkpo",
         "rain": "owo",
-        "name": "iye"
+        "name": "iye",
+        "come": "waa",
+        "go": "nyo",
+        "speak": "ka"
       }
     },
     "ibibio": {
@@ -254,7 +282,10 @@
         "ear": "uton",
         "water": "mmon",
         "rain": "edim",
-        "name": "enyin"
+        "name": "enyin",
+        "come": "di",
+        "speak": "tan",
+        "go": "ka"
       }
     },
     "ijaw": {
@@ -329,7 +360,10 @@
         "ear": "msi",
         "water": "mini",
         "rain": "olu",
-        "name": "awhna"
+        "name": "awhna",
+        "come": "bia",
+        "speak": "kwu",
+        "go": "zee"
       }
     },
     "kanuri": {
@@ -378,7 +412,10 @@
         "ear": "sikio",
         "water": "maji",
         "rain": "mvua",
-        "name": "jina"
+        "name": "jina",
+        "come": "kuja",
+        "go": "kwenda",
+        "speak": "kusema"
       }
     }
   }
