@@ -417,6 +417,34 @@
         "go": "kwenda",
         "speak": "kusema"
       }
+    },
+    "luganda": {
+      "name": "Luganda",
+      "words": {
+        "one": "emu",
+        "two": "bbiri",
+        "three": "ssatu",
+        "four": "nnya",
+        "five": "ttaano",
+        "six": "mukaaga",
+        "seven": "musanvu",
+        "eight": "munaana",
+        "nine": "mwenda",
+        "ten": "kkumi",
+        "man": "omusajja",
+        "woman": "omukazi",
+        "people": "abantu",
+        "head": "omutwe",
+        "mouth": "akamwa",
+        "nose": "ennyindo",
+        "ear": "okutu",
+        "water": "amazzi",
+        "rain": "enkuba",
+        "name": "erinnya",
+        "come": "jja",
+        "go": "genda",
+        "speak": "yogera"
+      }
     }
   }
 }
