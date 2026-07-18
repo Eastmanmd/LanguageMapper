@@ -516,6 +516,154 @@
         "go": "kɔ",
         "speak": "kasa"
       }
+    },
+    "efik": {
+      "name": "Efik",
+      "classification": "Niger-Congo > Atlantic-Congo > Cross River > Delta-Cross > Lower Cross",
+      "words": {
+        "one": "kiet",
+        "two": "iba",
+        "three": "ita",
+        "four": "inañ",
+        "five": "ition",
+        "six": "itiokiet",
+        "seven": "itiaba",
+        "eight": "itiaita",
+        "nine": "usukiet",
+        "ten": "duop",
+        "man": "eren",
+        "woman": "n̄wan",
+        "people": "mbon",
+        "head": "ibuot",
+        "mouth": "inua",
+        "ear": "utong",
+        "water": "mmong",
+        "rain": "edim",
+        "name": "enyiñ",
+        "come": "di",
+        "go": "ka",
+        "speak": "tañ"
+      }
+    },
+    "annang": {
+      "name": "Annang",
+      "classification": "Niger-Congo > Atlantic-Congo > Cross River > Delta-Cross > Lower Cross",
+      "words": {
+        "one": "kiet",
+        "two": "iba",
+        "three": "ita",
+        "four": "inan",
+        "five": "ition",
+        "six": "itiokiet",
+        "seven": "itiaba",
+        "eight": "itiaita",
+        "nine": "usukkiet",
+        "ten": "duop",
+        "head": "ibuot",
+        "mouth": "inua",
+        "ear": "utong",
+        "water": "mmong",
+        "name": "enyin",
+        "come": "di",
+        "go": "ka"
+      }
+    },
+    "esan": {
+      "name": "Esan",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Edoid",
+      "words": {
+        "one": "okpa",
+        "two": "eva",
+        "three": "ela",
+        "four": "ene",
+        "five": "isẹn",
+        "six": "ehian",
+        "seven": "ihinlon",
+        "eight": "erenlen",
+        "nine": "ihinlin",
+        "ten": "igbe",
+        "man": "okpia",
+        "woman": "okhuo",
+        "head": "uhonmhon",
+        "mouth": "unu",
+        "water": "amẹn",
+        "name": "eni"
+      }
+    },
+    "urhobo": {
+      "name": "Urhobo",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Edoid",
+      "words": {
+        "one": "ọvo",
+        "two": "ivẹ",
+        "three": "erha",
+        "four": "ene",
+        "five": "iyọrin",
+        "six": "ẹsan",
+        "seven": "ihwre",
+        "man": "ọshare",
+        "woman": "aye",
+        "head": "uzou",
+        "mouth": "unu",
+        "water": "ame",
+        "name": "odẹ"
+      }
+    },
+    "isoko": {
+      "name": "Isoko",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Edoid",
+      "words": {
+        "one": "ọvo",
+        "two": "ivẹ",
+        "three": "esa",
+        "four": "ene",
+        "man": "ọzae",
+        "woman": "aye",
+        "head": "uzou",
+        "water": "ame",
+        "name": "odẹ"
+      }
+    },
+    "nupe": {
+      "name": "Nupe",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Nupoid",
+      "words": {
+        "one": "nini",
+        "two": "guba",
+        "three": "guta",
+        "four": "guni",
+        "five": "gutsun"
+      }
+    },
+    "igala": {
+      "name": "Igala",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Yoruboid",
+      "words": {
+        "two": "ẹ̀jì",
+        "three": "ẹ̀ta",
+        "water": "omi"
+      }
+    },
+    "berom": {
+      "name": "Berom",
+      "classification": "Niger-Congo > Atlantic-Congo > Benue-Congo > Plateau",
+      "words": {
+        "one": "gwɛ́nàng",
+        "two": "bà",
+        "three": "tàt",
+        "four": "nààs",
+        "five": "tùŋùn"
+      }
+    },
+    "ebira": {
+      "name": "Ebira",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Nupoid",
+      "words": {}
+    },
+    "gbagyi": {
+      "name": "Gbagyi (Gwari)",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Nupoid",
+      "words": {}
     }
   }
 }
