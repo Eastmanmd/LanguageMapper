@@ -3,6 +3,8 @@ import { useSearchParams } from 'react-router-dom'
 import wordData from '../../data/wordComparison.json'
 import PhylogeneticTree from './PhylogeneticTree'
 import MultiLanguagePicker from '../MultiLanguagePicker'
+import FlagWordModal from '../contribute/FlagWordModal'
+import { FlagIcon } from '../icons'
 import { languageSimilarity, buildTree } from '../../utils/phylogenetics'
 
 const LANGUAGE_OPTIONS = Object.entries(wordData.languages)
@@ -41,6 +43,7 @@ const groupAtLevel = (id, level) => {
 export default function CompareLanguages() {
   const [searchParams, setSearchParams] = useSearchParams()
   const [colorLevel, setColorLevel] = useState(0)
+  const [flagTarget, setFlagTarget] = useState(null)
 
   const selected = useMemo(() => {
     const raw = searchParams.get('langs')
@@ -195,13 +198,30 @@ export default function CompareLanguages() {
                       return (
                         <td
                           key={id}
-                          className={`px-3 py-2 ${
+                          className={`group px-3 py-2 ${
                             value
                               ? 'text-gray-900 dark:text-white'
                               : 'text-gray-300 dark:text-gray-600'
                           }`}
                         >
-                          {value ?? '—'}
+                          <span className="inline-flex items-center gap-1.5">
+                            {value ?? '—'}
+                            <button
+                              onClick={() =>
+                                setFlagTarget({
+                                  languageId: id,
+                                  languageName: labelOf(id),
+                                  wordId: word.id,
+                                  wordEn: word.en,
+                                  currentValue: value ?? null,
+                                })
+                              }
+                              title={value ? 'Suggest a correction' : 'Suggest this word'}
+                              className="text-gray-300 opacity-0 transition-opacity hover:text-blue-600 focus:opacity-100 group-hover:opacity-100 dark:text-gray-600 dark:hover:text-blue-400"
+                            >
+                              <FlagIcon className="h-3.5 w-3.5" />
+                            </button>
+                          </span>
                         </td>
                       )
                     })}
@@ -209,8 +229,17 @@ export default function CompareLanguages() {
                 ))}
               </tbody>
             </table>
+            <p className="mt-3 text-xs text-gray-400 dark:text-gray-500">
+              Spot a mistake or a missing word? Hover over a cell and click the
+              flag to suggest a change — suggestions are reviewed before going
+              live.
+            </p>
           </div>
         </div>
+      )}
+
+      {flagTarget && (
+        <FlagWordModal target={flagTarget} onClose={() => setFlagTarget(null)} />
       )}
     </div>
   )

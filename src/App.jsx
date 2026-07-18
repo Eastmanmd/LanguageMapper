@@ -3,6 +3,8 @@ import Home from './components/tabs/Home'
 import MapExplorer from './components/tabs/MapExplorer'
 import CompareLanguages from './components/tabs/CompareLanguages'
 import Blog from './components/tabs/Blog'
+import Contribute from './components/tabs/Contribute'
+import Admin from './components/tabs/Admin'
 import { SunIcon, MoonIcon } from './components/icons'
 import { useTheme } from './context/ThemeContext'
 
@@ -10,6 +12,7 @@ const TABS = [
   { path: '/', label: 'Home', end: true },
   { path: '/map', label: 'Map' },
   { path: '/compare', label: 'Compare languages' },
+  { path: '/contribute', label: 'Contribute' },
   { path: '/blog', label: 'Blog' },
 ]
 
@@ -61,6 +64,8 @@ function App() {
           <Route path="/map" element={<MapExplorer />} />
           <Route path="/map/:stateId" element={<MapExplorer />} />
           <Route path="/compare" element={<CompareLanguages />} />
+          <Route path="/contribute" element={<Contribute />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="*" element={<Home />} />
         </Routes>

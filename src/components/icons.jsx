@@ -17,3 +17,11 @@ export function MoonIcon(props) {
     </svg>
   )
 }
+
+export function FlagIcon(props) {
+  return (
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.6" {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 18V3.2c3.7-2 7.3 2 11-.1v9c-3.7 2.1-7.3-1.9-11 .1" />
+    </svg>
+  )
+}

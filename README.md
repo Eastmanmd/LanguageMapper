@@ -35,6 +35,26 @@ Pick two or more languages and compare them side by side:
 
 The tree is a simple lexical-similarity illustration, not a rigorous historical-linguistic classification.
 
+### Contribute (`/contribute`)
+
+Community submissions, all reviewed by the admin before going live:
+
+- **Flag a word** — hover any cell in the comparison table and click the flag to suggest a correction (or propose a value for an empty cell).
+- **Fill in a word list** — pick any of the 239 languages and fill in its missing words from the master list; only new or changed entries are submitted.
+- **Add a new language** — name, classification, ethnic groups, states where spoken, description, and optionally its word list.
+
+Every form takes an optional contributor name, email, and source citation. Submissions are validated client- and server-side, rate-limited per IP, and identical pending suggestions are merged with a counter.
+
+### Admin review (`/admin`)
+
+A hidden route (not in the nav) where the admin signs in with a Supabase magic link. Row-level security restricts reads and reviews to the admin email. The queue shows each submission as a diff (current value → suggested value) with contributor info, and approve/reject buttons. Approved submissions are applied to the JSON data files with:
+
+```bash
+npm run sync-data   # needs SUPABASE_SERVICE_ROLE_KEY (see .env.example)
+```
+
+The script applies each approved item to `languages.json`, `stateLanguages.json`, and `wordComparison.json`, marks it `applied` in Supabase, and leaves the changes as an ordinary git diff to review and commit — so every accepted change stays versioned in git.
+
 ### Blog (`/blog`)
 
 Placeholder — articles and research notes are coming soon.
@@ -45,7 +65,7 @@ Placeholder — articles and research notes are coming soon.
 - [MapLibre GL JS](https://maplibre.org/) with [OpenFreeMap](https://openfreemap.org/) vector tiles
 - [Tailwind CSS 4](https://tailwindcss.com/) with class-based dark mode
 - [Oxlint](https://oxc.rs/) for linting
-- No backend — the whole app is a static site; all data ships as JSON
+- [Supabase](https://supabase.com/) for community submissions and admin review — the app itself is still a static site; all published data ships as JSON
 
 ## Getting started
 
@@ -55,7 +75,17 @@ npm run dev      # start dev server
 npm run build    # production build to dist/
 npm run preview  # serve the production build
 npm run lint     # run oxlint
+npm run sync-data # apply approved community submissions to the JSON files
 ```
+
+### Supabase setup (for community submissions)
+
+Without this, the app runs fine but the contribution forms and `/admin` show a "not configured" notice.
+
+1. Create a free project at [supabase.com](https://supabase.com/).
+2. In the SQL editor, run [`supabase/schema.sql`](supabase/schema.sql) — first replace the `ADMIN_EMAIL` placeholder comments' address with your admin email if it differs.
+3. Copy `.env.example` to `.env` and fill in the project URL and anon key (Dashboard → Settings → API). For `npm run sync-data`, also add the service role key — never commit it or expose it to the client.
+4. Make sure email (magic link) auth is enabled (it is by default). Sign in at `/admin` with the admin email.
 
 ## Data model
 
@@ -97,15 +127,25 @@ src/
     LanguageProfile.jsx       # single language profile card
     LanguageSearch.jsx        # typeahead for map language search
     MultiLanguagePicker.jsx   # multi-select picker for the compare tool
+    contribute/
+      fields.jsx              # shared form primitives (inputs, honeypot, status)
+      FlagWordModal.jsx       # flag/correct a single word from the compare table
+      WordListEditor.jsx      # grid of inputs for the master word list
     tabs/
       Home.jsx                # landing page
       MapExplorer.jsx         # map + search + info panel layout
       CompareLanguages.jsx    # word table + similarity tree
       PhylogeneticTree.jsx    # SVG dendrogram renderer
+      Contribute.jsx          # fill-words and new-language submission forms
+      Admin.jsx               # magic-link login + submission review queue
       Blog.jsx                # placeholder
   context/ThemeContext.jsx    # dark mode state, persisted
   data/                       # all language data (see Data model)
+  lib/supabase.js             # Supabase client (null when unconfigured)
+  lib/submissions.js          # submit RPC wrapper + admin queries
   utils/phylogenetics.js      # normalization, Levenshtein, UPGMA clustering
+scripts/sync-approved.mjs     # applies approved submissions to the JSON files
+supabase/schema.sql           # submissions table, RLS, submit_suggestion RPC
 crawler/                      # experimental data-harvesting pipeline (Python)
 public/data/                  # state boundary GeoJSON
 ```

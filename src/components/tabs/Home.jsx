@@ -21,6 +21,12 @@ const FEATURES = [
     badge: null,
   },
   {
+    title: 'Contribute',
+    description:
+      'Flag incorrect words, fill in missing word lists, or propose a new language. Every submission is reviewed before it goes live.',
+    badge: null,
+  },
+  {
     title: 'Blog',
     description: 'Articles and research notes on language documentation and mapping.',
     badge: 'Coming soon',
