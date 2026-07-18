@@ -1,6 +1,6 @@
 # LanguageMap
 
-An interactive tool for exploring linguistic diversity, region by region. The project is launching with Nigeria as its first fully mapped country — all 37 states (including the FCT) with 239 catalogued languages — with a data model built to extend to other countries over time.
+A tool for mapping and reconstructing the shared origins of words across diverse languages, starting with the languages of Africa. Compare vocabulary side by side, explore how languages relate, and see where they are spoken. The focus today is Nigeria — all 37 states (including the FCT) with 239 catalogued languages — with the project built to spread to other regions of Africa and beyond.
 
 **Live features:** interactive state map · language profiles · side-by-side word comparison · lexical similarity tree · dark mode
 
@@ -112,7 +112,8 @@ public/data/                  # state boundary GeoJSON
 
 ## Roadmap
 
-- Expand to other West African countries (the data model already supports it)
+- Expand to other African regions, starting with West Africa (the data model already supports it)
+- Move beyond lexical similarity toward tracing shared word origins across languages
 - Data validation script to catch dangling cross-references between the JSON files
 - Connect the crawler pipeline to the app data for sourced, semi-automated growth
 - Blog with articles and research notes

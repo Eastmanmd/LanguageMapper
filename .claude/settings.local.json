@@ -86,7 +86,9 @@
       "Bash(curl -s https://tiles.openfreemap.org/styles/dark)",
       "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('src/data/wordComparison.json','utf8'\\)\\); console.log\\('valid json'\\)\")",
       "Bash(npx vite *)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(git -C /Users/aoku/Desktop/ClaudeCode/LanguageMap remote -v)",
+      "Bash(git -C /Users/aoku/Desktop/ClaudeCode/LanguageMap branch -a)"
     ]
   }
 }

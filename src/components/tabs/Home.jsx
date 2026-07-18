@@ -45,13 +45,14 @@ export default function Home() {
               LanguageMap
             </p>
             <h1 className="mt-4 max-w-xl text-4xl font-medium leading-[1.1] tracking-tight text-gray-900 md:text-6xl dark:text-white">
-              Mapping the world&apos;s languages, region by region.
+              Tracing words back to their shared origins.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-              An interactive tool for exploring linguistic diversity. Click a region to
-              see its languages, then dig into classification, ethnic groups, and
-              linguistic relatives. The project is launching with Nigeria as its first
-              fully mapped region, with the data model built to extend worldwide.
+              LanguageMap is a tool for mapping and reconstructing the shared origins
+              of words across diverse languages, starting with the languages of
+              Africa. Compare vocabulary side by side, explore how languages relate,
+              and see where they are spoken. The focus today is Nigeria, with the
+              project built to spread to other regions over time.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <button
@@ -123,14 +124,16 @@ export default function Home() {
       <section className="border-t border-gray-200 px-6 py-16 md:px-10 md:py-20 dark:border-white/10">
         <div className="max-w-2xl">
           <h2 className="text-2xl font-medium tracking-tight text-gray-900 md:text-3xl dark:text-white">
-            Starting with Nigeria
+            Starting with African languages
           </h2>
           <p className="mt-4 text-base leading-relaxed text-gray-600 dark:text-gray-400">
-            Nigeria alone is home to hundreds of languages across several major
-            language families &mdash; Niger-Congo, Afro-Asiatic, and Nilo-Saharan among
-            them. It's a natural place to start: linguistically dense, well-documented,
-            and geographically compact enough to map state by state. From here, the
-            same data model extends to other countries and regions over time.
+            Africa holds some of the deepest linguistic diversity on Earth, and much
+            of the shared history behind its words is still waiting to be traced.
+            Nigeria is the starting point: home to hundreds of languages across
+            several major families &mdash; Niger-Congo, Afro-Asiatic, and Nilo-Saharan
+            among them &mdash; it is linguistically dense, well-documented, and compact
+            enough to map state by state. From here, the same approach spreads to
+            other regions of Africa and beyond.
           </p>
           <button
             onClick={() => navigate('/map')}
