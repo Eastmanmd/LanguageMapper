@@ -664,6 +664,123 @@
       "name": "Gbagyi (Gwari)",
       "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Nupoid",
       "words": {}
+    },
+    "nigerian-pidgin": {
+      "name": "Nigerian Pidgin",
+      "classification": "English Creole (Atlantic Creole, English-lexified)",
+      "words": {
+        "one": "wọn",
+        "two": "tu",
+        "three": "tri",
+        "four": "fọọ",
+        "five": "faif",
+        "six": "siks",
+        "seven": "sẹ́vun",
+        "eight": "ẹẹt",
+        "nine": "nain",
+        "ten": "tẹn",
+        "man": "man",
+        "woman": "wuman",
+        "people": "pipo",
+        "head": "hẹd",
+        "mouth": "maut",
+        "nose": "noz",
+        "ear": "ia",
+        "water": "wọta",
+        "rain": "ren",
+        "name": "nem",
+        "come": "kọm",
+        "go": "go",
+        "speak": "tok"
+      }
+    },
+    "bole": {
+      "name": "Bole",
+      "classification": "Afro-Asiatic > Chadic",
+      "words": {
+        "one": "móoɗì",
+        "two": "bòláu",
+        "three": "kúnùm",
+        "four": "pòɗɗó",
+        "five": "bàɗì",
+        "six": "bàššimóoɗì",
+        "seven": "báawúló",
+        "eight": "póorɗó",
+        "nine": "ɓòonùm",
+        "ten": "bìmbáɗí",
+        "man": "gwərzo",
+        "woman": "mundù",
+        "people": "mêmu",
+        "head": "kòʔi",
+        "mouth": "bòno",
+        "nose": "wìntu",
+        "ear": "kùmi",
+        "water": "ə̀mma",
+        "name": "siŋkwò",
+        "come": "diŋgò",
+        "go": "jiwò",
+        "speak": "puwo'i"
+      }
+    },
+    "kalabari": {
+      "name": "Kalabari",
+      "classification": "Niger-Congo > Ijoid > Eastern Ijoid",
+      "words": {
+        "one": "ŋ̀gèi",
+        "two": "màĩ",
+        "three": "tẹrẹ",
+        "four": "inei",
+        "five": "sọnọ",
+        "six": "sọniọ",
+        "seven": "sọnọmà",
+        "eight": "ninè",
+        "nine": "esenie",
+        "ten": "oji",
+        "woman": "ẹ́rẹ́bọ́",
+        "nose": "nini",
+        "ear": "beri",
+        "water": "minji",
+        "rain": "énē",
+        "name": "ere",
+        "come": "bo"
+      }
+    },
+    "tarok": {
+      "name": "Tarok",
+      "classification": "Niger-Congo > Atlantic-Congo > Benue-Congo > Plateau",
+      "words": {
+        "one": "ùzɨ̀ŋ",
+        "two": "ùpàrɨ́m",
+        "three": "ùʃáɗɨ́ŋ",
+        "four": "ùnèɗɨ́ŋ",
+        "five": "ùtúkún",
+        "six": "ùk͡pə́ɗɨ́ŋ",
+        "seven": "ùfàŋʃát",
+        "eight": "ùnə̀nnè",
+        "nine": "ùfàŋzɨ́ŋtɨ́ŋ",
+        "ten": "ùg͡bə́pei",
+        "nose": "alur",
+        "ear": "acwuŋ",
+        "water": "diŋ",
+        "name": "adin",
+        "come": "ba"
+      }
+    },
+    "itsekiri": {
+      "name": "Itsekiri",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Yoruboid",
+      "words": {
+        "one": "okan",
+        "two": "meji",
+        "three": "meeta",
+        "four": "meeren",
+        "five": "maaru",
+        "six": "mefa",
+        "seven": "meje",
+        "eight": "mejo",
+        "nine": "mesan",
+        "ten": "meegwa"
+      }
     }
   }
 }

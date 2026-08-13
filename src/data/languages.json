@@ -722,7 +722,7 @@
   "afade": {
     "id": "afade",
     "name": "Afade",
-    "classification": "Afroasiatic > Chadic > Biu-Mandara",
+    "classification": "Afro-Asiatic > Chadic > Biu-Mandara",
     "ethnicGroups": [
       "Afade"
     ],
@@ -810,7 +810,7 @@
   "bachama": {
     "id": "bachama",
     "name": "Bachama",
-    "classification": "Afroasiatic > Chadic > Biu-Mandara",
+    "classification": "Afro-Asiatic > Chadic > Biu-Mandara",
     "ethnicGroups": [
       "Bwatiye"
     ],
@@ -823,7 +823,7 @@
   "barke": {
     "id": "barke",
     "name": "Mburku",
-    "classification": "Afroasiatic > Chadic",
+    "classification": "Afro-Asiatic > Chadic",
     "ethnicGroups": [
       "Mburku"
     ],
@@ -861,7 +861,7 @@
   "bele": {
     "id": "bele",
     "name": "Ɓeele",
-    "classification": "Afroasiatic > Chadic > West Chadic > West Chadic A > Bole-Tangale",
+    "classification": "Afro-Asiatic > Chadic > West Chadic > West Chadic A > Bole-Tangale",
     "ethnicGroups": [
       "Bele"
     ],
@@ -911,7 +911,7 @@
   "bokkos": {
     "id": "bokkos",
     "name": "Ron",
-    "classification": "Afroasiatic > Chadic > West Chadic > West Chadic A > Ron",
+    "classification": "Afro-Asiatic > Chadic > West Chadic > West Chadic A > Ron",
     "ethnicGroups": [
       "Ron"
     ],
@@ -947,7 +947,7 @@
   "bole": {
     "id": "bole",
     "name": "Bole",
-    "classification": "Afroasiatic > Chadic",
+    "classification": "Afro-Asiatic > Chadic",
     "ethnicGroups": [
       "Bolewa"
     ],
@@ -2611,7 +2611,7 @@
   "ron": {
     "id": "ron",
     "name": "Ron",
-    "classification": "Afroasiatic > Chadic > West Chadic > West Chadic A > Ron",
+    "classification": "Afro-Asiatic > Chadic > West Chadic > West Chadic A > Ron",
     "ethnicGroups": [
       "Ron"
     ],
@@ -2650,7 +2650,7 @@
   "saya": {
     "id": "saya",
     "name": "Saya",
-    "classification": "Afroasiatic > Chadic > West Chadic > West Chadic B > South Bauchi",
+    "classification": "Afro-Asiatic > Chadic > West Chadic > West Chadic B > South Bauchi",
     "ethnicGroups": [
       "Saya"
     ],
@@ -2718,7 +2718,7 @@
   "siri": {
     "id": "siri",
     "name": "Siri",
-    "classification": "Afroasiatic > Chadic > West Chadic > West Chadic B > Warji",
+    "classification": "Afro-Asiatic > Chadic > West Chadic > West Chadic B > Warji",
     "ethnicGroups": [
       "Siri"
     ],
@@ -2731,7 +2731,7 @@
   "sukur": {
     "id": "sukur",
     "name": "Sukur",
-    "classification": "Afroasiatic > Chadic > Biu-Mandara",
+    "classification": "Afro-Asiatic > Chadic > Biu-Mandara",
     "ethnicGroups": [
       "Sukur"
     ],
@@ -2771,7 +2771,7 @@
   "tera": {
     "id": "tera",
     "name": "Tera",
-    "classification": "Afroasiatic > Chadic > Biu-Mandara > Teraic",
+    "classification": "Afro-Asiatic > Chadic > Biu-Mandara > Teraic",
     "ethnicGroups": [
       "Tera"
     ],
@@ -2784,7 +2784,7 @@
   "teshena": {
     "id": "teshena",
     "name": "Teshenawa",
-    "classification": "Afroasiatic > Chadic",
+    "classification": "Afro-Asiatic > Chadic",
     "ethnicGroups": [
       "Teshenawa"
     ],
@@ -2941,7 +2941,7 @@
   "warji": {
     "id": "warji",
     "name": "Warji",
-    "classification": "Afroasiatic > Chadic",
+    "classification": "Afro-Asiatic > Chadic",
     "ethnicGroups": [
       "Warji"
     ],

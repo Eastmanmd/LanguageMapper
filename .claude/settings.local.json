@@ -88,7 +88,30 @@
       "Bash(npx vite *)",
       "Bash(npm run *)",
       "Bash(git -C /Users/aoku/Desktop/ClaudeCode/LanguageMap remote -v)",
-      "Bash(git -C /Users/aoku/Desktop/ClaudeCode/LanguageMap branch -a)"
+      "Bash(git -C /Users/aoku/Desktop/ClaudeCode/LanguageMap branch -a)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:lingweb.eva.mpg.de)",
+      "Bash(curl -sL https://api.github.com/repos/numeralbank/channumerals/contents/cldf)",
+      "Bash(python3 -c \"import json,sys; [print\\(x['name'], x.get\\('size'\\)\\) for x in json.load\\(sys.stdin\\)]\")",
+      "Bash(curl -sL -o chan-forms.csv https://raw.githubusercontent.com/numeralbank/channumerals/master/cldf/forms.csv)",
+      "Bash(curl -sL -o chan-languages.csv https://raw.githubusercontent.com/numeralbank/channumerals/master/cldf/languages.csv)",
+      "Bash(curl -s --retry 3 --retry-delay 30 -A \"LanguageMapper-research/0.1\" \"https://en.wiktionary.org/w/api.php?action=query&list=categorymembers&cmtitle=Category:Nigerian%20Pidgin%20numerals&cmlimit=500&format=json\")",
+      "Bash(python3 -c \"import json,sys; print\\([m['title'] for m in json.load\\(sys.stdin\\)['query']['categorymembers']]\\)\")",
+      "WebFetch(domain:naijalingo.com)",
+      "WebFetch(domain:www.rogerblench.info)",
+      "Bash(curl -s https://api.github.com/repos/lexibank/kraftchadic)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(d.get\\('full_name'\\), d.get\\('description'\\)\\)\")",
+      "Bash(curl -s \"https://api.github.com/search/repositories?q=org:lexibank+ijoid+OR+plateau+OR+tarok+OR+yoruboid\")",
+      "Bash(python3 -c \"import json,sys; [print\\(r['full_name'],'-',r.get\\('description'\\)\\) for r in json.load\\(sys.stdin\\).get\\('items',[]\\)]\")",
+      "Bash(curl -sL -o kraft-languages.csv https://raw.githubusercontent.com/lexibank/kraftchadic/main/cldf/languages.csv)",
+      "Bash(curl -sL -o kraft-params.csv https://raw.githubusercontent.com/lexibank/kraftchadic/main/cldf/parameters.csv)",
+      "WebFetch(domain:www.kasahorow.org)",
+      "Bash(curl -sL -o kraft-languages.csv https://raw.githubusercontent.com/lexibank/kraftchadic/master/cldf/languages.csv)",
+      "Bash(curl -sL -o kraft-forms.csv https://raw.githubusercontent.com/lexibank/kraftchadic/master/cldf/forms.csv)",
+      "Bash(curl -sL -o kraft-params.csv https://raw.githubusercontent.com/lexibank/kraftchadic/master/cldf/parameters.csv)",
+      "Bash(curl -s --retry 2 --retry-delay 20 -A \"LanguageMapper-research/0.1\" \"https://en.wiktionary.org/w/api.php?action=query&list=categorymembers&cmtitle=Category:Isekiri%20lemmas&cmlimit=500&format=json\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\([m['title'] for m in d.get\\('query',{}\\).get\\('categorymembers',[]\\)]\\)\")",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('/Users/aoku/Desktop/ClaudeCode/LanguageMap/candidates/word-candidates.json'\\)\\); print\\('valid JSON;', {k: v['coverage'] for k,v in d['languages'].items\\(\\)}\\)\")"
     ]
   }
 }

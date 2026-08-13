@@ -1,0 +1,204 @@
+{
+  "generatedAt": "2026-08-12",
+  "method": "Web research pilot: 5 languages with no word data in wordComparison.json. Every value carries its source. Values were NOT verified by a speaker — review before merging. Where a source uses phonetic transcription rather than practical orthography, the raw cited form is kept in `citedForm` and the proposed display value is an orthographic adaptation (flagged low confidence).",
+  "sources": {
+    "chan": {
+      "name": "Chan, Numeral Systems of the World's Languages (CLDF edition, numeralbank/channumerals)",
+      "url": "https://github.com/numeralbank/channumerals",
+      "license": "CC-BY 4.0"
+    },
+    "asjp-kalabari": {
+      "name": "ASJP Database — Wordlist Kalabari (from Jenewari 1977, West African language data sheets)",
+      "url": "https://asjp.clld.org/languages/KALABARI",
+      "license": "CC-BY 4.0",
+      "note": "Forms are in ASJP phonetic code, not Kalabari orthography."
+    },
+    "asjp-tarok": {
+      "name": "ASJP Database — Wordlist Tarok (from Fitzpatrick 1910-11)",
+      "url": "https://asjp.clld.org/languages/TAROK",
+      "license": "CC-BY 4.0",
+      "note": "1910s source in ASJP phonetic code; treat as low confidence."
+    },
+    "ucla-kalabari": {
+      "name": "UCLA Phonetics Lab Archive — Kalabari word list (1984)",
+      "url": "http://archive.phonetics.ucla.edu/Language/IJN/ijn_word-list_1984_01.html"
+    },
+    "kraft": {
+      "name": "Kraft, Chadic Wordlists (1981), CLDF edition (lexibank/kraftchadic), language: Bolewa",
+      "url": "https://github.com/lexibank/kraftchadic",
+      "license": "CC-BY 4.0",
+      "note": "Phonetic transcription from 1981 fieldwork; modern Bole orthography (Gimba & Schuh 2015) may differ."
+    },
+    "omniglot-bole": {
+      "name": "Omniglot — Counting in Bole (data from Gimba & Schuh 2015, Bole-English-Hausa Dictionary)",
+      "url": "https://www.omniglot.com/language/numbers/bole.htm"
+    },
+    "kasahorow-its": {
+      "name": "kasahorow — Iṣẹkiri Numbers Zero To 20",
+      "url": "https://www.kasahorow.org/node/1396749",
+      "note": "No tone marks. Community-educational source, not academic."
+    },
+    "wiktionary": {
+      "name": "English Wiktionary — Nigerian Pidgin (pcm) lemmas",
+      "url": "https://en.wiktionary.org/wiki/Category:Nigerian_Pidgin_lemmas",
+      "license": "CC BY-SA"
+    },
+    "glosbe-pcm": {
+      "name": "Glosbe English–Nigerian Pidgin dictionary (verified entries, largely Weldon / Dbnary)",
+      "url": "https://glosbe.com/en/pcm",
+      "note": "Uses ọ/ẹ orthography (Naija orthography). Per-word URL: https://glosbe.com/en/pcm/<english word>."
+    }
+  },
+  "languages": {
+    "nigerian-pidgin": {
+      "name": "Nigerian Pidgin",
+      "classification": "English Creole (Atlantic Creole, English-lexified)",
+      "coverage": "23/23",
+      "words": {
+        "one": { "value": "wọn", "source": "wiktionary", "sourceUrl": "https://en.wiktionary.org/wiki/w%E1%BB%8Dn", "confidence": "high", "note": "Also verified on Glosbe. 'wan' in Pidgin is the verb 'want'." },
+        "two": { "value": "tu", "source": "wiktionary", "sourceUrl": "https://en.wiktionary.org/wiki/tu", "confidence": "high" },
+        "three": { "value": "tri", "source": "wiktionary", "sourceUrl": "https://en.wiktionary.org/wiki/tri", "confidence": "high" },
+        "four": { "value": "fọọ", "source": "glosbe-pcm", "sourceUrl": "https://glosbe.com/en/pcm/four", "confidence": "medium" },
+        "five": { "value": "faif", "source": "glosbe-pcm", "sourceUrl": "https://glosbe.com/en/pcm/five", "confidence": "medium" },
+        "six": { "value": "siks", "source": "glosbe-pcm", "sourceUrl": "https://glosbe.com/en/pcm/six", "confidence": "medium" },
+        "seven": { "value": "sẹ́vun", "source": "glosbe-pcm", "sourceUrl": "https://glosbe.com/en/pcm/seven", "confidence": "medium" },
+        "eight": { "value": "ẹẹt", "source": "glosbe-pcm", "sourceUrl": "https://glosbe.com/en/pcm/eight", "confidence": "medium" },
+        "nine": { "value": "nain", "source": "glosbe-pcm", "sourceUrl": "https://glosbe.com/en/pcm/nine", "confidence": "medium" },
+        "ten": { "value": "tẹn", "source": "glosbe-pcm", "sourceUrl": "https://glosbe.com/en/pcm/ten", "confidence": "medium" },
+        "man": { "value": "man", "source": null, "sourceUrl": null, "confidence": "low", "note": "Standard usage (e.g. BBC News Pidgin) but no dictionary citation found; Glosbe page extraction was unreliable. Easy for a speaker to confirm." },
+        "woman": { "value": "wuman", "source": "glosbe-pcm", "sourceUrl": "https://glosbe.com/en/pcm/woman", "confidence": "medium" },
+        "people": { "value": "pipo", "source": "wiktionary", "sourceUrl": "https://en.wiktionary.org/wiki/pipo", "confidence": "high", "note": "Wiktionary also lists variants 'pippo', 'pipul'." },
+        "head": { "value": "hẹd", "source": "glosbe-pcm", "sourceUrl": "https://glosbe.com/en/pcm/head", "confidence": "medium" },
+        "mouth": { "value": "maut", "source": "glosbe-pcm", "sourceUrl": "https://glosbe.com/en/pcm/mouth", "confidence": "medium" },
+        "nose": { "value": "noz", "source": "glosbe-pcm", "sourceUrl": "https://glosbe.com/en/pcm/nose", "confidence": "medium" },
+        "ear": { "value": "ia", "source": "glosbe-pcm", "sourceUrl": "https://glosbe.com/en/pcm/ear", "confidence": "medium" },
+        "water": { "value": "wọta", "source": "glosbe-pcm", "sourceUrl": "https://glosbe.com/en/pcm/water", "confidence": "medium" },
+        "rain": { "value": "ren", "source": "glosbe-pcm", "sourceUrl": "https://glosbe.com/en/pcm/rain", "confidence": "medium" },
+        "name": { "value": "nem", "source": "wiktionary", "sourceUrl": "https://en.wiktionary.org/wiki/nem", "confidence": "high" },
+        "come": { "value": "kọm", "source": "glosbe-pcm", "sourceUrl": "https://glosbe.com/en/pcm/come", "confidence": "medium" },
+        "go": { "value": "go", "source": "wiktionary", "sourceUrl": "https://en.wiktionary.org/wiki/go", "confidence": "high" },
+        "speak": { "value": "tok", "source": "wiktionary", "sourceUrl": "https://en.wiktionary.org/wiki/tok", "confidence": "high" }
+      }
+    },
+    "bole": {
+      "name": "Bole",
+      "classification": "Afroasiatic > Chadic",
+      "coverage": "22/23",
+      "words": {
+        "one": { "value": "móoɗì", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "high", "note": "Contributor: Russell G. Schuh. Cross-checked with Omniglot (mōɗì, from Gimba & Schuh 2015)." },
+        "two": { "value": "bòláu", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "high", "note": "Omniglot: bòlou." },
+        "three": { "value": "kúnùm", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "high" },
+        "four": { "value": "pòɗɗó", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "high" },
+        "five": { "value": "bàɗì", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "high" },
+        "six": { "value": "bàššimóoɗì", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "high", "note": "Omniglot: bàccimōɗì / bàsshimōɗì." },
+        "seven": { "value": "báawúló", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "high" },
+        "eight": { "value": "póorɗó", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "high" },
+        "nine": { "value": "ɓòonùm", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "high" },
+        "ten": { "value": "bìmbáɗí", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "high" },
+        "man": { "value": "gwərzo", "source": "kraft", "sourceUrl": "https://github.com/lexibank/kraftchadic", "confidence": "medium" },
+        "woman": { "value": "mundù", "source": "kraft", "sourceUrl": "https://github.com/lexibank/kraftchadic", "confidence": "medium" },
+        "people": { "value": "mêmu", "source": "kraft", "sourceUrl": "https://github.com/lexibank/kraftchadic", "confidence": "low", "note": "Source gloss is 'person', not 'people'." },
+        "head": { "value": "kòʔi", "source": "kraft", "sourceUrl": "https://github.com/lexibank/kraftchadic", "confidence": "medium" },
+        "mouth": { "value": "bòno", "source": "kraft", "sourceUrl": "https://github.com/lexibank/kraftchadic", "confidence": "medium" },
+        "nose": { "value": "wìntu", "source": "kraft", "sourceUrl": "https://github.com/lexibank/kraftchadic", "confidence": "medium" },
+        "ear": { "value": "kùmi", "source": "kraft", "sourceUrl": "https://github.com/lexibank/kraftchadic", "confidence": "medium" },
+        "water": { "value": "ə̀mma", "source": "kraft", "sourceUrl": "https://github.com/lexibank/kraftchadic", "confidence": "medium" },
+        "rain": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found. Kraft has only 'rainy season' (kuzò). Present in Gimba & Schuh 2015 print dictionary." },
+        "name": { "value": "siŋkwò", "source": "kraft", "sourceUrl": "https://github.com/lexibank/kraftchadic", "confidence": "medium" },
+        "come": { "value": "diŋgò", "source": "kraft", "sourceUrl": "https://github.com/lexibank/kraftchadic", "confidence": "medium" },
+        "go": { "value": "jiwò", "source": "kraft", "sourceUrl": "https://github.com/lexibank/kraftchadic", "confidence": "medium" },
+        "speak": { "value": "puwo'i", "source": "kraft", "sourceUrl": "https://github.com/lexibank/kraftchadic", "confidence": "medium" }
+      }
+    },
+    "kalabari": {
+      "name": "Kalabari",
+      "classification": "Niger-Congo > Ijoid > Eastern Ijoid",
+      "coverage": "17/23",
+      "words": {
+        "one": { "value": "ŋ̀gèi", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "medium", "note": "Contributor: Dr. Ethelbert E. Kari, Univ. of Port Harcourt (from Isukul 1997). ASJP (Jenewari 1977) agrees: iNei / gb~ere." },
+        "two": { "value": "màĩ", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "citedForm": "màɪ̃", "confidence": "medium", "note": "ASJP agrees: mai / ma." },
+        "three": { "value": "tẹrẹ", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "citedForm": "tɛrɛ", "confidence": "medium", "note": "Adapted to Kalabari orthography (ɛ→ẹ)." },
+        "four": { "value": "inei", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "citedForm": "ineĩ", "confidence": "medium" },
+        "five": { "value": "sọnọ", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "citedForm": "sɔnɔ", "confidence": "high", "note": "Independently confirmed by UCLA 1984 list: sọ́nọ́." },
+        "six": { "value": "sọniọ", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "citedForm": "sonio", "confidence": "medium" },
+        "seven": { "value": "sọnọmà", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "citedForm": "sɔnɔmɛ̀", "confidence": "low", "note": "Adaptation uncertain; cited form ends in ɛ̀ (sọnọmẹ̀)." },
+        "eight": { "value": "ninè", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "medium" },
+        "nine": { "value": "esenie", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "medium" },
+        "ten": { "value": "oji", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "medium", "note": "Chan also lists àtèi as an alternative." },
+        "man": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found in accessible sources. In Jenewari's print materials." },
+        "woman": { "value": "ẹ́rẹ́bọ́", "source": "ucla-kalabari", "sourceUrl": "http://archive.phonetics.ucla.edu/Language/IJN/ijn_word-list_1984_01.html", "confidence": "medium" },
+        "people": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found." },
+        "head": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found." },
+        "mouth": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found." },
+        "nose": { "value": "nini", "source": "asjp-kalabari", "sourceUrl": "https://asjp.clld.org/languages/KALABARI", "citedForm": "nini", "confidence": "medium" },
+        "ear": { "value": "beri", "source": "asjp-kalabari", "sourceUrl": "https://asjp.clld.org/languages/KALABARI", "citedForm": "beri", "confidence": "medium" },
+        "water": { "value": "minji", "source": "ucla-kalabari", "sourceUrl": "http://archive.phonetics.ucla.edu/Language/IJN/ijn_word-list_1984_01.html", "confidence": "high", "note": "ASJP (minTi) agrees phonetically." },
+        "rain": { "value": "énē", "source": "ucla-kalabari", "sourceUrl": "http://archive.phonetics.ucla.edu/Language/IJN/ijn_word-list_1984_01.html", "confidence": "medium" },
+        "name": { "value": "ere", "source": "asjp-kalabari", "sourceUrl": "https://asjp.clld.org/languages/KALABARI", "citedForm": "ere", "confidence": "medium" },
+        "come": { "value": "bo", "source": "asjp-kalabari", "sourceUrl": "https://asjp.clld.org/languages/KALABARI", "citedForm": "bo", "confidence": "medium" },
+        "go": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found." },
+        "speak": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found." }
+      }
+    },
+    "tarok": {
+      "name": "Tarok",
+      "classification": "Niger-Congo > Atlantic-Congo > Benue-Congo > Plateau",
+      "coverage": "15/23",
+      "words": {
+        "one": { "value": "ùzɨ̀ŋ", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "high", "note": "Contributors: Roger Blench & Selbut Longtau — the authors of the Tarok dictionary. IPA-style transcription; practical orthography may write ɨ as ə." },
+        "two": { "value": "ùpàrɨ́m", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "high" },
+        "three": { "value": "ùʃáɗɨ́ŋ", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "high" },
+        "four": { "value": "ùnèɗɨ́ŋ", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "high" },
+        "five": { "value": "ùtúkún", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "high" },
+        "six": { "value": "ùk͡pə́ɗɨ́ŋ", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "high" },
+        "seven": { "value": "ùfàŋʃát", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "high" },
+        "eight": { "value": "ùnə̀nnè", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "high" },
+        "nine": { "value": "ùfàŋzɨ́ŋtɨ́ŋ", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "high" },
+        "ten": { "value": "ùg͡bə́pei", "source": "chan", "sourceUrl": "https://github.com/numeralbank/channumerals", "confidence": "high" },
+        "man": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found in accessible sources. Blench & Longtau's Tarok dictionary (rogerblench.info) is behind a bot-check; a manual download would cover all 13 missing/weak items." },
+        "woman": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found." },
+        "people": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found." },
+        "head": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found." },
+        "mouth": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found." },
+        "nose": { "value": "alur", "source": "asjp-tarok", "sourceUrl": "https://asjp.clld.org/languages/TAROK", "citedForm": "alur", "confidence": "low", "note": "1910 source." },
+        "ear": { "value": "acwuŋ", "source": "asjp-tarok", "sourceUrl": "https://asjp.clld.org/languages/TAROK", "citedForm": "aCwuN", "confidence": "low", "note": "Orthographic adaptation of ASJP code (C=ch, N=ŋ). 1910 source." },
+        "water": { "value": "diŋ", "source": "asjp-tarok", "sourceUrl": "https://asjp.clld.org/languages/TAROK", "citedForm": "diN", "confidence": "low", "note": "1910 source." },
+        "rain": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found." },
+        "name": { "value": "adin", "source": "asjp-tarok", "sourceUrl": "https://asjp.clld.org/languages/TAROK", "citedForm": "adin", "confidence": "low", "note": "1910 source." },
+        "come": { "value": "ba", "source": "asjp-tarok", "sourceUrl": "https://asjp.clld.org/languages/TAROK", "citedForm": "ba", "confidence": "low", "note": "1910 source." },
+        "go": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found." },
+        "speak": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found." }
+      }
+    },
+    "itsekiri": {
+      "name": "Itsekiri",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Yoruboid",
+      "coverage": "10/23",
+      "words": {
+        "one": { "value": "okan", "source": "kasahorow-its", "sourceUrl": "https://www.kasahorow.org/node/1396749", "confidence": "medium", "note": "Community sources write ọkàn with tone marks." },
+        "two": { "value": "meji", "source": "kasahorow-its", "sourceUrl": "https://www.kasahorow.org/node/1396749", "confidence": "medium" },
+        "three": { "value": "meeta", "source": "kasahorow-its", "sourceUrl": "https://www.kasahorow.org/node/1396749", "confidence": "medium", "note": "Community sources: mẹtá." },
+        "four": { "value": "meeren", "source": "kasahorow-its", "sourceUrl": "https://www.kasahorow.org/node/1396749", "confidence": "medium", "note": "Community sources: mẹrèn." },
+        "five": { "value": "maaru", "source": "kasahorow-its", "sourceUrl": "https://www.kasahorow.org/node/1396749", "confidence": "medium", "note": "Community sources: máru." },
+        "six": { "value": "mefa", "source": "kasahorow-its", "sourceUrl": "https://www.kasahorow.org/node/1396749", "confidence": "medium", "note": "Community sources: mẹ́fa." },
+        "seven": { "value": "meje", "source": "kasahorow-its", "sourceUrl": "https://www.kasahorow.org/node/1396749", "confidence": "medium" },
+        "eight": { "value": "mejo", "source": "kasahorow-its", "sourceUrl": "https://www.kasahorow.org/node/1396749", "citedForm": "meeejo", "confidence": "low", "note": "kasahorow prints 'meeejo', likely a typo; community sources write mẹ́jọ." },
+        "nine": { "value": "mesan", "source": "kasahorow-its", "sourceUrl": "https://www.kasahorow.org/node/1396749", "confidence": "medium", "note": "Community sources: mẹ́sàn." },
+        "ten": { "value": "meegwa", "source": "kasahorow-its", "sourceUrl": "https://www.kasahorow.org/node/1396749", "confidence": "medium", "note": "Community sources: mẹ̀guá." },
+        "man": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found in freely accessible sources. kasahorow's Itsekiri dictionary exists but is gated; no Wiktionary Isekiri entries; Glosbe empty. Best remaining option: a speaker contribution or a print dictionary." },
+        "woman": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found." },
+        "people": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found." },
+        "head": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found." },
+        "mouth": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found." },
+        "nose": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found." },
+        "ear": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found." },
+        "water": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found. Likely omi (Yoruboid cognate) but no citable source located — do not merge without one." },
+        "rain": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found." },
+        "name": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found." },
+        "come": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found." },
+        "go": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found." },
+        "speak": { "value": null, "source": null, "sourceUrl": null, "confidence": null, "note": "Not found." }
+      }
+    }
+  }
+}
