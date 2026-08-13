@@ -1,4 +1,4 @@
-# LanguageMap
+# LanguageMapper
 
 A tool for mapping and reconstructing the shared origins of words across diverse languages, starting with the languages of Africa. Compare vocabulary side by side, explore how languages relate, and see where they are spoken. The focus today is Nigeria — all 37 states (including the FCT) with 239 catalogued languages — with the project built to spread to other regions of Africa and beyond.
 

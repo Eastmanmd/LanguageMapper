@@ -23,10 +23,10 @@ function App() {
     <div className="flex h-full flex-col bg-white transition-colors dark:bg-[#0a0a0a]">
       <header className="border-b border-gray-200 dark:border-white/10">
         <div className="flex items-center justify-between px-6 pt-4">
-          <div className="flex items-center gap-2">
-            <div className="h-2 w-2 rounded-full bg-blue-600 dark:bg-blue-400" />
+          <div className="flex items-center gap-2.5">
+            <img src="/favicon.svg" alt="" className="h-6 w-6" />
             <span className="text-[15px] font-medium tracking-tight text-gray-900 dark:text-white">
-              LanguageMap
+              LanguageMapper
             </span>
           </div>
           <button

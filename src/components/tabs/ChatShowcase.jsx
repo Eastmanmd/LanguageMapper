@@ -12,7 +12,8 @@ export default function ChatShowcase() {
       {MESSAGES.map((message, index) => (
         <div
           key={index}
-          className={`flex ${message.from === 'me' ? 'justify-end' : 'justify-start'}`}
+          className={`animate-rise-in flex ${message.from === 'me' ? 'justify-end' : 'justify-start'}`}
+          style={{ animationDelay: `${0.3 + index * 0.25}s` }}
         >
           <div
             className={`max-w-[75%] rounded-2xl px-4 py-2.5 text-sm ${
