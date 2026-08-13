@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import wordData from '../../data/wordComparison.json'
 import PhylogeneticTree from './PhylogeneticTree'
@@ -6,6 +6,7 @@ import MultiLanguagePicker from '../MultiLanguagePicker'
 import FlagWordModal from '../contribute/FlagWordModal'
 import { FlagIcon } from '../icons'
 import { languageSimilarity, buildTree } from '../../utils/phylogenetics'
+import { exportTreePdf } from '../../utils/exportTreePdf'
 
 const LANGUAGE_OPTIONS = Object.entries(wordData.languages)
   .map(([id, lang]) => ({ id, name: lang.name }))
@@ -44,6 +45,8 @@ export default function CompareLanguages() {
   const [searchParams, setSearchParams] = useSearchParams()
   const [colorLevel, setColorLevel] = useState(0)
   const [flagTarget, setFlagTarget] = useState(null)
+  const [exporting, setExporting] = useState(false)
+  const treeContainerRef = useRef(null)
 
   const selected = useMemo(() => {
     const raw = searchParams.get('langs')
@@ -60,6 +63,25 @@ export default function CompareLanguages() {
 
   const handleAdd = (id) => updateSelected([...selected, id])
   const handleRemove = (id) => updateSelected(selected.filter((x) => x !== id))
+  const handleSelectAll = () => updateSelected(LANGUAGE_OPTIONS.map((l) => l.id))
+  const handleClearAll = () => updateSelected([])
+  const allSelected = selected.length === LANGUAGE_OPTIONS.length
+
+  const handleExportPdf = async () => {
+    const svg = treeContainerRef.current?.querySelector('svg')
+    if (!svg || exporting) return
+    setExporting(true)
+    try {
+      const names = selected.map((id) => labelOf(id))
+      const title =
+        names.length <= 6
+          ? `Lexical similarity tree — ${names.join(', ')}`
+          : `Lexical similarity tree — ${names.length} languages`
+      await exportTreePdf(svg, title, 'language-similarity-tree.pdf')
+    } finally {
+      setExporting(false)
+    }
+  }
 
   const tree = useMemo(() => {
     if (selected.length < 2) return null
@@ -123,6 +145,25 @@ export default function CompareLanguages() {
           onAdd={handleAdd}
           onRemove={handleRemove}
         />
+        <div className="mt-3 flex flex-wrap gap-2">
+          <button
+            type="button"
+            onClick={handleSelectAll}
+            disabled={allSelected}
+            className="rounded-full border border-gray-200 px-3 py-1.5 text-xs font-medium text-gray-600 transition-colors hover:border-blue-400 hover:text-blue-600 disabled:cursor-default disabled:opacity-40 disabled:hover:border-gray-200 disabled:hover:text-gray-600 dark:border-white/15 dark:text-gray-300 dark:hover:border-blue-400 dark:hover:text-blue-400 dark:disabled:hover:border-white/15 dark:disabled:hover:text-gray-300"
+          >
+            Compare all {LANGUAGE_OPTIONS.length} languages
+          </button>
+          {selected.length > 0 && (
+            <button
+              type="button"
+              onClick={handleClearAll}
+              className="rounded-full border border-gray-200 px-3 py-1.5 text-xs font-medium text-gray-600 transition-colors hover:border-red-400 hover:text-red-600 dark:border-white/15 dark:text-gray-300 dark:hover:border-red-400 dark:hover:text-red-400"
+            >
+              Clear selection
+            </button>
+          )}
+        </div>
       </div>
 
       {selected.length < 2 ? (
@@ -145,22 +186,32 @@ export default function CompareLanguages() {
                   rigorous historical-linguistic classification.
                 </p>
               </div>
-              <label className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-                Color by
-                <select
-                  value={effectiveLevel}
-                  onChange={(e) => setColorLevel(Number(e.target.value))}
-                  className="rounded-md border border-gray-200 bg-white px-2 py-1 text-xs text-gray-900 dark:border-white/15 dark:bg-white/5 dark:text-white"
+              <div className="flex items-center gap-3">
+                <label className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+                  Color by
+                  <select
+                    value={effectiveLevel}
+                    onChange={(e) => setColorLevel(Number(e.target.value))}
+                    className="rounded-md border border-gray-200 bg-white px-2 py-1 text-xs text-gray-900 dark:border-white/15 dark:bg-white/5 dark:text-white"
+                  >
+                    {Array.from({ length: maxLevels }, (_, level) => (
+                      <option key={level} value={level}>
+                        {LEVEL_NAMES[level] ?? `Level ${level + 1}`}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                <button
+                  type="button"
+                  onClick={handleExportPdf}
+                  disabled={exporting}
+                  className="rounded-md border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-600 transition-colors hover:border-blue-400 hover:text-blue-600 disabled:cursor-default disabled:opacity-50 dark:border-white/15 dark:bg-white/5 dark:text-gray-300 dark:hover:border-blue-400 dark:hover:text-blue-400"
                 >
-                  {Array.from({ length: maxLevels }, (_, level) => (
-                    <option key={level} value={level}>
-                      {LEVEL_NAMES[level] ?? `Level ${level + 1}`}
-                    </option>
-                  ))}
-                </select>
-              </label>
+                  {exporting ? 'Exporting…' : 'Download PDF'}
+                </button>
+              </div>
             </div>
-            <div className="mt-6">
+            <div className="mt-6" ref={treeContainerRef}>
               <PhylogeneticTree
                 tree={tree}
                 labelOf={labelOf}
