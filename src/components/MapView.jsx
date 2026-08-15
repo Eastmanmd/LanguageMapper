@@ -13,10 +13,10 @@ function fillColorExpr(selectedId, highlightedIds) {
   return [
     'case',
     ['==', ['get', 'state_id'], selectedId ?? ''],
-    '#f97316',
+    '#3a4d8f',
     ['in', ['get', 'state_id'], ['literal', highlightedIds ?? []]],
-    '#16a34a',
-    '#2563eb',
+    '#f5a623',
+    '#008751',
   ]
 }
 
@@ -55,7 +55,7 @@ function addStatesLayers(map, selectedId, highlightedIds) {
       type: 'line',
       source: STATES_SOURCE,
       paint: {
-        'line-color': '#1e3a8a',
+        'line-color': '#242e57',
         'line-width': 1,
       },
     })
@@ -100,8 +100,15 @@ export default function MapView({ selectedStateId, onSelectState, highlightedSta
       style: darkRef.current ? DARK_STYLE : LIGHT_STYLE,
       center: [8.0, 9.1],
       zoom: 5.4,
-      minZoom: 4,
+      minZoom: 5,
       maxZoom: 10,
+      // Keep the view on Nigeria. The margin has to clear the country on every
+      // side at minZoom — tighter bounds make MapLibre zoom in to satisfy them,
+      // which crops Sokoto and Borno out of the default view.
+      maxBounds: [
+        [0.5, 2.0],
+        [16.8, 16.0],
+      ],
     })
     mapRef.current = map
 

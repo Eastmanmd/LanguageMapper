@@ -5,7 +5,7 @@ export default function LanguageProfile({ language, onSelectLanguage, onBack }) 
     <div>
       <button
         onClick={onBack}
-        className="mb-3 text-sm text-blue-700 hover:underline dark:text-blue-400"
+        className="mb-3 text-sm text-naija-700 hover:underline dark:text-naija-400"
       >
         &larr; Back to state
       </button>
@@ -35,7 +35,7 @@ export default function LanguageProfile({ language, onSelectLanguage, onBack }) 
                 <button
                   key={id}
                   onClick={() => onSelectLanguage(id)}
-                  className="rounded-full bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-700 hover:bg-blue-100 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20"
+                  className="rounded-full bg-naija-50 px-2.5 py-1 text-xs font-medium text-naija-700 hover:bg-naija-100 dark:bg-naija-500/10 dark:text-naija-400 dark:hover:bg-naija-500/20"
                 >
                   {sim.name}
                 </button>

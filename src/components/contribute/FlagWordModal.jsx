@@ -96,7 +96,7 @@ export default function FlagWordModal({ target, onClose }) {
             <SubmitStatus status={status} />
             <button
               onClick={onClose}
-              className="rounded-full bg-blue-600 px-5 py-2 text-sm font-medium text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400"
+              className="rounded-full bg-naija-600 px-5 py-2 text-sm font-medium text-white hover:bg-naija-700 dark:bg-naija-500 dark:hover:bg-naija-400"
             >
               Close
             </button>
@@ -131,7 +131,7 @@ export default function FlagWordModal({ target, onClose }) {
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className="rounded-full bg-blue-600 px-5 py-2 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50 dark:bg-blue-500 dark:hover:bg-blue-400"
+                className="rounded-full bg-naija-600 px-5 py-2 text-sm font-medium text-white hover:bg-naija-700 disabled:opacity-50 dark:bg-naija-500 dark:hover:bg-naija-400"
               >
                 Submit for review
               </button>

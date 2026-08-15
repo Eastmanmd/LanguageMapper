@@ -1,6 +1,48 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Brand palettes, all Nigerian in origin:
+   naija  — the flag green (#008751 sits at 600), the primary accent
+   adire  — the indigo of Yoruba resist-dyed cloth, the secondary accent
+   ankara — the gold of wax-print cloth, used sparingly for highlights */
+@theme {
+  --color-naija-50: #ecfaf3;
+  --color-naija-100: #d0f2e1;
+  --color-naija-200: #a3e4c5;
+  --color-naija-300: #6bd0a3;
+  --color-naija-400: #33b57f;
+  --color-naija-500: #0f9a66;
+  --color-naija-600: #008751;
+  --color-naija-700: #006e43;
+  --color-naija-800: #005736;
+  --color-naija-900: #00462d;
+  --color-naija-950: #00281a;
+
+  --color-adire-50: #eff3fb;
+  --color-adire-100: #dbe3f6;
+  --color-adire-200: #bccbec;
+  --color-adire-300: #94a9dd;
+  --color-adire-400: #6b83c8;
+  --color-adire-500: #4c63ae;
+  --color-adire-600: #3a4d8f;
+  --color-adire-700: #2f3d73;
+  --color-adire-800: #242e57;
+  --color-adire-900: #1a2240;
+  --color-adire-950: #101528;
+
+  --color-ankara-50: #fff7e9;
+  --color-ankara-100: #ffebc4;
+  --color-ankara-200: #ffd88a;
+  --color-ankara-300: #fcbf4f;
+  --color-ankara-400: #f5a623;
+  --color-ankara-500: #e08c0c;
+  --color-ankara-600: #bd6f06;
+  --color-ankara-700: #97550a;
+  --color-ankara-800: #7b440f;
+  --color-ankara-900: #66380f;
+  --color-ankara-950: #3d1e05;
+}
+
 html, body, #root {
   height: 100%;
   margin: 0;
@@ -25,4 +67,51 @@ body {
 
 .animate-rise-in {
   animation: rise-in 0.5s ease-out both;
+}
+
+/* --- Fabric motifs ---------------------------------------------------------
+   Drawn with CSS gradients rather than image assets so they inherit the theme
+   through --fabric-ink and cost nothing to load. Every one of these is meant to
+   sit *behind* content at low contrast, so the ink stays heavily transparent —
+   raising it starts to fight the text on top. */
+
+/* Adire eleko: concentric hand-drawn rings in a lattice, the motif you see on
+   indigo resist-dyed Yoruba cloth. */
+.fabric-adire {
+  --fabric-ink: color-mix(in srgb, var(--color-adire-600) 10%, transparent);
+  background-image:
+    radial-gradient(circle at 50% 50%, var(--fabric-ink) 0 1.5px, transparent 1.6px),
+    radial-gradient(circle at 50% 50%, transparent 0 6px, var(--fabric-ink) 6px 7px, transparent 7.1px),
+    radial-gradient(circle at 50% 50%, transparent 0 11px, var(--fabric-ink) 11px 12px, transparent 12.1px);
+  background-size: 34px 34px;
+}
+
+:where(.dark) .fabric-adire {
+  --fabric-ink: color-mix(in srgb, var(--color-adire-300) 14%, transparent);
+}
+
+/* Ankara wax print: a bold diamond lattice with a dot at each crossing. */
+.fabric-ankara {
+  --fabric-ink: color-mix(in srgb, var(--color-ankara-600) 18%, transparent);
+  background-image:
+    radial-gradient(circle at 50% 50%, var(--fabric-ink) 0 2px, transparent 2.1px),
+    repeating-linear-gradient(45deg, var(--fabric-ink) 0 1.5px, transparent 1.5px 18px),
+    repeating-linear-gradient(-45deg, var(--fabric-ink) 0 1.5px, transparent 1.5px 18px);
+  background-size: 36px 36px, auto, auto;
+}
+
+:where(.dark) .fabric-ankara {
+  --fabric-ink: color-mix(in srgb, var(--color-ankara-300) 15%, transparent);
+}
+
+/* A woven selvedge stripe — full strength colour, so it is only ever used as a
+   thin rule, never behind text. */
+.fabric-band {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--color-naija-600) 0 20px,
+    var(--color-naija-400) 20px 26px,
+    var(--color-ankara-400) 26px 32px,
+    var(--color-adire-600) 32px 38px
+  );
 }

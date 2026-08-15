@@ -30,7 +30,7 @@ export default function MultiLanguagePicker({ languageOptions, selectedIds, onAd
           onFocus={() => setIsOpen(true)}
           onBlur={() => setTimeout(() => setIsOpen(false), 120)}
           placeholder="Add a language…"
-          className="w-full rounded-lg border border-gray-200 bg-white py-2 px-3 text-sm text-gray-900 placeholder:text-gray-400 focus:border-blue-400 focus:outline-none dark:border-white/15 dark:bg-white/5 dark:text-white dark:placeholder:text-gray-500 dark:focus:border-blue-400"
+          className="w-full rounded-lg border border-gray-200 bg-white py-2 px-3 text-sm text-gray-900 placeholder:text-gray-400 focus:border-naija-400 focus:outline-none dark:border-white/15 dark:bg-white/5 dark:text-white dark:placeholder:text-gray-500 dark:focus:border-naija-400"
         />
 
         {isOpen && matches.length > 0 && (
@@ -41,7 +41,7 @@ export default function MultiLanguagePicker({ languageOptions, selectedIds, onAd
                   type="button"
                   onMouseDown={(e) => e.preventDefault()}
                   onClick={() => handleAdd(lang)}
-                  className="block w-full px-3 py-2 text-left text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 dark:text-gray-300 dark:hover:bg-blue-500/10 dark:hover:text-blue-400"
+                  className="block w-full px-3 py-2 text-left text-sm text-gray-700 hover:bg-naija-50 hover:text-naija-700 dark:text-gray-300 dark:hover:bg-naija-500/10 dark:hover:text-naija-400"
                 >
                   {lang.name}
                 </button>
@@ -68,7 +68,7 @@ export default function MultiLanguagePicker({ languageOptions, selectedIds, onAd
           return (
             <span
               key={id}
-              className="flex items-center gap-1.5 rounded-full border border-blue-600 bg-blue-600 py-2 pl-4 pr-2 text-sm font-medium text-white dark:border-blue-500 dark:bg-blue-500"
+              className="flex items-center gap-1.5 rounded-full border border-naija-600 bg-naija-600 py-2 pl-4 pr-2 text-sm font-medium text-white dark:border-naija-500 dark:bg-naija-500"
             >
               {lang?.name ?? id}
               <button

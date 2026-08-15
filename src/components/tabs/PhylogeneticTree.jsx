@@ -55,8 +55,7 @@ function renderNode(node, positions, xScale, labelOf, colorOf, annotationOf, key
           x={x + ANNOTATION_OFFSET}
           y={pos.y}
           dominantBaseline="middle"
-          fill={color}
-          className="text-[11px] font-medium"
+          className="fill-gray-500 text-[11px] font-medium dark:fill-gray-400"
         >
           {annotation}
         </text>,

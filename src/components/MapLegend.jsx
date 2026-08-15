@@ -1,7 +1,8 @@
+// Swatches mirror fillColorExpr in MapView — keep the two in step.
 const ITEMS = [
-  { color: 'bg-blue-600', label: 'Not selected' },
-  { color: 'bg-orange-500', label: 'Selected state' },
-  { color: 'bg-green-600', label: 'Search match' },
+  { color: 'bg-naija-600', label: 'Not selected' },
+  { color: 'bg-adire-600', label: 'Selected state' },
+  { color: 'bg-ankara-400', label: 'Search match' },
 ]
 
 export default function MapLegend() {

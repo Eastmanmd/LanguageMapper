@@ -1,6 +1,6 @@
 # LanguageMapper
 
-A tool for mapping and reconstructing the shared origins of words across diverse languages, starting with the languages of Africa. Compare vocabulary side by side, explore how languages relate, and see where they are spoken. The focus today is Nigeria — all 37 states (including the FCT) with 239 catalogued languages — with the project built to spread to other regions of Africa and beyond.
+A tool for mapping and reconstructing the shared origins of words across the languages of Nigeria. Compare vocabulary side by side, explore how languages relate, and see where they are spoken — all 37 states (including the FCT) with 239 catalogued languages across the Niger-Congo, Afro-Asiatic, and Nilo-Saharan families.
 
 **Live features:** interactive state map · language profiles · side-by-side word comparison · lexical similarity tree · dark mode
 
@@ -30,7 +30,7 @@ Pick two or more languages and compare them side by side:
 
 - A table of **23 basic words** (numbers one to ten, body parts, everyday nouns, and the verbs *come*, *go*, *speak*) across all selected languages.
 - A **similarity tree** built live in the browser: word forms are normalized (tone marks stripped), compared with Levenshtein distance, averaged into a per-language-pair similarity score, and clustered with UPGMA into a dendrogram. Closer word forms cluster together first.
-- Currently 15 languages have word lists: Hausa, Yoruba, Igbo, Fulfulde, Edo, Idoma, Ibibio, Ijaw (Izon), Tiv, Ikwerre, Kanuri, plus Swahili, Luganda, Wolof, and Twi for cross-regional comparison.
+- Currently 26 languages have word lists, including Hausa, Yoruba, Igbo, Fulfulde, Edo, Idoma, Ibibio, Ijaw (Izon), Tiv, Ikwerre, Kanuri, and Nigerian Pidgin.
 - Selections live in the URL (`/compare?langs=yoruba,igbo,twi`) for sharing.
 
 The tree is a simple lexical-similarity illustration, not a rigorous historical-linguistic classification.
@@ -152,7 +152,7 @@ public/data/                  # state boundary GeoJSON
 
 ## Roadmap
 
-- Expand to other African regions, starting with West Africa (the data model already supports it)
+- Fill in word lists for more of the 239 catalogued Nigerian languages
 - Move beyond lexical similarity toward tracing shared word origins across languages
 - Data validation script to catch dangling cross-references between the JSON files
 - Connect the crawler pipeline to the app data for sourced, semi-automated growth

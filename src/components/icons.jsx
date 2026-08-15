@@ -25,3 +25,15 @@ export function FlagIcon(props) {
     </svg>
   )
 }
+
+// The flag as a drawn shape rather than 🇳🇬 — regional-indicator emoji fall back
+// to bare letters or tofu on Windows and most Linux browsers.
+export function NigeriaFlagIcon(props) {
+  return (
+    <svg viewBox="0 0 18 12" {...props}>
+      <rect width="18" height="12" rx="1.5" fill="#fff" />
+      <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0H6v12H1.5A1.5 1.5 0 0 1 0 10.5ZM12 0h4.5A1.5 1.5 0 0 1 18 1.5v9a1.5 1.5 0 0 1-1.5 1.5H12Z" fill="#008751" />
+      <rect x="0.35" y="0.35" width="17.3" height="11.3" rx="1.2" fill="none" stroke="#00000018" strokeWidth="0.7" />
+    </svg>
+  )
+}

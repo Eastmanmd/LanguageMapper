@@ -17,17 +17,27 @@ const WORD_IDS = wordData.words.map((w) => w.id)
 // "color by" selector and to pick which segment of the path drives grouping.
 const LEVEL_NAMES = ['Family', 'Subfamily', 'Branch', 'Sub-branch', 'Group', 'Subgroup']
 
-// Distinguishable palette that reads on both light and dark backgrounds.
+// Categorical palette, brand hues first (naija green, adire indigo, ankara gold).
+// Every step sits in the lightness band both themes share, so one palette serves
+// light and dark. Checked with the dataviz validator against #fcfcfb and #0a0a0a:
+// all checks pass; the one warning is olive/pink adjacent-CVD separation (ΔE 6.8),
+// which is allowed here because each leaf is directly labelled with its group name.
+// Re-run the validator before changing any of these values.
 const GROUP_COLORS = [
-  '#2563eb',
-  '#f97316',
-  '#16a34a',
+  '#008751',
+  '#4c63ae',
+  '#bd6f06',
+  '#b91c1c',
   '#9333ea',
-  '#dc2626',
-  '#0d9488',
-  '#db2777',
-  '#ca8a04',
+  '#0891b2',
+  '#be185d',
+  '#4d7c0f',
 ]
+
+// Groups past the palette share one neutral rather than re-using a hue, so a
+// colour never means two different things in the same tree. The text annotation
+// beside each leaf still names the group.
+const OVERFLOW_COLOR = '#94a3b8'
 
 const classificationPath = (id) =>
   wordData.languages[id]?.classification?.split(' > ').map((s) => s.trim()) ?? []
@@ -118,7 +128,7 @@ export default function CompareLanguages() {
     for (const id of selected) {
       const group = groupAtLevel(id, effectiveLevel)
       if (group && !map.has(group)) {
-        map.set(group, GROUP_COLORS[map.size % GROUP_COLORS.length])
+        map.set(group, GROUP_COLORS[map.size] ?? OVERFLOW_COLOR)
       }
     }
     return map
@@ -150,7 +160,7 @@ export default function CompareLanguages() {
             type="button"
             onClick={handleSelectAll}
             disabled={allSelected}
-            className="rounded-full border border-gray-200 px-3 py-1.5 text-xs font-medium text-gray-600 transition-colors hover:border-blue-400 hover:text-blue-600 disabled:cursor-default disabled:opacity-40 disabled:hover:border-gray-200 disabled:hover:text-gray-600 dark:border-white/15 dark:text-gray-300 dark:hover:border-blue-400 dark:hover:text-blue-400 dark:disabled:hover:border-white/15 dark:disabled:hover:text-gray-300"
+            className="rounded-full border border-gray-200 px-3 py-1.5 text-xs font-medium text-gray-600 transition-colors hover:border-naija-400 hover:text-naija-600 disabled:cursor-default disabled:opacity-40 disabled:hover:border-gray-200 disabled:hover:text-gray-600 dark:border-white/15 dark:text-gray-300 dark:hover:border-naija-400 dark:hover:text-naija-400 dark:disabled:hover:border-white/15 dark:disabled:hover:text-gray-300"
           >
             Compare all {LANGUAGE_OPTIONS.length} languages
           </button>
@@ -205,7 +215,7 @@ export default function CompareLanguages() {
                   type="button"
                   onClick={handleExportPdf}
                   disabled={exporting}
-                  className="rounded-md border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-600 transition-colors hover:border-blue-400 hover:text-blue-600 disabled:cursor-default disabled:opacity-50 dark:border-white/15 dark:bg-white/5 dark:text-gray-300 dark:hover:border-blue-400 dark:hover:text-blue-400"
+                  className="rounded-md border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-600 transition-colors hover:border-naija-400 hover:text-naija-600 disabled:cursor-default disabled:opacity-50 dark:border-white/15 dark:bg-white/5 dark:text-gray-300 dark:hover:border-naija-400 dark:hover:text-naija-400"
                 >
                   {exporting ? 'Exporting…' : 'Download PDF'}
                 </button>
@@ -268,7 +278,7 @@ export default function CompareLanguages() {
                                 })
                               }
                               title={value ? 'Suggest a correction' : 'Suggest this word'}
-                              className="text-gray-300 opacity-0 transition-opacity hover:text-blue-600 focus:opacity-100 group-hover:opacity-100 dark:text-gray-600 dark:hover:text-blue-400"
+                              className="text-gray-300 opacity-0 transition-opacity hover:text-naija-600 focus:opacity-100 group-hover:opacity-100 dark:text-gray-600 dark:hover:text-naija-400"
                             >
                               <FlagIcon className="h-3.5 w-3.5" />
                             </button>

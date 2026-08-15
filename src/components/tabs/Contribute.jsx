@@ -115,7 +115,7 @@ function FillWordsForm() {
             <button
               type="submit"
               disabled={status === 'sending' || Object.keys(changedWords).length === 0}
-              className="rounded-full bg-blue-600 px-5 py-2 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50 dark:bg-blue-500 dark:hover:bg-blue-400"
+              className="rounded-full bg-naija-600 px-5 py-2 text-sm font-medium text-white hover:bg-naija-700 disabled:opacity-50 dark:bg-naija-500 dark:hover:bg-naija-400"
             >
               Submit {Object.keys(changedWords).length || 'no'} word
               {Object.keys(changedWords).length === 1 ? '' : 's'} for review
@@ -229,7 +229,7 @@ function NewLanguageForm() {
                   onClick={() => toggleState(state.id)}
                   className={`rounded-full border px-3 py-1 text-xs transition-colors ${
                     active
-                      ? 'border-blue-600 bg-blue-600 text-white dark:border-blue-400 dark:bg-blue-500'
+                      ? 'border-naija-600 bg-naija-600 text-white dark:border-naija-400 dark:bg-naija-500'
                       : 'border-gray-200 text-gray-600 hover:border-gray-300 dark:border-white/15 dark:text-gray-300 dark:hover:border-white/30'
                   }`}
                 >
@@ -245,7 +245,7 @@ function NewLanguageForm() {
         <button
           type="button"
           onClick={() => setShowWords(!showWords)}
-          className="text-sm font-medium text-blue-600 hover:underline dark:text-blue-400"
+          className="text-sm font-medium text-naija-600 hover:underline dark:text-naija-400"
         >
           {showWords ? 'Hide word list' : `Add the ${WORD_COUNT}-word list (optional)`}
         </button>
@@ -264,7 +264,7 @@ function NewLanguageForm() {
         <button
           type="submit"
           disabled={status === 'sending' || !form.name.trim()}
-          className="rounded-full bg-blue-600 px-5 py-2 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50 dark:bg-blue-500 dark:hover:bg-blue-400"
+          className="rounded-full bg-naija-600 px-5 py-2 text-sm font-medium text-white hover:bg-naija-700 disabled:opacity-50 dark:bg-naija-500 dark:hover:bg-naija-400"
         >
           Submit for review
         </button>
@@ -308,7 +308,7 @@ export default function Contribute() {
               onClick={() => setMode(m.id)}
               className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
                 mode === m.id
-                  ? 'border-blue-600 bg-blue-600 text-white dark:border-blue-400 dark:bg-blue-500'
+                  ? 'border-naija-600 bg-naija-600 text-white dark:border-naija-400 dark:bg-naija-500'
                   : 'border-gray-200 text-gray-600 hover:border-gray-300 dark:border-white/15 dark:text-gray-300 dark:hover:border-white/30'
               }`}
             >

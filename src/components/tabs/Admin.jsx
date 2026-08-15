@@ -48,7 +48,7 @@ function LoginForm() {
         <button
           type="submit"
           disabled={status === 'sending'}
-          className="rounded-full bg-blue-600 px-5 py-2 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50 dark:bg-blue-500 dark:hover:bg-blue-400"
+          className="rounded-full bg-naija-600 px-5 py-2 text-sm font-medium text-white hover:bg-naija-700 disabled:opacity-50 dark:bg-naija-500 dark:hover:bg-naija-400"
         >
           Send magic link
         </button>
@@ -154,7 +154,7 @@ function SubmissionCard({ submission, onReviewed }) {
   return (
     <div className="rounded-2xl border border-gray-200 p-5 dark:border-white/10 dark:bg-white/5">
       <div className="flex flex-wrap items-center gap-2">
-        <span className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700 dark:bg-blue-500/10 dark:text-blue-300">
+        <span className="rounded-full bg-naija-50 px-2.5 py-0.5 text-xs font-medium text-naija-700 dark:bg-naija-500/10 dark:text-naija-300">
           {TYPE_LABELS[submission.type]}
         </span>
         <span className="text-sm font-medium text-gray-900 dark:text-white">{languageName}</span>
@@ -285,7 +285,7 @@ function Queue({ session }) {
             onClick={() => setStatusTab(tab)}
             className={`rounded-full border px-4 py-1.5 text-sm font-medium capitalize transition-colors ${
               statusTab === tab
-                ? 'border-blue-600 bg-blue-600 text-white dark:border-blue-400 dark:bg-blue-500'
+                ? 'border-naija-600 bg-naija-600 text-white dark:border-naija-400 dark:bg-naija-500'
                 : 'border-gray-200 text-gray-600 hover:border-gray-300 dark:border-white/15 dark:text-gray-300 dark:hover:border-white/30'
             }`}
           >

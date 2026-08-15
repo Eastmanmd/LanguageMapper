@@ -48,7 +48,7 @@ export default function InfoPanel({ selectedStateId, selectedStateName }) {
             <li key={id}>
               <button
                 onClick={() => setActiveLanguageId(id)}
-                className="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-left hover:border-blue-300 hover:bg-blue-50 dark:border-white/10 dark:hover:border-blue-400/40 dark:hover:bg-blue-500/10"
+                className="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-left hover:border-naija-300 hover:bg-naija-50 dark:border-white/10 dark:hover:border-naija-400/40 dark:hover:bg-naija-500/10"
               >
                 <span className="font-medium text-gray-900 dark:text-white">{lang.name}</span>
                 <span className="block text-xs text-gray-500 dark:text-gray-400">

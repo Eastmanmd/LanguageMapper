@@ -21,6 +21,7 @@ function App() {
 
   return (
     <div className="flex h-full flex-col bg-white transition-colors dark:bg-[#0a0a0a]">
+      <div className="fabric-band h-1 shrink-0" />
       <header className="border-b border-gray-200 dark:border-white/10">
         <div className="flex items-center justify-between px-6 pt-4">
           <div className="flex items-center gap-2.5">
@@ -47,7 +48,7 @@ function App() {
               className={({ isActive }) =>
                 `border-b-2 pb-3 text-sm font-medium transition-colors ${
                   isActive
-                    ? 'border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-400'
+                    ? 'border-naija-600 text-naija-600 dark:border-naija-400 dark:text-naija-400'
                     : 'border-transparent text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'
                 }`
               }
