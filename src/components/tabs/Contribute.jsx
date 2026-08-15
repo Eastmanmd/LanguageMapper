@@ -146,7 +146,7 @@ function NewLanguageForm() {
 
   // State names live in the boundary GeoJSON, which ships as a static asset.
   useEffect(() => {
-    fetch('/data/nigeria-states.geojson')
+    fetch(`${import.meta.env.BASE_URL}data/nigeria-states.geojson`)
       .then((res) => res.json())
       .then((geo) => {
         const list = geo.features

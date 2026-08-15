@@ -19,7 +19,7 @@ export default function MapExplorer() {
   const [stateNames, setStateNames] = useState({})
 
   useEffect(() => {
-    fetch('/data/nigeria-states.geojson')
+    fetch(`${import.meta.env.BASE_URL}data/nigeria-states.geojson`)
       .then((res) => res.json())
       .then((geojson) => {
         const names = {}

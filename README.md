@@ -78,6 +78,10 @@ npm run lint     # run oxlint
 npm run sync-data # apply approved community submissions to the JSON files
 ```
 
+The dev server runs at **http://localhost:5173/LanguageMap/**, not at the bare
+root — the site is deployed under that subpath and the base is applied in
+development too, so path bugs surface locally instead of in production.
+
 ### Supabase setup (for community submissions)
 
 Without this, the app runs fine but the contribution forms and `/admin` show a "not configured" notice.
@@ -86,6 +90,54 @@ Without this, the app runs fine but the contribution forms and `/admin` show a "
 2. In the SQL editor, run [`supabase/schema.sql`](supabase/schema.sql) — first replace the `ADMIN_EMAIL` placeholder comments' address with your admin email if it differs.
 3. Copy `.env.example` to `.env` and fill in the project URL and anon key (Dashboard → Settings → API). For `npm run sync-data`, also add the service role key — never commit it or expose it to the client.
 4. Make sure email (magic link) auth is enabled (it is by default). Sign in at `/admin` with the admin email.
+
+## Deployment (GitHub Pages)
+
+The site is static, so Pages serves it directly and the contribution forms keep
+working — the browser talks to Supabase itself, with no server in between.
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) builds and
+publishes on every push to `main`; `dist/` stays gitignored and is never
+committed.
+
+Live at **https://eastmanmd.github.io/LanguageMap/**.
+
+### One-time setup
+
+1. Repository → Settings → Pages → **Source: GitHub Actions**.
+2. Repository → Settings → Secrets and variables → Actions, add
+   `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`. Both are baked into the
+   bundle and are safe to expose; row-level security is what protects the data.
+   Skip them and the site still deploys, with the contribution forms showing
+   their "not configured" notice. Never add the service role key — it belongs
+   only to `npm run sync-data`, which you run locally.
+3. In Supabase → Authentication → URL Configuration, add
+   `https://eastmanmd.github.io/LanguageMap/admin` as a redirect URL, or the
+   `/admin` magic link will send you back to localhost.
+
+### How routing survives a static host
+
+Pages has no server-side rewrites, so a deep link like `/map/NG-KN?lang=hausa`
+asks for a file that does not exist. The `postbuild` step copies `index.html` to
+`404.html`; Pages serves that for any unmatched path while leaving the URL
+intact, so the app boots and React Router renders the right view. Shareable URLs
+therefore work exactly as they do locally.
+
+The trade-off: those responses carry an HTTP 404 status. Visitors never notice,
+but crawlers may not index deep links. Switching to a `HashRouter` would return
+a clean 200 at the cost of `#/` in every URL.
+
+### Moving to a custom domain
+
+Set `base` in [`vite.config.js`](vite.config.js) back to `'/'` — everything else
+reads the base at runtime and follows automatically.
+
+## Keeping Supabase awake
+
+Free Supabase projects pause after about a week without traffic, and this site
+only touches the database when somebody submits a suggestion, so it can go
+dormant between contributions.
+[`.github/workflows/supabase-keepalive.yml`](.github/workflows/supabase-keepalive.yml)
+makes one read a week to prevent that. It no-ops when the secrets are absent.
 
 ## Data model
 

@@ -35,7 +35,7 @@ function addStatesLayers(map, selectedId, highlightedIds) {
   if (!map.getSource(STATES_SOURCE)) {
     map.addSource(STATES_SOURCE, {
       type: 'geojson',
-      data: '/data/nigeria-states.geojson',
+      data: `${import.meta.env.BASE_URL}data/nigeria-states.geojson`,
     })
   }
   if (!map.getLayer(FILL_LAYER)) {

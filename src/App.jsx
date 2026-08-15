@@ -25,7 +25,7 @@ function App() {
       <header className="border-b border-gray-200 dark:border-white/10">
         <div className="flex items-center justify-between px-6 pt-4">
           <div className="flex items-center gap-2.5">
-            <img src="/favicon.svg" alt="" className="h-6 w-6" />
+            <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" className="h-6 w-6" />
             <span className="text-[15px] font-medium tracking-tight text-gray-900 dark:text-white">
               LanguageMapper
             </span>

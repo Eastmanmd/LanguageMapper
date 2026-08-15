@@ -1,0 +1,36 @@
+name: Supabase keep-alive
+
+# Free Supabase projects pause after roughly a week without traffic. This site
+# ships its published data as JSON and only touches the database when somebody
+# submits a suggestion, so the project can go dormant between contributions and
+# the next contributor hits a failure. One cheap read a week keeps it awake.
+on:
+  schedule:
+    - cron: '17 6 * * 1' # Mondays, 06:17 UTC
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Query the submissions table
+        env:
+          SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+        run: |
+          if [ -z "$SUPABASE_URL" ]; then
+            echo "No Supabase secrets configured — nothing to keep alive."
+            exit 0
+          fi
+          # Row-level security means anon reads come back empty; the request
+          # still counts as activity, which is the whole point.
+          code=$(curl -sS -o /dev/null -w '%{http_code}' \
+            "$SUPABASE_URL/rest/v1/submissions?select=id&limit=1" \
+            -H "apikey: $SUPABASE_ANON_KEY" \
+            -H "Authorization: Bearer $SUPABASE_ANON_KEY")
+          echo "Supabase responded $code"
+          # 2xx or 4xx both prove the project is awake; only a failure to reach
+          # it at all (000) or a 5xx should fail the job.
+          case "$code" in
+            000|5*) exit 1 ;;
+          esac
