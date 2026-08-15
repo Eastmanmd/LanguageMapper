@@ -78,7 +78,7 @@ npm run lint     # run oxlint
 npm run sync-data # apply approved community submissions to the JSON files
 ```
 
-The dev server runs at **http://localhost:5173/LanguageMap/**, not at the bare
+The dev server runs at **http://localhost:5173/LanguageMapper/**, not at the bare
 root — the site is deployed under that subpath and the base is applied in
 development too, so path bugs surface locally instead of in production.
 
@@ -99,7 +99,7 @@ working — the browser talks to Supabase itself, with no server in between.
 publishes on every push to `main`; `dist/` stays gitignored and is never
 committed.
 
-Live at **https://eastmanmd.github.io/LanguageMap/**.
+Live at **https://eastmanmd.github.io/LanguageMapper/**.
 
 ### One-time setup
 
@@ -111,7 +111,7 @@ Live at **https://eastmanmd.github.io/LanguageMap/**.
    their "not configured" notice. Never add the service role key — it belongs
    only to `npm run sync-data`, which you run locally.
 3. In Supabase → Authentication → URL Configuration, add
-   `https://eastmanmd.github.io/LanguageMap/admin` as a redirect URL, or the
+   `https://eastmanmd.github.io/LanguageMapper/admin` as a redirect URL, or the
    `/admin` magic link will send you back to localhost.
 
 ### How routing survives a static host
