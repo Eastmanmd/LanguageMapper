@@ -9,7 +9,8 @@
     "postbuild": "node -e \"require('fs').copyFileSync('dist/index.html','dist/404.html')\"",
     "lint": "oxlint",
     "preview": "vite preview",
-    "sync-data": "node scripts/sync-approved.mjs"
+    "sync-data": "node scripts/sync-approved.mjs",
+    "build-africa-data": "node scripts/build-africa-data.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.7",

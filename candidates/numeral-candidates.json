@@ -1,0 +1,6955 @@
+{
+  "generatedAt": "2026-08-15",
+  "method": "Automated sweep of Chan's numeral database (CLDF release via numeralbank). Our languages were matched to Chan entries by exact normalised name, preferring an entry whose country list includes Nigeria. Numerals 1-10 come from the first listed variant. Five name matches were rejected outright as different languages on other continents: bina (Bina, Papua New Guinea (Austronesian)); lau (Lau, Solomon Islands (Austronesian)); mangas (Mantsi, Vietnam/China (Sino-Tibetan)); panyam (Mak, China (Tai-Kadai)); ukelle (Kélé, Gabon — different Atlantic-Congo language).",
+  "IMPORTANT": "These are PHONETIC TRANSCRIPTIONS (IPA), not practical orthography, and must NOT be copied into wordComparison.json as-is. Chan writes Yoruba 'two' as 'eéɟì' where the app displays 'èjì', and Hausa 'two' as 'bíjú' where the app displays 'biyu'. Converting to each language's working orthography is per-language linguistic work needing a speaker or a grammar, not a global find-and-replace. Entries with status='crosscheck' already have a value in the app and are here so a reviewer can confirm the existing form, not replace it. Anything with a 'review' block needs a human decision before use.",
+  "source": {
+    "dataset": "channumerals (CLDF)",
+    "repository": "https://github.com/numeralbank/channumerals",
+    "citation": "Chan, Eugene (eds.) 2019. Numeral Systems of the World's Languages. https://mpi-lingweb.shh.mpg.de/numeral",
+    "license": "CC-BY-4.0 — attribution required if these forms are published"
+  },
+  "stats": {
+    "languagesMatched": 91,
+    "newNumeralCells": 777,
+    "crosscheckCells": 133,
+    "languagesNeedingHumanCheck": 24,
+    "nameMatchesRejected": 5
+  },
+  "languages": {
+    "aduge": {
+      "name": "Okpamheri",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Okpamheri, Nigeria",
+        "glottocode": "okpa1238",
+        "iso639_3": "opa",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "ɔkpa",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "eva",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "esa",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "enen",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "ishe",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "eaza",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "izuonua",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "ɛnien",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "isie",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "iɡ͡be",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "afade": {
+      "name": "Afade",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Afade, Nigeria, Cameroun",
+        "glottocode": "afad1236",
+        "iso639_3": "aal",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "sə́rə̀jā",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "sɗā",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "ɡàrkə̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "ɡàɗē",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "ʃìʃí",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "və̀nārkə̄",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "kàtùl",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "vìyāɗē",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "dìʃẽ̄",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "χkàn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "afo": {
+      "name": "Eloyi",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Eloyi (Afo), Nigeria",
+        "glottocode": "eloy1241",
+        "iso639_3": "afo",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": {
+        "multipleChanEntriesMatched": true
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "ńɡwònzé",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "ńɡwòpó",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "ńɡwòlá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "ńɡwòndó",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "ńɡwolɔ́",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ńɡwɔ̀rɛ́nyí",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "ńɡwòrówó",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "ńɡwòràndá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "ńɡwòròndó",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "úwó",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "agatu": {
+      "name": "Agatu",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Agatu, Nigeria",
+        "glottocode": "agat1236",
+        "iso639_3": "agc",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "ɔ́jè",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "ɛ̀pà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "ɛ̀tá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "ɛ́nɛ̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "ɛ̀hɔ́",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ɛ̀hílí",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "àhápà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "àhàtá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "àhànè",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ìɡwó",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "akpes": {
+      "name": "Akpes",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Akpes, Nigeria",
+        "glottocode": "akpe1248",
+        "iso639_3": "ibe",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "íɡbōn",
+          "variants": [
+            "ēkìnì"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "īdīan",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "īsās",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "īnīŋ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "īʃōn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ītʃānās",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "ītʃēnētʃ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "ānāānīŋ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "ɔ̀kpɔ̄lɔ̀ʃ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "īyōf",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "alago": {
+      "name": "Alago",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Alago, Nigeria",
+        "glottocode": "alag1242",
+        "iso639_3": "ala",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "óje",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "èpà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "èta",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "ènɛ̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "ɛ̀hɔ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ìhirì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "àhapà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "àhatá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "àhánɛ̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ìɡʷó",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "asholio": {
+      "name": "Tyap",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Tyap (Kataf), Nigeria",
+        "glottocode": "tyap1238",
+        "iso639_3": "kcg",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "anyuŋ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "afeaŋ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "atat",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "anaai",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "afwuon",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ataa",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "anatat",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "aninai",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "akubunyuŋ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "swak",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "ayu": {
+      "name": "Ayu",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Ayu, Nigeria",
+        "glottocode": "ayer1245",
+        "iso639_3": "aye",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "ɪdɪ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "ahwa",
+          "variants": [
+            "afah"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "ataar",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "anaŋaʃ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "atuɡen",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "atɛɛr",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "ataraŋaʃ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "anababoɡ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "atuluboɡ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "iʃoɡ",
+          "variants": [
+            "ajalaboɡ"
+          ],
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "bade": {
+      "name": "Bade",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Bade, Nigeria",
+        "glottocode": "bade1248",
+        "iso639_3": "bde",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "ɡàɗi",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "sərən",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "kwan",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "fəɗu",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "vàɗì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ə̀zdù",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "ɡatkasà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "ɬədàakwà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "warayà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ɡuumà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "bekwarra": {
+      "name": "Bekwarra",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Bekwarra, Nigeria",
+        "glottocode": "bekw1241",
+        "iso639_3": "bkv",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "kìn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "-hà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "-cià",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "-nè",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "-dyaŋ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "-dyaàkìn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "-dièhà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "-diècià",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "-diènè",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "irifo",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "berom": {
+      "name": "Berom",
+      "inWordComparison": true,
+      "chanEntry": {
+        "name": "Berom (Birom), Nigeria",
+        "glottocode": "bero1242",
+        "iso639_3": "bom",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "ɡwīnìŋ",
+          "variants": [
+            "(d)īnìŋ"
+          ],
+          "existingValue": "gwɛ́nàng",
+          "status": "crosscheck"
+        },
+        "two": {
+          "citedForm": "-bā",
+          "variants": null,
+          "existingValue": "bà",
+          "status": "crosscheck"
+        },
+        "three": {
+          "citedForm": "-tāt",
+          "variants": null,
+          "existingValue": "tàt",
+          "status": "crosscheck"
+        },
+        "four": {
+          "citedForm": "-nāːs",
+          "variants": null,
+          "existingValue": "nààs",
+          "status": "crosscheck"
+        },
+        "five": {
+          "citedForm": "-tūŋūn",
+          "variants": null,
+          "existingValue": "tùŋùn",
+          "status": "crosscheck"
+        },
+        "six": {
+          "citedForm": "-tī̄ː mìn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "-tāːmà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "-rwīːt",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "syāː-tāt",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "syāː-tāt",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "boki": {
+      "name": "Bokyi",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Bokyi, Cross River State, Nigeria",
+        "glottocode": "boky1238",
+        "iso639_3": "bky",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": {
+        "sharedChanEntry": [
+          "bokyi"
+        ]
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "kíbɔ́ŋè",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "bìfɛ̀ː",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "bìt͡ʃât",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "bìɲìː",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "bìtáŋɛ̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ɲât͡ʃât",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "kát͡ʃákáɲì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "ɲíríɲì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "kátáŋɛ̀káɲì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "děːk͡púː",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "bokkos": {
+      "name": "Ron",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Ron (Daffo), Nigeria",
+        "glottocode": "ronn1241",
+        "iso639_3": "cla",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": {
+        "sharedChanEntry": [
+          "ron"
+        ]
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "ɗaŋɡât",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "fu᷆l",
+          "variants": [
+            "fu᷆lál"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "yuhún",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "púʔ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "hárá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "mako᷆ŋ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "melo᷆k",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "mafwaráʔ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "yèlâm",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "hùrè",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "boko": {
+      "name": "Boko",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Boko, Nigeria, Benin",
+        "glottocode": "boko1266",
+        "iso639_3": "bqc",
+        "family": "Mande"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "do",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "pla",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "ʔààɔ̃",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "sííɔ̃",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "sɔ́o",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "soolo",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "sopla",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "swaàɔ̃",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "kɛ̃̀okwi",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "kwi",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "bokyi": {
+      "name": "Bokyi",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Bokyi, Cross River State, Nigeria",
+        "glottocode": "boky1238",
+        "iso639_3": "bky",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": {
+        "sharedChanEntry": [
+          "boki"
+        ]
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "kíbɔ́ŋè",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "bìfɛ̀ː",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "bìt͡ʃât",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "bìɲìː",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "bìtáŋɛ̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ɲât͡ʃât",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "kát͡ʃákáɲì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "ɲíríɲì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "kátáŋɛ̀káɲì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "děːk͡púː",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "bole": {
+      "name": "Bole",
+      "inWordComparison": true,
+      "chanEntry": {
+        "name": "Bole, Nigeria",
+        "glottocode": "nucl1695",
+        "iso639_3": "bol",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "móoɗì",
+          "variants": null,
+          "existingValue": "móoɗì",
+          "status": "crosscheck"
+        },
+        "two": {
+          "citedForm": "bòláu",
+          "variants": null,
+          "existingValue": "bòláu",
+          "status": "crosscheck"
+        },
+        "three": {
+          "citedForm": "kúnùm",
+          "variants": null,
+          "existingValue": "kúnùm",
+          "status": "crosscheck"
+        },
+        "four": {
+          "citedForm": "pòɗɗó",
+          "variants": null,
+          "existingValue": "pòɗɗó",
+          "status": "crosscheck"
+        },
+        "five": {
+          "citedForm": "bàɗì",
+          "variants": null,
+          "existingValue": "bàɗì",
+          "status": "crosscheck"
+        },
+        "six": {
+          "citedForm": "bàššimóoɗì",
+          "variants": null,
+          "existingValue": "bàššimóoɗì",
+          "status": "crosscheck"
+        },
+        "seven": {
+          "citedForm": "báawúló",
+          "variants": null,
+          "existingValue": "báawúló",
+          "status": "crosscheck"
+        },
+        "eight": {
+          "citedForm": "póorɗó",
+          "variants": null,
+          "existingValue": "póorɗó",
+          "status": "crosscheck"
+        },
+        "nine": {
+          "citedForm": "ɓòonùm",
+          "variants": null,
+          "existingValue": "ɓòonùm",
+          "status": "crosscheck"
+        },
+        "ten": {
+          "citedForm": "bìmbáɗí",
+          "variants": null,
+          "existingValue": "bìmbáɗí",
+          "status": "crosscheck"
+        }
+      }
+    },
+    "burak": {
+      "name": "Burak",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Burak, Nigeria",
+        "glottocode": "bura1271",
+        "iso639_3": "bys",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "kwín",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "ráb",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "ɡ͡bunuŋ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "net",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "nóob",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "naaʃín",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "nááre",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "nátát",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "ninit",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ʃóób",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "cibak": {
+      "name": "Cibak",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Cibak (Bura-Pabir), Nigeria",
+        "glottocode": "ciba1236",
+        "iso639_3": "ckl",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "tə̀ŋ",
+          "variants": [
+            "patù",
+            "dukù"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "sudæ̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "makùr̃",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "fwòɗu",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "tufù",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ŋ̀kwà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "murɨfwæ̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "ntsisù",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "mɨðæ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "kuma",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "dadiya": {
+      "name": "Dadiya",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Dadiya, Nigeria",
+        "glottocode": "dadi1249",
+        "iso639_3": "dbd",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "wiǹ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "yo",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "tal",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "nal",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "nu",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "nukuǹ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "ni̠bi̠l",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "nááli̠b",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "tí̠lku̠b",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ku̠b",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "duguri": {
+      "name": "Jarawa (Nigeria)",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Jarawa (Bankala), Nigeria",
+        "glottocode": "jara1263",
+        "iso639_3": "jar",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "mòk",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "ɓàri",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "tat",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "yǐn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "towùn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "təŋsɛlmò",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "təŋsɛlɓàrì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "kɛsyǐn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "kɛ̀stowun",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "lùm",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "duka": {
+      "name": "Hun-Saare",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Hun-Saare(Duka), Nigeria",
+        "glottocode": "huns1239",
+        "iso639_3": "dud",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "co̠o̠n",
+          "variants": [
+            "c=č= IPA"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "yoor oo=",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "tett",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "náss",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "aː )",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "cînd",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "tá'yoor",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "'yéér",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "jírò̠",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "o̠pp",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "ebira": {
+      "name": "Ebira",
+      "inWordComparison": true,
+      "chanEntry": {
+        "name": "Ebira, Nigeria",
+        "glottocode": "ebir1243",
+        "iso639_3": "igb",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": {
+        "sharedChanEntry": [
+          "etuno"
+        ]
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "ɔ̀ɔ̀nyɪ̄",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "ɛ̀ɛ̀vā",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "ɛ̀ɛ̀tá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "ɛ̀ɛ̀nà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "ɛ̀ɛ̀hɪ́",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "hɪ̋nɔ̋nyɪ̄",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "hɪ̋m̋bā",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "hɪ̋n̋tá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "hɪ̋ǹnà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ɛ̀ɛ̀wʊ́",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "edo": {
+      "name": "Edo (Bini)",
+      "inWordComparison": true,
+      "chanEntry": {
+        "name": "Ẹdo, Nigeria",
+        "glottocode": "bini1246",
+        "iso639_3": "bin",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": {
+        "multipleChanEntriesMatched": true
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "òwó",
+          "variants": null,
+          "existingValue": "ọkpa",
+          "status": "crosscheck"
+        },
+        "two": {
+          "citedForm": "èvá ́",
+          "variants": null,
+          "existingValue": "eva",
+          "status": "crosscheck"
+        },
+        "three": {
+          "citedForm": "èhá",
+          "variants": null,
+          "existingValue": "eha",
+          "status": "crosscheck"
+        },
+        "four": {
+          "citedForm": "ènɛ́",
+          "variants": null,
+          "existingValue": "enẹn",
+          "status": "crosscheck"
+        },
+        "five": {
+          "citedForm": "ìsɛ́ or",
+          "variants": null,
+          "existingValue": "isẹn",
+          "status": "crosscheck"
+        },
+        "six": {
+          "citedForm": "èhã̀",
+          "variants": null,
+          "existingValue": "ehan",
+          "status": "crosscheck"
+        },
+        "seven": {
+          "citedForm": "ìhĩɺɔ ̃",
+          "variants": null,
+          "existingValue": "ihinron",
+          "status": "crosscheck"
+        },
+        "eight": {
+          "citedForm": "èɺɛ̃ɺɛ̃",
+          "variants": null,
+          "existingValue": "erenren",
+          "status": "crosscheck"
+        },
+        "nine": {
+          "citedForm": "ihĩɺĩ",
+          "variants": null,
+          "existingValue": "ihinrin",
+          "status": "crosscheck"
+        },
+        "ten": {
+          "citedForm": "ìɡ͡bé",
+          "variants": null,
+          "existingValue": "igbe",
+          "status": "crosscheck"
+        }
+      }
+    },
+    "efik": {
+      "name": "Efik",
+      "inWordComparison": true,
+      "chanEntry": {
+        "name": "Efik, Nigeria",
+        "glottocode": "efik1245",
+        "iso639_3": "efi",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "kíét",
+          "variants": null,
+          "existingValue": "kiet",
+          "status": "crosscheck"
+        },
+        "two": {
+          "citedForm": "íbá",
+          "variants": null,
+          "existingValue": "iba",
+          "status": "crosscheck"
+        },
+        "three": {
+          "citedForm": "ítá",
+          "variants": null,
+          "existingValue": "ita",
+          "status": "crosscheck"
+        },
+        "four": {
+          "citedForm": "ínáŋ",
+          "variants": null,
+          "existingValue": "inañ",
+          "status": "crosscheck"
+        },
+        "five": {
+          "citedForm": "ítíón",
+          "variants": null,
+          "existingValue": "ition",
+          "status": "crosscheck"
+        },
+        "six": {
+          "citedForm": "ítíókíét < ítíón yé kíét",
+          "variants": null,
+          "existingValue": "itiokiet",
+          "status": "crosscheck"
+        },
+        "seven": {
+          "citedForm": "ítíábá < ítíón yé íbá",
+          "variants": null,
+          "existingValue": "itiaba",
+          "status": "crosscheck"
+        },
+        "eight": {
+          "citedForm": "ítíáitá < ítíón yé ítá",
+          "variants": null,
+          "existingValue": "itiaita",
+          "status": "crosscheck"
+        },
+        "nine": {
+          "citedForm": "úsúk-kíét",
+          "variants": null,
+          "existingValue": "usukiet",
+          "status": "crosscheck"
+        },
+        "ten": {
+          "citedForm": "dúóp",
+          "variants": null,
+          "existingValue": "duop",
+          "status": "crosscheck"
+        }
+      }
+    },
+    "eggon": {
+      "name": "Eggon",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Eggon, Nigeria",
+        "glottocode": "eggo1239",
+        "iso639_3": "ego",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": {
+        "multipleChanEntriesMatched": true
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "ákiə́n",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "àhàà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "àtráá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "ùɲí",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "òtnó",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ùfín",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "àfóhà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "àfóté",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "àfúúɲí",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ókpo",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "ejagham": {
+      "name": "Ejagham",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Ejagham, Cameroun",
+        "glottocode": "ejag1239",
+        "iso639_3": "etu",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": {
+        "sharedChanEntry": [
+          "etung"
+        ],
+        "nonNigeriaEntry": "Ejagham, Cameroun"
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "yə́t",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "éβáé",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "ésá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "énî",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "érôn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "èsáɡàsá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "èníɡìsá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "èníɡànî",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "érôn énî",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ófó",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "engenni": {
+      "name": "Engenni",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Engenni, Nigeria",
+        "glottocode": "enge1239",
+        "iso639_3": "enn",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "ávʊ̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "ívà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "ɛ́sàà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "ínìì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "ìsyònì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ɛ̀nyísà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "ìsyovà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "ɛ̀nʊ̀màní",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "àvʊ́mó",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "íɡ͡bèì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "esan": {
+      "name": "Esan",
+      "inWordComparison": true,
+      "chanEntry": {
+        "name": "Esan, Nigeria",
+        "glottocode": "esan1238",
+        "iso639_3": "ish",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "ɔ̀k͡pá",
+          "variants": null,
+          "existingValue": "okpa",
+          "status": "crosscheck"
+        },
+        "two": {
+          "citedForm": "èvá",
+          "variants": null,
+          "existingValue": "eva",
+          "status": "crosscheck"
+        },
+        "three": {
+          "citedForm": "éà",
+          "variants": null,
+          "existingValue": "ela",
+          "status": "crosscheck"
+        },
+        "four": {
+          "citedForm": "énɛ̃̀",
+          "variants": null,
+          "existingValue": "ene",
+          "status": "crosscheck"
+        },
+        "five": {
+          "citedForm": "ìsɛ̃́",
+          "variants": null,
+          "existingValue": "isẹn",
+          "status": "crosscheck"
+        },
+        "six": {
+          "citedForm": "éhã́",
+          "variants": null,
+          "existingValue": "ehian",
+          "status": "crosscheck"
+        },
+        "seven": {
+          "citedForm": "ìhĩ́lɔ̃̀",
+          "variants": null,
+          "existingValue": "ihinlon",
+          "status": "crosscheck"
+        },
+        "eight": {
+          "citedForm": "èlɛ̃́lɛ̃̀",
+          "variants": null,
+          "existingValue": "erenlen",
+          "status": "crosscheck"
+        },
+        "nine": {
+          "citedForm": "ĩ̀sɪ̃́lɪ̃̀",
+          "variants": null,
+          "existingValue": "ihinlin",
+          "status": "crosscheck"
+        },
+        "ten": {
+          "citedForm": "ìɡ͡bé",
+          "variants": null,
+          "existingValue": "igbe",
+          "status": "crosscheck"
+        }
+      }
+    },
+    "etung": {
+      "name": "Ejagham",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Ejagham, Cameroun",
+        "glottocode": "ejag1239",
+        "iso639_3": "etu",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": {
+        "sharedChanEntry": [
+          "ejagham"
+        ],
+        "nonNigeriaEntry": "Ejagham, Cameroun"
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "yə́t",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "éβáé",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "ésá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "énî",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "érôn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "èsáɡàsá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "èníɡìsá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "èníɡànî",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "érôn énî",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ófó",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "etuno": {
+      "name": "Ebira",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Ebira, Nigeria",
+        "glottocode": "ebir1243",
+        "iso639_3": "igb",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": {
+        "sharedChanEntry": [
+          "ebira"
+        ]
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "ɔ̀ɔ̀nyɪ̄",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "ɛ̀ɛ̀vā",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "ɛ̀ɛ̀tá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "ɛ̀ɛ̀nà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "ɛ̀ɛ̀hɪ́",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "hɪ̋nɔ̋nyɪ̄",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "hɪ̋m̋bā",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "hɪ̋n̋tá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "hɪ̋ǹnà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ɛ̀ɛ̀wʊ́",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "gaanda": {
+      "name": "Ga'anda",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Ga'anda, Nigeria",
+        "glottocode": "gaan1243",
+        "iso639_3": "gqa",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "ar̃ta",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "sur̃r̃i",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "mahkə̀n",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "fwəɗà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "ɗɨrmən",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "mɪca",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "mwùt(n)",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "fwətfwəɗà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "wə̀nhəhəʔar̃tà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "kum",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "galambi": {
+      "name": "Galambu",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Galambu, Nigeria",
+        "glottocode": "gala1264",
+        "iso639_3": "glo",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "múuri",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "m̀bàál",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "kúun",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "páryá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "bòorí",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "bɪ́címɪ́n",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "bùcù m̀bàl",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "hórró",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "bàryà múuri",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "bár",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "gamergu": {
+      "name": "Wandala",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Wandala (Malgwa), Nigeria",
+        "glottocode": "wand1278",
+        "iso639_3": "mfi",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "pálle",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "búwa",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "kəɠyé",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "ufáɗe",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "iiɮəbé",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "unkwé",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "vúye",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "tiise",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "másə́lmane",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "kəláwa",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "geji": {
+      "name": "Geji",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Geji (Gyazi), Nigeria",
+        "glottocode": "geji1246",
+        "iso639_3": "gji",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": {
+        "multipleChanEntriesMatched": true
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "nə̀m",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "lôp",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "mèkan",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "wupsì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "nàmtan",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "mukkà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "nitɡi",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "wùsupsì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "topsi",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "kuɬ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "gera": {
+      "name": "Gera",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Gera, Nigeria",
+        "glottocode": "gera1246",
+        "iso639_3": "gew",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "móóyi",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "mbùlú",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "kúnú",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "fúɗú",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "bàaɗì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "bèeshím",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "bìccìmbùlú",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "húrɗú",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "ɓànìnjà",
+          "variants": [
+            "barija"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "bàrɗí",
+          "variants": [
+            "barr"
+          ],
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "geruma": {
+      "name": "Geruma",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Geruma, Nigeria",
+        "glottocode": "geru1240",
+        "iso639_3": "gea",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "mô",
+          "variants": [
+            "mon"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "m̀bàalú",
+          "variants": [
+            "mbàalúŋ"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "kúnú",
+          "variants": [
+            "kúnúŋ"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "fúɗú",
+          "variants": [
+            "húɗúŋ"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "bàaɗì",
+          "variants": [
+            "bàalí"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "bècə́m",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "bàzə̀mbàalú",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "húrɗú",
+          "variants": [
+            "úrɗúŋ"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "ɓár jà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ɓáráɗì",
+          "variants": [
+            "ɓárári"
+          ],
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "ghotuo": {
+      "name": "Ghotuo",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Ghotuo, Nigeria",
+        "glottocode": "ghot1243",
+        "iso639_3": "aaa",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "ɔ̀k͡pā",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "èvā",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "èēsà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "èēnè",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "ìīʒè",
+          "variants": [
+            "ìīʒìè"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ìjhēhà",
+          "variants": [
+            "ìēhà",
+            "vd"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "ìhīɲã̄",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "ènhīē",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "ìsī",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ìɡ͡bē",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "gokana": {
+      "name": "Gokana",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Gokana, Nigeria",
+        "glottocode": "goka1239",
+        "iso639_3": "gkn",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "ɛ̃̀nɛ̃",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "bàà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "taa",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "ténì",
+          "variants": [
+            "tã́nĩ̀"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "vòò",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ɔ̀ɔ̀lɛ̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "àlàbà",
+          "variants": [
+            "àràbà"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "aatáá",
+          "variants": [
+            "aàtaa"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "síìna òb",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "òb",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "gudu": {
+      "name": "Gudu",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Gudu (Gudo), Nigeria",
+        "glottocode": "gudu1250",
+        "iso639_3": "gdu",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "ǰə́ŋ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "bœ̀k",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "māːkə́n",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "fwád",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "tùf",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "kwǎ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "mīskàtā",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "fɔ̄rfwād",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "žīɛ́tə́pə̀n",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "pú",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "guruntum": {
+      "name": "Guruntum",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Guruntum, Nigeria",
+        "glottocode": "guru1271",
+        "iso639_3": "grd",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "ʃàak",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "raap",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "miyaŋ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "ooso",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "kʸuwun",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "môon",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "nʸeene",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "ɡèesau",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "ɗáar",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "zùp",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "gwandara": {
+      "name": "Gwandara",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Gwandara, Nigeria",
+        "glottocode": "gwan1268",
+        "iso639_3": "gwn",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "da",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "bi",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "úkù",
+          "variants": [
+            "úɡú"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "huru",
+          "variants": [
+            "furu"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "bìyàri",
+          "variants": [
+            "bìyàr"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ʃídà",
+          "variants": [
+            "ʃídə́"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "bákwè",
+          "variants": [
+            "boʔo"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "tákùʃì",
+          "variants": [
+            "táɡə́r"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "tárà",
+          "variants": [
+            "tãrã"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ɡóm̀",
+          "variants": [
+            "ɡóŋ̀",
+            "ɡwóm"
+          ],
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "gwoza": {
+      "name": "Lamang",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Lamang, Nigeria",
+        "glottocode": "lama1288",
+        "iso639_3": "hia",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "tíuwá",
+          "variants": [
+            "tálá"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "χésá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "χ̀kə́ná",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "ùfáɗá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "χẁtáfá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "m̀kwá",
+          "variants": [
+            "m̀kuwá"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "ə̀lfáŋá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "tə̀ɣásá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "tə̀mbáyá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ɣwáŋá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "hausa": {
+      "name": "Hausa",
+      "inWordComparison": true,
+      "chanEntry": {
+        "name": "Hausa, Nigeria",
+        "glottocode": "haus1257",
+        "iso639_3": "hau",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "ɗájá",
+          "variants": null,
+          "existingValue": "ɗaya",
+          "status": "crosscheck"
+        },
+        "two": {
+          "citedForm": "bíjú",
+          "variants": null,
+          "existingValue": "biyu",
+          "status": "crosscheck"
+        },
+        "three": {
+          "citedForm": "ʔúkù",
+          "variants": [
+            "ʔúkkù"
+          ],
+          "existingValue": "uku",
+          "status": "crosscheck"
+        },
+        "four": {
+          "citedForm": "fúɗú",
+          "variants": null,
+          "existingValue": "huɗu",
+          "status": "crosscheck"
+        },
+        "five": {
+          "citedForm": "bìjár",
+          "variants": null,
+          "existingValue": "biyar",
+          "status": "crosscheck"
+        },
+        "six": {
+          "citedForm": "ʃídà",
+          "variants": [
+            "ʃíddà"
+          ],
+          "existingValue": "shida",
+          "status": "crosscheck"
+        },
+        "seven": {
+          "citedForm": "bákwài",
+          "variants": null,
+          "existingValue": "bakwai",
+          "status": "crosscheck"
+        },
+        "eight": {
+          "citedForm": "tákwàs",
+          "variants": null,
+          "existingValue": "takwas",
+          "status": "crosscheck"
+        },
+        "nine": {
+          "citedForm": "tárà",
+          "variants": null,
+          "existingValue": "tara",
+          "status": "crosscheck"
+        },
+        "ten": {
+          "citedForm": "ɡóːmà",
+          "variants": null,
+          "existingValue": "goma",
+          "status": "crosscheck"
+        }
+      }
+    },
+    "hona": {
+      "name": "Hwana",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Hwana (Hwona), Nigeria",
+        "glottocode": "hwan1240",
+        "iso639_3": "hwo",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "tìtal",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "suɣurì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "maxə̀n",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "faɗà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "tuf",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "mɪ̀ki",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "mɨɗ(u)",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "(w)ùvwəɗà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "wùtàrè",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ɡumdìɗi",
+          "variants": [
+            "kum"
+          ],
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "ibibio": {
+      "name": "Ibibio",
+      "inWordComparison": true,
+      "chanEntry": {
+        "name": "Ibibio, Nigeria",
+        "glottocode": "ibib1240",
+        "iso639_3": "ibb",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "kèèd",
+          "variants": null,
+          "existingValue": "kiet",
+          "status": "crosscheck"
+        },
+        "two": {
+          "citedForm": "ìbà",
+          "variants": null,
+          "existingValue": "iba",
+          "status": "crosscheck"
+        },
+        "three": {
+          "citedForm": "ìtá",
+          "variants": null,
+          "existingValue": "ita",
+          "status": "crosscheck"
+        },
+        "four": {
+          "citedForm": "ìnàŋ",
+          "variants": null,
+          "existingValue": "inan",
+          "status": "crosscheck"
+        },
+        "five": {
+          "citedForm": "ìtíòn",
+          "variants": null,
+          "existingValue": "ition",
+          "status": "crosscheck"
+        },
+        "six": {
+          "citedForm": "ìtíòkèèd",
+          "variants": null,
+          "existingValue": "itiokiet",
+          "status": "crosscheck"
+        },
+        "seven": {
+          "citedForm": "ìtíàbà",
+          "variants": null,
+          "existingValue": "itiaba",
+          "status": "crosscheck"
+        },
+        "eight": {
+          "citedForm": "ìtià-ìtá",
+          "variants": null,
+          "existingValue": "itiaita",
+          "status": "crosscheck"
+        },
+        "nine": {
+          "citedForm": "ùsúkèèd",
+          "variants": null,
+          "existingValue": "usukkiet",
+          "status": "crosscheck"
+        },
+        "ten": {
+          "citedForm": "dùòp",
+          "variants": null,
+          "existingValue": "duop",
+          "status": "crosscheck"
+        }
+      }
+    },
+    "ichen": {
+      "name": "Izere",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Izere, Nigeria",
+        "glottocode": "izer1243",
+        "iso639_3": "fiz",
+        "family": "Bookkeeping"
+      },
+      "coverage": "10/10",
+      "review": {
+        "sharedChanEntry": [
+          "izere"
+        ],
+        "unclassifiedInSource": true
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "ziníŋ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "fà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "taar",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "nààs",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "tùwùn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ìɡàràːr",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "kànàsàtáár",
+          "variants": [
+            "kànàtáár"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "ì-kárá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "kàtúbɔ́k",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "kùsɔ́k",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "idoma": {
+      "name": "Idoma",
+      "inWordComparison": true,
+      "chanEntry": {
+        "name": "Idoma, Nigeria",
+        "glottocode": "idom1241",
+        "iso639_3": "idu",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "éjè",
+          "variants": null,
+          "existingValue": "eye",
+          "status": "crosscheck"
+        },
+        "two": {
+          "citedForm": "ɛ́pà",
+          "variants": null,
+          "existingValue": "epa",
+          "status": "crosscheck"
+        },
+        "three": {
+          "citedForm": "ɛtá",
+          "variants": null,
+          "existingValue": "eta",
+          "status": "crosscheck"
+        },
+        "four": {
+          "citedForm": "ɛ́hɛ́",
+          "variants": null,
+          "existingValue": "ene",
+          "status": "crosscheck"
+        },
+        "five": {
+          "citedForm": "ɛ́hɔ",
+          "variants": null,
+          "existingValue": "eho",
+          "status": "crosscheck"
+        },
+        "six": {
+          "citedForm": "ɛ́hili",
+          "variants": null,
+          "existingValue": "ehili",
+          "status": "crosscheck"
+        },
+        "seven": {
+          "citedForm": "àhapà",
+          "variants": null,
+          "existingValue": "ahapa",
+          "status": "crosscheck"
+        },
+        "eight": {
+          "citedForm": "àhátá",
+          "variants": null,
+          "existingValue": "ahata",
+          "status": "crosscheck"
+        },
+        "nine": {
+          "citedForm": "àhánɛ́",
+          "variants": null,
+          "existingValue": "ahane",
+          "status": "crosscheck"
+        },
+        "ten": {
+          "citedForm": "iɡwó",
+          "variants": null,
+          "existingValue": "igwo",
+          "status": "crosscheck"
+        }
+      }
+    },
+    "igala": {
+      "name": "Igala",
+      "inWordComparison": true,
+      "chanEntry": {
+        "name": "Igala, Nigeria",
+        "glottocode": "igal1242",
+        "iso639_3": "igl",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": {
+        "multipleChanEntriesMatched": true
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "éɲɛ́",
+          "variants": [
+            "ǒkâ"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "èdʒì",
+          "variants": null,
+          "existingValue": "ẹ̀jì",
+          "status": "crosscheck"
+        },
+        "three": {
+          "citedForm": "ɛ̀ta",
+          "variants": null,
+          "existingValue": "ẹ̀ta",
+          "status": "crosscheck"
+        },
+        "four": {
+          "citedForm": "ɛ̀lɛ̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "ɛ̀lú",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ɛ̀fà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "èbʲe",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "ɛ̀dʒɔ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "ɛ̀lá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ɛ̀ɡʷá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "igbo": {
+      "name": "Igbo",
+      "inWordComparison": true,
+      "chanEntry": {
+        "name": "Igbo, Nigeria",
+        "glottocode": "nucl1417",
+        "iso639_3": "ibo",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": {
+        "multipleChanEntriesMatched": true
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "ótù",
+          "variants": null,
+          "existingValue": "otu",
+          "status": "crosscheck"
+        },
+        "two": {
+          "citedForm": "àbʊ̄ɔ́",
+          "variants": null,
+          "existingValue": "abụọ",
+          "status": "crosscheck"
+        },
+        "three": {
+          "citedForm": "àtɔ́",
+          "variants": null,
+          "existingValue": "atọ",
+          "status": "crosscheck"
+        },
+        "four": {
+          "citedForm": "ànɔ́",
+          "variants": null,
+          "existingValue": "anọ",
+          "status": "crosscheck"
+        },
+        "five": {
+          "citedForm": "ìsé",
+          "variants": null,
+          "existingValue": "ise",
+          "status": "crosscheck"
+        },
+        "six": {
+          "citedForm": "ìsiì",
+          "variants": null,
+          "existingValue": "isii",
+          "status": "crosscheck"
+        },
+        "seven": {
+          "citedForm": "àsáà",
+          "variants": null,
+          "existingValue": "asaa",
+          "status": "crosscheck"
+        },
+        "eight": {
+          "citedForm": "àsátɔ́",
+          "variants": null,
+          "existingValue": "asato",
+          "status": "crosscheck"
+        },
+        "nine": {
+          "citedForm": "ìtólú",
+          "variants": null,
+          "existingValue": "itoolu",
+          "status": "crosscheck"
+        },
+        "ten": {
+          "citedForm": "ìri",
+          "variants": null,
+          "existingValue": "ìri",
+          "status": "crosscheck"
+        }
+      }
+    },
+    "igede": {
+      "name": "Igede",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Igede, Nigeria",
+        "glottocode": "iged1239",
+        "iso639_3": "ige",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "óòk͡pók͡póh",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "îmíìyèh",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "ītā",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "īnêh",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "ērʊ̄",
+          "variants": [
+            "īrʊ̄"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "īrʷɔ̀nyɛ̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "īrùyèh",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "īnêkúh",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "ìhíkítʃú",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "īwō",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "isoko": {
+      "name": "Isoko",
+      "inWordComparison": true,
+      "chanEntry": {
+        "name": "Isoko, Nigeria",
+        "glottocode": "isok1239",
+        "iso639_3": "iso",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": {
+        "multipleChanEntriesMatched": true
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "ɔvʊ",
+          "variants": null,
+          "existingValue": "ọvo",
+          "status": "crosscheck"
+        },
+        "two": {
+          "citedForm": "ɪ́vɛ",
+          "variants": null,
+          "existingValue": "ivẹ",
+          "status": "crosscheck"
+        },
+        "three": {
+          "citedForm": "ɪ́sa",
+          "variants": null,
+          "existingValue": "esa",
+          "status": "crosscheck"
+        },
+        "four": {
+          "citedForm": "ɪ́nɪ",
+          "variants": null,
+          "existingValue": "ene",
+          "status": "crosscheck"
+        },
+        "five": {
+          "citedForm": "ɪ́sɔɪ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ɪ́zɪ́za",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "ɪ́hɾɛ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "ɪ́rɪ́ː",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "ɪ́zɪ́ː",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ɪ́kpe",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "iyala": {
+      "name": "Yala",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Yala, Cross River State, Nigeria",
+        "glottocode": "yala1263",
+        "iso639_3": "yba",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "ósè",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "ɛ̀pà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "ɛ̀ta",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "ɛ̀nɛ̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "èrwɔ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "èríwi",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "àrapà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "àratá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "àranɛ̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ìɡwó",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "izere": {
+      "name": "Izere",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Izere, Nigeria",
+        "glottocode": "izer1243",
+        "iso639_3": "fiz",
+        "family": "Bookkeeping"
+      },
+      "coverage": "10/10",
+      "review": {
+        "sharedChanEntry": [
+          "ichen"
+        ],
+        "unclassifiedInSource": true
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "ziníŋ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "fà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "taar",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "nààs",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "tùwùn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ìɡàràːr",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "kànàsàtáár",
+          "variants": [
+            "kànàtáár"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "ì-kárá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "kàtúbɔ́k",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "kùsɔ́k",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "jaku": {
+      "name": "Labir",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Labir (Jaku), Nigeria",
+        "glottocode": "jara1263",
+        "iso639_3": "jar",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "mòɣɔʔ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "ɓar",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "tat",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "yin",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "tuwun",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "tɪɓa",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "səbɨr",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "nə̌n",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "fuɣu",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "lǔm",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "kilba": {
+      "name": "Huba",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Huba (Kilba), Nigeria",
+        "glottocode": "huba1236",
+        "iso639_3": "hbb",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "dzàŋ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "mətlù",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "màkə̀r",
+          "variants": [
+            "màkərù"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "fòɗù",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "tùfù",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "kwà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "məɗəfà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "cìsù",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "dlà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "kùmà",
+          "variants": [
+            "kùm"
+          ],
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "kona": {
+      "name": "Jiba",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Jiba (Jibe / Kona), Nigeria",
+        "glottocode": "jiba1237",
+        "iso639_3": "juo",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "zũ̀ː",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "pyèːnà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "sàːr",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "nyè",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "són",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "sùnʒé",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "sùmpyèːnà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "húhúnyè",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "zōrhōnnì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "dùb",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "kurama": {
+      "name": "Kurama",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Kurama (Akurmi), Kaduna, Nigeria",
+        "glottocode": "kura1249",
+        "iso639_3": "krh",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "nìdíi",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "tɨɽyá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "tɨtáaɽɔ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "tɨnáazɛ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "úʃii",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "útasɛ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "úsúndèɽì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "úɽiɽé",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "ùtáɽá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "níkúɽí",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "kuteb": {
+      "name": "Kuteb",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Kuteb (Kutev), Nigeria",
+        "glottocode": "kute1248",
+        "iso639_3": "kub",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": {
+        "multipleChanEntriesMatched": true
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "kínzō",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "ífaẽ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "ítā",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "índʒē",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "ítsóŋ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ítsóŋ-ndʒō",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "ítsóŋ-ífaẽ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "ítsóŋ-ítā",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "ítsóŋ-ndʒē",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ridʒwēr",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "kyenga": {
+      "name": "Kyenga",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Kyenga, Nigeria, Benin",
+        "glottocode": "kyen1242",
+        "iso639_3": "tye",
+        "family": "Mande"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "do",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "hia",
+          "variants": [
+            "fia"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "ʔà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "ʃí",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "sɔɔlu",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "sɔɔdu",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "sɔɔhia",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "soowà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "sooʃí",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "korì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "longuda": {
+      "name": "Longuda",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Longuda, Nigeria",
+        "glottocode": "long1389",
+        "iso639_3": "lnu",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": {
+        "multipleChanEntriesMatched": true
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "laatwɛ̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "nààkwɛ̃́",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "nààtsə́r",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "nèénnyìr",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "nàànyɔ́",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "tsààtə̀n",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "ínéényìr inààtsə́r",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "nyíítìn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "énàànyɔ́ ínéényìr",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "koo",
+          "variants": [
+            "kù"
+          ],
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "mada": {
+      "name": "Mada",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Mada (Madda), Nigeria",
+        "glottocode": "mada1282",
+        "iso639_3": "mda",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "ɡyə̄r",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "ywā",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "tar",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "nlyɛ̄",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "tun",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "tānnɛ̀n",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "tāmɡ͡bā",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "tāndà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "tīyār",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ɡùr",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "mbembe": {
+      "name": "Mbembe",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Mbembe (Cross River), Nigeria",
+        "glottocode": "cros1244",
+        "iso639_3": "mfn",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "wànɔ́",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "m̩̀fà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "ǹt̩áːn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "ǹnà",
+          "variants": [
+            "ǹnébùŋ"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "ǹt͡ʃén",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ǹt͡ʃádànɛ̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "ót͡ʃénɔ́m̩fà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "ót͡ʃénɔ́ntáːn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "ósówánɛ̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ìd͡ʒòβ̚",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "miya": {
+      "name": "Miya",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Miya, Nigeria",
+        "glottocode": "miya1266",
+        "iso639_3": "mkf",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "wútə̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "tsə̀r",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "kìdi",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "fə̀ɗə",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "vàaɬə",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "màaha",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "mààtsə̀r",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "fə́rfəɗə",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "kùcìyà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "də́rɓitim",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "mumuye": {
+      "name": "Mumuye",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Mumuye, Nigeria",
+        "glottocode": "nucl1240",
+        "iso639_3": "mzm",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "ɡbétè",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "ziti",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "taːti",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "dɛ̃̀ːtì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "mǎːni",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "máŋɡbétè",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "mánziti",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "mántaːti",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "mándɛ̃̀ːtì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "kopi",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "mushere": {
+      "name": "Cakfem-Mushere",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Cakfem-Mushere, Nigeria",
+        "glottocode": "cakf1236",
+        "iso639_3": "cky",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "kume",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "vel",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "kun",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "feer",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "paat",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "peemee",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "feermeekum",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "feertiit",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "paatmeefeer",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "kakapaat",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "ngamo": {
+      "name": "Ngamo",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Ngamo, Nigeria",
+        "glottocode": "ngam1282",
+        "iso639_3": "nbh",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "mòɗi",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "bòlò",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "kùnû",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "hɔ̀ɗò",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "bât",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "bàʔàʃìmòɗi",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "babìlò",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "hɔɔrɗò",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "ɓònù",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "bimbaɗ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "ngizim": {
+      "name": "Ngizim",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Ngizim, Nigeria",
+        "glottocode": "ngiz1242",
+        "iso639_3": "ngi",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "kə́ɗə́n",
+          "variants": [
+            "ɡàyí"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "ʃírín",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "kwán",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "fə́ɗú",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "vàaɗ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "zə̀dù",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "ɡátkásà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "dándàfə́ɗú",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "kúɗkûvdà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ɡúmà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "nupe": {
+      "name": "Nupe",
+      "inWordComparison": true,
+      "chanEntry": {
+        "name": "Nupe, Nigeria",
+        "glottocode": "nupe1254",
+        "iso639_3": "nup",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "niní",
+          "variants": null,
+          "existingValue": "nini",
+          "status": "crosscheck"
+        },
+        "two": {
+          "citedForm": "ɡúbà",
+          "variants": null,
+          "existingValue": "guba",
+          "status": "crosscheck"
+        },
+        "three": {
+          "citedForm": "ɡútá",
+          "variants": null,
+          "existingValue": "guta",
+          "status": "crosscheck"
+        },
+        "four": {
+          "citedForm": "ɡúni",
+          "variants": null,
+          "existingValue": "guni",
+          "status": "crosscheck"
+        },
+        "five": {
+          "citedForm": "ɡútsũ",
+          "variants": null,
+          "existingValue": "gutsun",
+          "status": "crosscheck"
+        },
+        "six": {
+          "citedForm": "ɡútswàɲĩ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "ɡútwàbà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "ɡútotá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "ɡútwã̀ni",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ɡúwo",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "nzanyi": {
+      "name": "Nzanyi",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Nzanyi, Nigeria, Cameroun",
+        "glottocode": "nzan1240",
+        "iso639_3": "nja",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "hɪɗè",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "buk",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "mɨ̀dɨfəl",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "fwət",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "tuf",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "kwɔx",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "mɨ̀skatə̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "fwəfwaɗè",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "təmɓeɗè",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "pu",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "obolo": {
+      "name": "Obolo (Andoni)",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Obolo, Nigeria",
+        "glottocode": "obol1243",
+        "iso639_3": "ann",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "ɡê",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "íbà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "ítá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "ínî",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "ɡò",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ɡʷèrèɡʷèn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "d͡ʒààbà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "d͡ʒèètá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "ónáánɡê",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "àkɔ̀p̚",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "ododop": {
+      "name": "Korop",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Korop, Nigeria",
+        "glottocode": "koro1304",
+        "iso639_3": "krp",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "bú-ní",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "búwán",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "bú-nàːn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "bù-này",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "búnɛ̀ŋ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "kàsákàsá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "búnáy ná búnâːn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "cáŋá cáŋá náy",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "búnɛ̀ŋ nà bùnày",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "dyô",
+          "variants": [
+            "díò"
+          ],
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "ogbia": {
+      "name": "Ogbia",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Ogbia, Nigeria",
+        "glottocode": "ogbi1239",
+        "iso639_3": "ogb",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "onin",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "ɛwal",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "ɛsar",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "iɲə",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "ɔwʊ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "odin",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "oɗuən",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "ɛɲa",
+          "variants": [
+            "ɛβɪβɪɛɲa"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "ɛsuwo",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "iɗioβ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "pero": {
+      "name": "Pero",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Pero (Pipero), Nigeria",
+        "glottocode": "pero1241",
+        "iso639_3": "pip",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "ɗók",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "bélòw",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "ɡ͡bónòŋ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "béeɗòw",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "púat",
+          "variants": [
+            "fwát"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "páttira múndi",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "páttira bélòw",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "bídìdow",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "kómpòy",
+          "variants": [
+            "kómvòy"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "kó",
+          "variants": [
+            "k͡púmmò"
+          ],
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "polchi": {
+      "name": "Polci",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Polci (Palci), Nigeria",
+        "glottocode": "polc1243",
+        "iso639_3": "plj",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "nɨ̀m",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "rǒp",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "miyèn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "wupsɨ̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "nə̀mtəm",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "maɣà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "wusɨ̀rmìyen",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "wɨsɨpsɨ̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "nàtoropsɨ̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "zup",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "pongu": {
+      "name": "Pongu",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Pongu (Pangu), Nigeria",
+        "glottocode": "pong1250",
+        "iso639_3": "png",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "hĩ́ː",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "ɾêːnù",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "tâːtù",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "nə̃́ːʃĩ̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "tá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "tʃíníhì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "tə̃́ndə́ɾə̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "tə̃́ndáːtù",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "tṹndúʃì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "úpwá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "reshe": {
+      "name": "Reshe",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Reshe (Tsureshe), Nigeria",
+        "glottocode": "resh1242",
+        "iso639_3": "res",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "tsúnnɛ̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "rìsə̄",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "tàtswā",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "nāʃẽ́",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "tɔ̃̄",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "tēnzɔ̄",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "tànsã̄",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "dálànzɔ̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "tānāʃẽ́",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "úpwà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "ron": {
+      "name": "Ron",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Ron (Daffo), Nigeria",
+        "glottocode": "ronn1241",
+        "iso639_3": "cla",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": {
+        "sharedChanEntry": [
+          "bokkos"
+        ]
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "ɗaŋɡât",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "fu᷆l",
+          "variants": [
+            "fu᷆lál"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "yuhún",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "púʔ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "hárá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "mako᷆ŋ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "melo᷆k",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "mafwaráʔ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "yèlâm",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "hùrè",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "saya": {
+      "name": "Saya",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Saya, Nigeria",
+        "glottocode": "saya1246",
+        "iso639_3": "say",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "nàmbə́ŋ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "mbə̀ɬíŋ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "máajìi",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "wúpsə̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "nândə̀m",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "lîim",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "wátsə̀maí",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "tántán",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "tɔ́knándə́m",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "zúp",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "shanga": {
+      "name": "Shanga",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Shanga, Nigeria, Benin",
+        "glottocode": "shan1282",
+        "iso639_3": "sho",
+        "family": "Mande"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "do",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "ʍa",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "ʔà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "ʃí",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "sɔ́ɔ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "sɔbodo",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "sɔhia",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "sɔboʔà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "sɔdoʃí",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "wókòì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "sukur": {
+      "name": "Sukur",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Sukur, Nigeria",
+        "glottocode": "suku1272",
+        "iso639_3": "syk",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": {
+        "multipleChanEntriesMatched": true
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "kə̀lí",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "bák",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "ma̋ken",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "fwáɗ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "ɮám",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "mʊ́kwà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "máɗáf",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "tə̀kə̀z",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "míçí",
+          "variants": [
+            "míɬí"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ʔwàn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "tangale": {
+      "name": "Tangale",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Tangale (Shongom), Nigeria",
+        "glottocode": "nucl1696",
+        "iso639_3": "tan",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "dɔ́k",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "ráp",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "kúnúŋ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "sɛ́rɛɪ̀",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "pʊ́wàd",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "páyɪ̀nɗɪ́",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "péelòu",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "párpàɗá",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "lámɓɗà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ɡ͡bɔ́mɔ́",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "tarok": {
+      "name": "Tarok",
+      "inWordComparison": true,
+      "chanEntry": {
+        "name": "Tarok (Yergam), Nigeria",
+        "glottocode": "taro1263",
+        "iso639_3": "yer",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "ùzɨ̀ŋ",
+          "variants": null,
+          "existingValue": "ùzɨ̀ŋ",
+          "status": "crosscheck"
+        },
+        "two": {
+          "citedForm": "ùpàrɨ́m",
+          "variants": null,
+          "existingValue": "ùpàrɨ́m",
+          "status": "crosscheck"
+        },
+        "three": {
+          "citedForm": "ùʃáɗɨ́ŋ",
+          "variants": null,
+          "existingValue": "ùʃáɗɨ́ŋ",
+          "status": "crosscheck"
+        },
+        "four": {
+          "citedForm": "ùnèɗɨ́ŋ",
+          "variants": null,
+          "existingValue": "ùnèɗɨ́ŋ",
+          "status": "crosscheck"
+        },
+        "five": {
+          "citedForm": "ùtúkún",
+          "variants": null,
+          "existingValue": "ùtúkún",
+          "status": "crosscheck"
+        },
+        "six": {
+          "citedForm": "ùk͡pə́ɗɨ́ŋ",
+          "variants": null,
+          "existingValue": "ùk͡pə́ɗɨ́ŋ",
+          "status": "crosscheck"
+        },
+        "seven": {
+          "citedForm": "ùfàŋʃát",
+          "variants": null,
+          "existingValue": "ùfàŋʃát",
+          "status": "crosscheck"
+        },
+        "eight": {
+          "citedForm": "ùnə̀nnè",
+          "variants": null,
+          "existingValue": "ùnə̀nnè",
+          "status": "crosscheck"
+        },
+        "nine": {
+          "citedForm": "ùfàŋzɨ́ŋtɨ́ŋ",
+          "variants": null,
+          "existingValue": "ùfàŋzɨ́ŋtɨ́ŋ",
+          "status": "crosscheck"
+        },
+        "ten": {
+          "citedForm": "ùɡ͡bə́pei",
+          "variants": null,
+          "existingValue": "ùg͡bə́pei",
+          "status": "crosscheck"
+        }
+      }
+    },
+    "tera": {
+      "name": "Tera",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Tera, Nigeria",
+        "glottocode": "tera1251",
+        "iso639_3": "ttr",
+        "family": "Afro-Asiatic"
+      },
+      "coverage": "10/10",
+      "review": {
+        "multipleChanEntriesMatched": true
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "dà",
+          "variants": [
+            "da"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "rāp",
+          "variants": [
+            "rap"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "kúnúŋ",
+          "variants": [
+            "kununɡ"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "vàt",
+          "variants": [
+            "vat"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "qúrmún",
+          "variants": [
+            "qurmun"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ⁿjòŋ",
+          "variants": [
+            "njoŋ"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "mút",
+          "variants": [
+            "mut"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "mʲāsī",
+          "variants": [
+            "myaasi"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "mɨ̄ɮām",
+          "variants": [
+            "mu̠dlam"
+          ],
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ɡʷàŋ",
+          "variants": [
+            "ɡwanɡ"
+          ],
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "tigon": {
+      "name": "Tigon Mbembe",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Tigon Mbembe, Cameroun",
+        "glottocode": "tigo1236",
+        "iso639_3": "nza",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": {
+        "nonNigeriaEntry": "Tigon Mbembe, Cameroun"
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "nzo",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "pya",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "sra",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "nyɛ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "tʃwɔ́",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "tʃwɔ́mbazo",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "tʃwɔ́mbapya",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "ɛ́nyɛnyɛ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "tʃwɔ́mnyɛ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "dʒé",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "tikar": {
+      "name": "Tikar",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Tikar, Cameroun",
+        "glottocode": "tika1246",
+        "iso639_3": "tik",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": {
+        "nonNigeriaEntry": "Tikar, Cameroun"
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "mbɔʔ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "ɓî",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "lê",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "ɲî",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "ʃæ̃̂",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ɸyulu",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "ʃâmɓì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "nìnì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "tæ̂nì",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "wûm",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "tiv": {
+      "name": "Tiv",
+      "inWordComparison": true,
+      "chanEntry": {
+        "name": "Tiv, Nigeria, Cameroun",
+        "glottocode": "tivv1240",
+        "iso639_3": "tiv",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "mɔ̀ḿ",
+          "variants": [
+            "mɔ́ꜜm"
+          ],
+          "existingValue": "mom",
+          "status": "crosscheck"
+        },
+        "two": {
+          "citedForm": "úháꜜr",
+          "variants": null,
+          "existingValue": "uhar",
+          "status": "crosscheck"
+        },
+        "three": {
+          "citedForm": "útáŕ",
+          "variants": null,
+          "existingValue": "utar",
+          "status": "crosscheck"
+        },
+        "four": {
+          "citedForm": "únjì:",
+          "variants": null,
+          "existingValue": "unyiin",
+          "status": "crosscheck"
+        },
+        "five": {
+          "citedForm": "útã́ː",
+          "variants": null,
+          "existingValue": "utaan",
+          "status": "crosscheck"
+        },
+        "six": {
+          "citedForm": "átérátáŕ",
+          "variants": null,
+          "existingValue": "ateratar",
+          "status": "crosscheck"
+        },
+        "seven": {
+          "citedForm": "útã́ː kàː úháꜜr",
+          "variants": null,
+          "existingValue": "utaankaruhar",
+          "status": "crosscheck"
+        },
+        "eight": {
+          "citedForm": "ániènì",
+          "variants": null,
+          "existingValue": "anigheni",
+          "status": "crosscheck"
+        },
+        "nine": {
+          "citedForm": "útã́ː kàː únjì:",
+          "variants": null,
+          "existingValue": "utankarunyiin",
+          "status": "crosscheck"
+        },
+        "ten": {
+          "citedForm": "púè",
+          "variants": [
+            "púwè"
+          ],
+          "existingValue": "pue",
+          "status": "crosscheck"
+        }
+      }
+    },
+    "tula": {
+      "name": "Tula",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Tula (Kɨtule), Nigeria",
+        "glottocode": "tula1252",
+        "iso639_3": "tul",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "wìːn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "júrau",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "jítːà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "jáːnà",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "júnù",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "júrùkùn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "jídìbìn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "nárɨ̀bú",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "túrkùbú",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "kúb",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "urhobo": {
+      "name": "Urhobo",
+      "inWordComparison": true,
+      "chanEntry": {
+        "name": "Urhobo, Nigeria",
+        "glottocode": "urho1239",
+        "iso639_3": "urh",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "ɔ̀vò",
+          "variants": null,
+          "existingValue": "ọvo",
+          "status": "crosscheck"
+        },
+        "two": {
+          "citedForm": "ǐvɛ̀",
+          "variants": null,
+          "existingValue": "ivẹ",
+          "status": "crosscheck"
+        },
+        "three": {
+          "citedForm": "ěrà",
+          "variants": null,
+          "existingValue": "erha",
+          "status": "crosscheck"
+        },
+        "four": {
+          "citedForm": "ɛ̌nè",
+          "variants": null,
+          "existingValue": "ene",
+          "status": "crosscheck"
+        },
+        "five": {
+          "citedForm": "ǐjòɾĩ̀",
+          "variants": null,
+          "existingValue": "iyọrin",
+          "status": "crosscheck"
+        },
+        "six": {
+          "citedForm": "ěsã́",
+          "variants": null,
+          "existingValue": "ẹsan",
+          "status": "crosscheck"
+        },
+        "seven": {
+          "citedForm": "ǐɣwɾɛ̃́",
+          "variants": null,
+          "existingValue": "ihwre",
+          "status": "crosscheck"
+        },
+        "eight": {
+          "citedForm": "ɛ̌ɾéɾẽ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "ǐríɾĩ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "ǐxwè",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "waja": {
+      "name": "Waja",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Waja (nyan wɩyáʋ̀), Nigeria",
+        "glottocode": "waja1259",
+        "iso639_3": "wja",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "ɡɛɛn",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "rɔɔp",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "kunoŋ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "nɩɩ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "nuwo",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "nokono",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "nibíyo",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "wunii",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "tɔɔrɔ",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "kwáp",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "yandang": {
+      "name": "Yendang",
+      "inWordComparison": false,
+      "chanEntry": {
+        "name": "Yendang (Nyandang), Nigeria",
+        "glottocode": "yend1240",
+        "iso639_3": "yen",
+        "family": "Bookkeeping"
+      },
+      "coverage": "10/10",
+      "review": {
+        "unclassifiedInSource": true
+      },
+      "numerals": {
+        "one": {
+          "citedForm": "ɓīntī",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "two": {
+          "citedForm": "ínī",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "three": {
+          "citedForm": "tâːt",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "four": {
+          "citedForm": "nâːt",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "five": {
+          "citedForm": "ɡhìnān",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "six": {
+          "citedForm": "ɡètīntī",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "seven": {
+          "citedForm": "ɡéːtìnī",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "eight": {
+          "citedForm": "ɓɔ̄lánāːt",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "nine": {
+          "citedForm": "nòkɔ́mtâːt",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        },
+        "ten": {
+          "citedForm": "koːb",
+          "variants": null,
+          "existingValue": null,
+          "status": "new"
+        }
+      }
+    },
+    "yoruba": {
+      "name": "Yoruba",
+      "inWordComparison": true,
+      "chanEntry": {
+        "name": "Yoruba, Nigeria, Benin",
+        "glottocode": "yoru1245",
+        "iso639_3": "yor",
+        "family": "Atlantic-Congo"
+      },
+      "coverage": "10/10",
+      "review": null,
+      "numerals": {
+        "one": {
+          "citedForm": "oókan",
+          "variants": null,
+          "existingValue": "ọ̀kan",
+          "status": "crosscheck"
+        },
+        "two": {
+          "citedForm": "eéɟì",
+          "variants": null,
+          "existingValue": "èjì",
+          "status": "crosscheck"
+        },
+        "three": {
+          "citedForm": "ɛɛ́ta",
+          "variants": null,
+          "existingValue": "ẹ̀ta",
+          "status": "crosscheck"
+        },
+        "four": {
+          "citedForm": "ɛɛ́ɾin",
+          "variants": null,
+          "existingValue": "ẹ̀rin",
+          "status": "crosscheck"
+        },
+        "five": {
+          "citedForm": "aáɾun",
+          "variants": null,
+          "existingValue": "àrún",
+          "status": "crosscheck"
+        },
+        "six": {
+          "citedForm": "ɛɛ́fà",
+          "variants": null,
+          "existingValue": "ẹ̀fà",
+          "status": "crosscheck"
+        },
+        "seven": {
+          "citedForm": "ɛɛ́ɟe",
+          "variants": null,
+          "existingValue": "èje",
+          "status": "crosscheck"
+        },
+        "eight": {
+          "citedForm": "ɛɛ́ɟɔ",
+          "variants": null,
+          "existingValue": "ẹ̀jọ",
+          "status": "crosscheck"
+        },
+        "nine": {
+          "citedForm": "ɛɛ́sàn",
+          "variants": null,
+          "existingValue": "ẹ̀sán",
+          "status": "crosscheck"
+        },
+        "ten": {
+          "citedForm": "ɛɛ́wàá",
+          "variants": null,
+          "existingValue": "ẹ̀wá",
+          "status": "crosscheck"
+        }
+      }
+    }
+  }
+}

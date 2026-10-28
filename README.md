@@ -1,10 +1,19 @@
 # LanguageMapper
 
-A tool for mapping and reconstructing the shared origins of words across the languages of Nigeria. Compare vocabulary side by side, explore how languages relate, and see where they are spoken — all 37 states (including the FCT) with 239 catalogued languages across the Niger-Congo, Afro-Asiatic, and Nilo-Saharan families.
+A map of Africa's languages and how they relate: 2,223 languages placed where they are spoken, coloured by family, with basic-word comparisons for 1,752 of them. Nigeria is covered in depth, with all 37 states (including the FCT) and 239 hand-written language profiles.
 
-**Live features:** interactive state map · language profiles · side-by-side word comparison · lexical similarity tree · dark mode
+**Live features:** Africa atlas · family drill-down · similarity map · interactive state map · language profiles · side-by-side word comparison · lexical similarity tree · dark mode
 
 ## Features
+
+### Africa atlas (`/atlas`)
+
+One dot per language across the continent, built from [Glottolog](https://glottolog.org) and the [ASJP Database](https://asjp.clld.org) (both CC BY 4.0).
+
+- **Families:** dots are coloured by family. Click a family in the legend to zoom in and colour its branches, down to the smallest subgroup. The top level uses the four traditional groupings (Niger-Congo, Afro-Asiatic, Nilo-Saharan, Khoisan). Everything below follows Glottolog.
+- **Similarity:** pick a language, then switch the legend to *Similarity*. Every other language is coloured by how much its 40 basic words resemble the selected one's, from "very close" to "no clear similarity". The score is LDND (normalized Levenshtein distance divided by the chance baseline), computed in the browser.
+- **Language panel:** where it's spoken, endangerment status, its full family tree, closest relatives, and a word-by-word comparison with any relative. Languages with a Nigeria profile also show its description and link to the state map and the compare tool.
+- State lives in the URL (`/atlas?lang=yoru1245&color=similar&vs=igal1242`), so every view can be shared.
 
 ### Interactive map (`/map`)
 
@@ -141,10 +150,13 @@ makes one read a week to prevent that. It no-ops when the secrets are absent.
 
 ## Data model
 
-All app data lives in three JSON files plus one GeoJSON:
+All app data lives in these JSON files plus one GeoJSON:
 
 | File | Contents |
 |---|---|
+| `public/data/africa/languages.json` | Generated. Atlas languages (glottocode, name, coordinates, countries, endangerment) and the family tree nodes |
+| `public/data/africa/words.json` | Generated. ASJP 40-concept word lists per glottocode: ASJPcode for scoring, IPA for display |
+| `src/data/nigeriaGlottocodes.json` | Nigeria profile id → glottocode, linking the profiles to atlas languages (dialect profiles point to their language) |
 | `src/data/languages.json` | Language profiles keyed by id: name, classification, ethnic groups, similar-language ids, description |
 | `src/data/stateLanguages.json` | State id (ISO 3166-2, e.g. `NG-KN`) → array of language ids spoken there |
 | `src/data/wordComparison.json` | Master word list (23 word ids) and per-language word maps for the comparison tool |
@@ -156,7 +168,15 @@ All app data lives in three JSON files plus one GeoJSON:
 2. Add its id to the relevant states in `src/data/stateLanguages.json`.
 3. Optionally, add a word map to `src/data/wordComparison.json` to include it in the comparison tool. Missing words are fine — the similarity score is computed over whichever words both languages have.
 
-Language ids are lowercase-kebab-case and must match across all three files.
+Language ids are lowercase-kebab-case and must match across all three files. To show the profile in the atlas, also add its glottocode to `src/data/nigeriaGlottocodes.json`.
+
+### Rebuilding the atlas data
+
+```bash
+npm run build-africa-data
+```
+
+This downloads pinned releases of Glottolog (5.2.1) and ASJP (v21) into `data-raw/` (gitignored) and regenerates `public/data/africa/`. To move to a newer release, bump the tags in `scripts/build-africa-data.mjs` and delete `data-raw/`. The script warns if any Nigeria link no longer matches an atlas language.
 
 ## Crawler (experimental)
 

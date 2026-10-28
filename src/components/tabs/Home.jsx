@@ -4,9 +4,18 @@ import { NigeriaFlagIcon } from '../icons'
 
 const FEATURES = [
   {
-    title: 'Interactive map',
+    title: 'Africa atlas',
     description:
-      'Click any region on a live, zoomable map to see which languages are spoken there.',
+      'Over 2,200 languages across the continent, coloured by family. Pick one to see which languages share its basic words.',
+    badge: 'New',
+    emoji: '🧭',
+    iconBg: 'bg-adire-50 dark:bg-adire-500/10',
+    path: '/atlas',
+  },
+  {
+    title: 'Nigeria map',
+    description:
+      'Click any state on a live, zoomable map to see which languages are spoken there.',
     badge: null,
     emoji: '🗺️',
     iconBg: 'bg-naija-50 dark:bg-naija-500/10',
@@ -50,9 +59,9 @@ const FEATURES = [
 ]
 
 const STATS = [
-  { value: '37', label: 'States mapped (incl. FCT)', color: 'text-naija-600 dark:text-naija-400' },
-  { value: '239', label: 'Languages catalogued', color: 'text-adire-600 dark:text-adire-400' },
-  { value: '3', label: 'Major language families', color: 'text-ankara-600 dark:text-ankara-400' },
+  { value: '2,223', label: 'African languages mapped', color: 'text-naija-600 dark:text-naija-400' },
+  { value: '1,752', label: 'With basic word lists to compare', color: 'text-adire-600 dark:text-adire-400' },
+  { value: '239', label: 'In-depth Nigerian language profiles', color: 'text-ankara-600 dark:text-ankara-400' },
 ]
 
 export default function Home() {
@@ -77,7 +86,7 @@ export default function Home() {
           <div className="animate-rise-in md:flex-1">
             <span className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/70 px-3 py-1 text-xs font-medium text-gray-600 dark:border-white/15 dark:bg-white/5 dark:text-gray-300">
               <NigeriaFlagIcon className="h-3 w-4.5 shrink-0" />
-              Mapping the languages of Nigeria
+              Mapping Africa's languages, in depth for Nigeria
             </span>
             <h1 className="mt-5 max-w-xl text-4xl font-medium leading-[1.1] tracking-tight text-gray-900 md:text-6xl dark:text-white">
               Tracing words back to their{' '}
@@ -87,18 +96,17 @@ export default function Home() {
               .
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-              LanguageMapper is a tool for mapping and reconstructing the shared
-              origins of words across the languages of Nigeria. Compare
-              vocabulary side by side, explore how languages relate, and see
-              where each one is spoken &mdash; state by state, across all 37
-              states.
+              LanguageMapper maps the languages of Africa and shows how they
+              relate. Explore language families across the continent, see which
+              languages share their basic words, and go in depth on Nigeria's
+              languages, state by state.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <button
-                onClick={() => navigate('/map')}
+                onClick={() => navigate('/atlas')}
                 className="rounded-full bg-gradient-to-r from-naija-600 to-adire-600 px-6 py-3 text-sm font-medium text-white shadow-md shadow-naija-600/20 transition-transform hover:scale-[1.03] dark:from-naija-500 dark:to-adire-500"
               >
-                Explore the map
+                Explore the atlas
               </button>
               <button
                 onClick={() => navigate('/contribute')}

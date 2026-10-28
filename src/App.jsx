@@ -1,6 +1,7 @@
 import { NavLink, Route, Routes } from 'react-router-dom'
 import Home from './components/tabs/Home'
 import MapExplorer from './components/tabs/MapExplorer'
+import AtlasExplorer from './components/tabs/AtlasExplorer'
 import CompareLanguages from './components/tabs/CompareLanguages'
 import Blog from './components/tabs/Blog'
 import Contribute from './components/tabs/Contribute'
@@ -10,7 +11,8 @@ import { useTheme } from './context/ThemeContext'
 
 const TABS = [
   { path: '/', label: 'Home', end: true },
-  { path: '/map', label: 'Map' },
+  { path: '/atlas', label: 'Africa atlas' },
+  { path: '/map', label: 'Nigeria map' },
   { path: '/compare', label: 'Compare languages' },
   { path: '/contribute', label: 'Contribute' },
   { path: '/blog', label: 'Blog' },
@@ -39,7 +41,7 @@ function App() {
           </button>
         </div>
 
-        <nav className="flex gap-6 px-6 pt-4">
+        <nav className="flex gap-6 overflow-x-auto whitespace-nowrap px-6 pt-4">
           {TABS.map((tab) => (
             <NavLink
               key={tab.path}
@@ -62,6 +64,7 @@ function App() {
       <main className="flex flex-1 flex-col overflow-hidden">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/atlas" element={<AtlasExplorer />} />
           <Route path="/map" element={<MapExplorer />} />
           <Route path="/map/:stateId" element={<MapExplorer />} />
           <Route path="/compare" element={<CompareLanguages />} />

@@ -29,3 +29,6 @@ __pycache__/
 .env
 .env.*
 !.env.example
+
+# Downloaded source datasets (scripts/build-africa-data.mjs)
+data-raw/

@@ -98,16 +98,16 @@
       "name": "Hausa",
       "classification": "Afro-Asiatic > Chadic > West Chadic > Hausa-Gwandara",
       "words": {
-        "one": "ɗaya",
-        "two": "biyu",
-        "three": "uku",
-        "four": "huɗu",
-        "five": "biyar",
-        "six": "shida",
-        "seven": "bakwai",
-        "eight": "takwas",
-        "nine": "tara",
-        "ten": "goma",
+        "one": "ɗájá",
+        "two": "bíjú",
+        "three": "ʔúkù",
+        "four": "fúɗú",
+        "five": "bìjár",
+        "six": "ʃídà",
+        "seven": "bákwài",
+        "eight": "tákwàs",
+        "nine": "tárà",
+        "ten": "ɡóːmà",
         "man": "mutum",
         "woman": "mace",
         "people": "mutane",
@@ -121,22 +121,35 @@
         "come": "zo",
         "go": "tafi",
         "speak": "yi magana"
-      }
+      },
+      "orthography": {
+        "one": "ɗaya",
+        "two": "biyu",
+        "three": "uku",
+        "four": "huɗu",
+        "five": "biyar",
+        "six": "shida",
+        "seven": "bakwai",
+        "eight": "takwas",
+        "nine": "tara",
+        "ten": "goma"
+      },
+      "numeralSource": "chan2019"
     },
     "yoruba": {
       "name": "Yoruba",
       "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Yoruboid",
       "words": {
-        "one": "ọ̀kan",
-        "two": "èjì",
-        "three": "ẹ̀ta",
-        "four": "ẹ̀rin",
-        "five": "àrún",
-        "six": "ẹ̀fà",
-        "seven": "èje",
-        "eight": "ẹ̀jọ",
-        "nine": "ẹ̀sán",
-        "ten": "ẹ̀wá",
+        "one": "oókan",
+        "two": "eéɟì",
+        "three": "ɛɛ́ta",
+        "four": "ɛɛ́ɾin",
+        "five": "aáɾun",
+        "six": "ɛɛ́fà",
+        "seven": "ɛɛ́ɟe",
+        "eight": "ɛɛ́ɟɔ",
+        "nine": "ɛɛ́sàn",
+        "ten": "ɛɛ́wàá",
         "man": "ọkùnrin",
         "woman": "obìnrin",
         "people": "ènìyàn",
@@ -150,22 +163,35 @@
         "come": "wá",
         "go": "lọ",
         "speak": "sọ̀rọ̀"
-      }
+      },
+      "orthography": {
+        "one": "ọ̀kan",
+        "two": "èjì",
+        "three": "ẹ̀ta",
+        "four": "ẹ̀rin",
+        "five": "àrún",
+        "six": "ẹ̀fà",
+        "seven": "èje",
+        "eight": "ẹ̀jọ",
+        "nine": "ẹ̀sán",
+        "ten": "ẹ̀wá"
+      },
+      "numeralSource": "chan2019"
     },
     "igbo": {
       "name": "Igbo",
       "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Igboid",
       "words": {
-        "one": "otu",
-        "two": "abụọ",
-        "three": "atọ",
-        "four": "anọ",
-        "five": "ise",
-        "six": "isii",
-        "seven": "asaa",
-        "eight": "asato",
-        "nine": "itoolu",
-        "ten": "ìri",
+        "one": "ótù",
+        "two": "àbʊ̄ɔ́",
+        "three": "àtɔ́",
+        "four": "ànɔ́",
+        "five": "ìsé",
+        "six": "ìsiì",
+        "seven": "àsáà",
+        "eight": "àsátɔ́",
+        "nine": "ìtólú",
+        "ten": "ìri",
         "man": "nwoke",
         "woman": "nwanyị",
         "people": "ndị mmadụ",
@@ -179,7 +205,20 @@
         "come": "bịa",
         "go": "gaa",
         "speak": "kwuo"
-      }
+      },
+      "orthography": {
+        "one": "otu",
+        "two": "abụọ",
+        "three": "atọ",
+        "four": "anọ",
+        "five": "ise",
+        "six": "isii",
+        "seven": "asaa",
+        "eight": "asato",
+        "nine": "itoolu",
+        "ten": "ìri"
+      },
+      "numeralSource": "chan2019"
     },
     "fulfulde": {
       "name": "Fulani (Fulfulde)",
@@ -212,16 +251,16 @@
       "name": "Edo",
       "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Edoid",
       "words": {
-        "one": "ọkpa",
-        "two": "eva",
-        "three": "eha",
-        "four": "enẹn",
-        "five": "isẹn",
-        "six": "ehan",
-        "seven": "ihinron",
-        "eight": "erenren",
-        "nine": "ihinrin",
-        "ten": "igbe",
+        "one": "òwó",
+        "two": "èvá ́",
+        "three": "èhá",
+        "four": "ènɛ́",
+        "five": "ìsɛ́ or",
+        "six": "èhã̀",
+        "seven": "ìhĩɺɔ ̃",
+        "eight": "èɺɛ̃ɺɛ̃",
+        "nine": "ihĩɺĩ",
+        "ten": "ìɡ͡bé",
         "man": "okpia",
         "woman": "okhuo",
         "people": "emwan",
@@ -235,22 +274,35 @@
         "come": "do",
         "go": "ghìan",
         "speak": "ta"
-      }
+      },
+      "orthography": {
+        "one": "ọkpa",
+        "two": "eva",
+        "three": "eha",
+        "four": "enẹn",
+        "five": "isẹn",
+        "six": "ehan",
+        "seven": "ihinron",
+        "eight": "erenren",
+        "nine": "ihinrin",
+        "ten": "igbe"
+      },
+      "numeralSource": "chan2019"
     },
     "idoma": {
       "name": "Idoma",
       "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Idomoid",
       "words": {
-        "one": "eye",
-        "two": "epa",
-        "three": "eta",
-        "four": "ene",
-        "five": "eho",
-        "six": "ehili",
-        "seven": "ahapa",
-        "eight": "ahata",
-        "nine": "ahane",
-        "ten": "igwo",
+        "one": "éjè",
+        "two": "ɛ́pà",
+        "three": "ɛtá",
+        "four": "ɛ́hɛ́",
+        "five": "ɛ́hɔ",
+        "six": "ɛ́hili",
+        "seven": "àhapà",
+        "eight": "àhátá",
+        "nine": "àhánɛ́",
+        "ten": "iɡwó",
         "man": "onyilo",
         "woman": "onya",
         "people": "ache",
@@ -264,22 +316,35 @@
         "come": "waa",
         "go": "nyo",
         "speak": "ka"
-      }
+      },
+      "orthography": {
+        "one": "eye",
+        "two": "epa",
+        "three": "eta",
+        "four": "ene",
+        "five": "eho",
+        "six": "ehili",
+        "seven": "ahapa",
+        "eight": "ahata",
+        "nine": "ahane",
+        "ten": "igwo"
+      },
+      "numeralSource": "chan2019"
     },
     "ibibio": {
       "name": "Ibibio",
       "classification": "Niger-Congo > Atlantic-Congo > Cross River > Delta-Cross > Lower Cross",
       "words": {
-        "one": "kiet",
-        "two": "iba",
-        "three": "ita",
-        "four": "inan",
-        "five": "ition",
-        "six": "itiokiet",
-        "seven": "itiaba",
-        "eight": "itiaita",
-        "nine": "usukkiet",
-        "ten": "duop",
+        "one": "kèèd",
+        "two": "ìbà",
+        "three": "ìtá",
+        "four": "ìnàŋ",
+        "five": "ìtíòn",
+        "six": "ìtíòkèèd",
+        "seven": "ìtíàbà",
+        "eight": "ìtià-ìtá",
+        "nine": "ùsúkèèd",
+        "ten": "dùòp",
         "man": "eden",
         "woman": "awowan",
         "people": "awo",
@@ -293,7 +358,20 @@
         "come": "di",
         "speak": "tan",
         "go": "ka"
-      }
+      },
+      "orthography": {
+        "one": "kiet",
+        "two": "iba",
+        "three": "ita",
+        "four": "inan",
+        "five": "ition",
+        "six": "itiokiet",
+        "seven": "itiaba",
+        "eight": "itiaita",
+        "nine": "usukkiet",
+        "ten": "duop"
+      },
+      "numeralSource": "chan2019"
     },
     "ijaw": {
       "name": "Ijaw (Izon)",
@@ -325,16 +403,16 @@
       "name": "Tiv",
       "classification": "Niger-Congo > Atlantic-Congo > Bantoid > Southern Bantoid > Tivoid",
       "words": {
-        "one": "mom",
-        "two": "uhar",
-        "three": "utar",
-        "four": "unyiin",
-        "five": "utaan",
-        "six": "ateratar",
-        "seven": "utaankaruhar",
-        "eight": "anigheni",
-        "nine": "utankarunyiin",
-        "ten": "pue",
+        "one": "mɔ̀ḿ",
+        "two": "úháꜜr",
+        "three": "útáŕ",
+        "four": "únjì:",
+        "five": "útã́ː",
+        "six": "átérátáŕ",
+        "seven": "útã́ː kàː úháꜜr",
+        "eight": "ániènì",
+        "nine": "útã́ː kàː únjì:",
+        "ten": "púè",
         "man": "numsor",
         "woman": "kwase",
         "people": "ior",
@@ -345,7 +423,20 @@
         "water": "ngerem",
         "rain": "uwula",
         "name": "iti"
-      }
+      },
+      "orthography": {
+        "one": "mom",
+        "two": "uhar",
+        "three": "utar",
+        "four": "unyiin",
+        "five": "utaan",
+        "six": "ateratar",
+        "seven": "utaankaruhar",
+        "eight": "anigheni",
+        "nine": "utankarunyiin",
+        "ten": "pue"
+      },
+      "numeralSource": "chan2019"
     },
     "ikwerre": {
       "name": "Ikwerre",
@@ -405,16 +496,16 @@
       "name": "Efik",
       "classification": "Niger-Congo > Atlantic-Congo > Cross River > Delta-Cross > Lower Cross",
       "words": {
-        "one": "kiet",
-        "two": "iba",
-        "three": "ita",
-        "four": "inañ",
-        "five": "ition",
-        "six": "itiokiet",
-        "seven": "itiaba",
-        "eight": "itiaita",
-        "nine": "usukiet",
-        "ten": "duop",
+        "one": "kíét",
+        "two": "íbá",
+        "three": "ítá",
+        "four": "ínáŋ",
+        "five": "ítíón",
+        "six": "ítíókíét < ítíón yé kíét",
+        "seven": "ítíábá < ítíón yé íbá",
+        "eight": "ítíáitá < ítíón yé ítá",
+        "nine": "úsúk-kíét",
+        "ten": "dúóp",
         "man": "eren",
         "woman": "n̄wan",
         "people": "mbon",
@@ -427,7 +518,20 @@
         "come": "di",
         "go": "ka",
         "speak": "tañ"
-      }
+      },
+      "orthography": {
+        "one": "kiet",
+        "two": "iba",
+        "three": "ita",
+        "four": "inañ",
+        "five": "ition",
+        "six": "itiokiet",
+        "seven": "itiaba",
+        "eight": "itiaita",
+        "nine": "usukiet",
+        "ten": "duop"
+      },
+      "numeralSource": "chan2019"
     },
     "annang": {
       "name": "Annang",
@@ -456,6 +560,24 @@
       "name": "Esan",
       "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Edoid",
       "words": {
+        "one": "ɔ̀k͡pá",
+        "two": "èvá",
+        "three": "éà",
+        "four": "énɛ̃̀",
+        "five": "ìsɛ̃́",
+        "six": "éhã́",
+        "seven": "ìhĩ́lɔ̃̀",
+        "eight": "èlɛ̃́lɛ̃̀",
+        "nine": "ĩ̀sɪ̃́lɪ̃̀",
+        "ten": "ìɡ͡bé",
+        "man": "okpia",
+        "woman": "okhuo",
+        "head": "uhonmhon",
+        "mouth": "unu",
+        "water": "amẹn",
+        "name": "eni"
+      },
+      "orthography": {
         "one": "okpa",
         "two": "eva",
         "three": "ela",
@@ -465,84 +587,156 @@
         "seven": "ihinlon",
         "eight": "erenlen",
         "nine": "ihinlin",
-        "ten": "igbe",
-        "man": "okpia",
-        "woman": "okhuo",
-        "head": "uhonmhon",
-        "mouth": "unu",
-        "water": "amẹn",
-        "name": "eni"
-      }
+        "ten": "igbe"
+      },
+      "numeralSource": "chan2019"
     },
     "urhobo": {
       "name": "Urhobo",
       "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Edoid",
       "words": {
+        "one": "ɔ̀vò",
+        "two": "ǐvɛ̀",
+        "three": "ěrà",
+        "four": "ɛ̌nè",
+        "five": "ǐjòɾĩ̀",
+        "six": "ěsã́",
+        "seven": "ǐɣwɾɛ̃́",
+        "man": "ọshare",
+        "woman": "aye",
+        "head": "uzou",
+        "mouth": "unu",
+        "water": "ame",
+        "name": "odẹ",
+        "eight": "ɛ̌ɾéɾẽ",
+        "nine": "ǐríɾĩ",
+        "ten": "ǐxwè"
+      },
+      "orthography": {
         "one": "ọvo",
         "two": "ivẹ",
         "three": "erha",
         "four": "ene",
         "five": "iyọrin",
         "six": "ẹsan",
-        "seven": "ihwre",
-        "man": "ọshare",
-        "woman": "aye",
-        "head": "uzou",
-        "mouth": "unu",
-        "water": "ame",
-        "name": "odẹ"
-      }
+        "seven": "ihwre"
+      },
+      "numeralSource": "chan2019"
     },
     "isoko": {
       "name": "Isoko",
       "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Edoid",
       "words": {
-        "one": "ọvo",
-        "two": "ivẹ",
-        "three": "esa",
-        "four": "ene",
+        "one": "ɔvʊ",
+        "two": "ɪ́vɛ",
+        "three": "ɪ́sa",
+        "four": "ɪ́nɪ",
         "man": "ọzae",
         "woman": "aye",
         "head": "uzou",
         "water": "ame",
-        "name": "odẹ"
-      }
+        "name": "odẹ",
+        "five": "ɪ́sɔɪ",
+        "six": "ɪ́zɪ́za",
+        "seven": "ɪ́hɾɛ",
+        "eight": "ɪ́rɪ́ː",
+        "nine": "ɪ́zɪ́ː",
+        "ten": "ɪ́kpe"
+      },
+      "orthography": {
+        "one": "ọvo",
+        "two": "ivẹ",
+        "three": "esa",
+        "four": "ene"
+      },
+      "numeralSource": "chan2019"
     },
     "nupe": {
       "name": "Nupe",
       "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Nupoid",
       "words": {
+        "one": "niní",
+        "two": "ɡúbà",
+        "three": "ɡútá",
+        "four": "ɡúni",
+        "five": "ɡútsũ",
+        "six": "ɡútswàɲĩ",
+        "seven": "ɡútwàbà",
+        "eight": "ɡútotá",
+        "nine": "ɡútwã̀ni",
+        "ten": "ɡúwo"
+      },
+      "orthography": {
         "one": "nini",
         "two": "guba",
         "three": "guta",
         "four": "guni",
         "five": "gutsun"
-      }
+      },
+      "numeralSource": "chan2019"
     },
     "igala": {
       "name": "Igala",
       "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Yoruboid",
       "words": {
+        "two": "èdʒì",
+        "three": "ɛ̀ta",
+        "water": "omi",
+        "one": "éɲɛ́",
+        "four": "ɛ̀lɛ̀",
+        "five": "ɛ̀lú",
+        "six": "ɛ̀fà",
+        "seven": "èbʲe",
+        "eight": "ɛ̀dʒɔ",
+        "nine": "ɛ̀lá",
+        "ten": "ɛ̀ɡʷá"
+      },
+      "orthography": {
         "two": "ẹ̀jì",
-        "three": "ẹ̀ta",
-        "water": "omi"
-      }
+        "three": "ẹ̀ta"
+      },
+      "numeralSource": "chan2019"
     },
     "berom": {
       "name": "Berom",
       "classification": "Niger-Congo > Atlantic-Congo > Benue-Congo > Plateau",
       "words": {
+        "one": "ɡwīnìŋ",
+        "two": "-bā",
+        "three": "-tāt",
+        "four": "-nāːs",
+        "five": "-tūŋūn",
+        "six": "-tī̄ː mìn",
+        "seven": "-tāːmà",
+        "eight": "-rwīːt",
+        "nine": "syāː-tāt",
+        "ten": "syāː-tāt"
+      },
+      "orthography": {
         "one": "gwɛ́nàng",
         "two": "bà",
         "three": "tàt",
         "four": "nààs",
         "five": "tùŋùn"
-      }
+      },
+      "numeralSource": "chan2019"
     },
     "ebira": {
       "name": "Ebira",
       "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Nupoid",
-      "words": {}
+      "words": {
+        "one": "ɔ̀ɔ̀nyɪ̄",
+        "two": "ɛ̀ɛ̀vā",
+        "three": "ɛ̀ɛ̀tá",
+        "four": "ɛ̀ɛ̀nà",
+        "five": "ɛ̀ɛ̀hɪ́",
+        "six": "hɪ̋nɔ̋nyɪ̄",
+        "seven": "hɪ̋m̋bā",
+        "eight": "hɪ̋n̋tá",
+        "nine": "hɪ̋ǹnà",
+        "ten": "ɛ̀ɛ̀wʊ́"
+      },
+      "numeralSource": "chan2019"
     },
     "gbagyi": {
       "name": "Gbagyi (Gwari)",
@@ -582,16 +776,16 @@
       "name": "Bole",
       "classification": "Afro-Asiatic > Chadic",
       "words": {
-        "one": "móoɗì",
-        "two": "bòláu",
-        "three": "kúnùm",
-        "four": "pòɗɗó",
-        "five": "bàɗì",
-        "six": "bàššimóoɗì",
-        "seven": "báawúló",
-        "eight": "póorɗó",
-        "nine": "ɓòonùm",
-        "ten": "bìmbáɗí",
+        "one": "móoɗì",
+        "two": "bòláu",
+        "three": "kúnùm",
+        "four": "pòɗɗó",
+        "five": "bàɗì",
+        "six": "bàššimóoɗì",
+        "seven": "báawúló",
+        "eight": "póorɗó",
+        "nine": "ɓòonùm",
+        "ten": "bìmbáɗí",
         "man": "gwərzo",
         "woman": "mundù",
         "people": "mêmu",
@@ -604,7 +798,20 @@
         "come": "diŋgò",
         "go": "jiwò",
         "speak": "puwo'i"
-      }
+      },
+      "orthography": {
+        "one": "móoɗì",
+        "two": "bòláu",
+        "three": "kúnùm",
+        "four": "pòɗɗó",
+        "five": "bàɗì",
+        "six": "bàššimóoɗì",
+        "seven": "báawúló",
+        "eight": "póorɗó",
+        "nine": "ɓòonùm",
+        "ten": "bìmbáɗí"
+      },
+      "numeralSource": "chan2019"
     },
     "kalabari": {
       "name": "Kalabari",
@@ -633,6 +840,23 @@
       "name": "Tarok",
       "classification": "Niger-Congo > Atlantic-Congo > Benue-Congo > Plateau",
       "words": {
+        "one": "ùzɨ̀ŋ",
+        "two": "ùpàrɨ́m",
+        "three": "ùʃáɗɨ́ŋ",
+        "four": "ùnèɗɨ́ŋ",
+        "five": "ùtúkún",
+        "six": "ùk͡pə́ɗɨ́ŋ",
+        "seven": "ùfàŋʃát",
+        "eight": "ùnə̀nnè",
+        "nine": "ùfàŋzɨ́ŋtɨ́ŋ",
+        "ten": "ùɡ͡bə́pei",
+        "nose": "alur",
+        "ear": "acwuŋ",
+        "water": "diŋ",
+        "name": "adin",
+        "come": "ba"
+      },
+      "orthography": {
         "one": "ùzɨ̀ŋ",
         "two": "ùpàrɨ́m",
         "three": "ùʃáɗɨ́ŋ",
@@ -642,13 +866,9 @@
         "seven": "ùfàŋʃát",
         "eight": "ùnə̀nnè",
         "nine": "ùfàŋzɨ́ŋtɨ́ŋ",
-        "ten": "ùg͡bə́pei",
-        "nose": "alur",
-        "ear": "acwuŋ",
-        "water": "diŋ",
-        "name": "adin",
-        "come": "ba"
-      }
+        "ten": "ùg͡bə́pei"
+      },
+      "numeralSource": "chan2019"
     },
     "itsekiri": {
       "name": "Itsekiri",
@@ -665,6 +885,1188 @@
         "nine": "mesan",
         "ten": "meegwa"
       }
+    },
+    "aduge": {
+      "name": "Okpamheri",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Volta-Niger > Edoid",
+      "words": {
+        "one": "ɔkpa",
+        "two": "eva",
+        "three": "esa",
+        "four": "enen",
+        "five": "ishe",
+        "six": "eaza",
+        "seven": "izuonua",
+        "eight": "ɛnien",
+        "nine": "isie",
+        "ten": "iɡ͡be"
+      },
+      "numeralSource": "chan2019"
+    },
+    "afade": {
+      "name": "Afade",
+      "classification": "Afro-Asiatic > Chadic > Biu-Mandara",
+      "words": {
+        "one": "sə́rə̀jā",
+        "two": "sɗā",
+        "three": "ɡàrkə̀",
+        "four": "ɡàɗē",
+        "five": "ʃìʃí",
+        "six": "və̀nārkə̄",
+        "seven": "kàtùl",
+        "eight": "vìyāɗē",
+        "nine": "dìʃẽ̄",
+        "ten": "χkàn"
+      },
+      "numeralSource": "chan2019"
+    },
+    "afo": {
+      "name": "Eloyi",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Plateau",
+      "words": {
+        "one": "ńɡwònzé",
+        "two": "ńɡwòpó",
+        "three": "ńɡwòlá",
+        "four": "ńɡwòndó",
+        "five": "ńɡwolɔ́",
+        "six": "ńɡwɔ̀rɛ́nyí",
+        "seven": "ńɡwòrówó",
+        "eight": "ńɡwòràndá",
+        "nine": "ńɡwòròndó",
+        "ten": "úwó"
+      },
+      "numeralSource": "chan2019"
+    },
+    "agatu": {
+      "name": "Agatu",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Idomoid",
+      "words": {
+        "one": "ɔ́jè",
+        "two": "ɛ̀pà",
+        "three": "ɛ̀tá",
+        "four": "ɛ́nɛ̀",
+        "five": "ɛ̀hɔ́",
+        "six": "ɛ̀hílí",
+        "seven": "àhápà",
+        "eight": "àhàtá",
+        "nine": "àhànè",
+        "ten": "ìɡwó"
+      },
+      "numeralSource": "chan2019"
+    },
+    "akpes": {
+      "name": "Akpes",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Benue-Congo",
+      "words": {
+        "one": "íɡbōn",
+        "two": "īdīan",
+        "three": "īsās",
+        "four": "īnīŋ",
+        "five": "īʃōn",
+        "six": "ītʃānās",
+        "seven": "ītʃēnētʃ",
+        "eight": "ānāānīŋ",
+        "nine": "ɔ̀kpɔ̄lɔ̀ʃ",
+        "ten": "īyōf"
+      },
+      "numeralSource": "chan2019"
+    },
+    "alago": {
+      "name": "Alago",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Idomoid > Akweya > Etulo-Idoma",
+      "words": {
+        "one": "óje",
+        "two": "èpà",
+        "three": "èta",
+        "four": "ènɛ̀",
+        "five": "ɛ̀hɔ",
+        "six": "ìhirì",
+        "seven": "àhapà",
+        "eight": "àhatá",
+        "nine": "àhánɛ̀",
+        "ten": "ìɡʷó"
+      },
+      "numeralSource": "chan2019"
+    },
+    "asholio": {
+      "name": "Tyap",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Plateau > Central Plateau > Tyapic",
+      "words": {
+        "one": "anyuŋ",
+        "two": "afeaŋ",
+        "three": "atat",
+        "four": "anaai",
+        "five": "afwuon",
+        "six": "ataa",
+        "seven": "anatat",
+        "eight": "aninai",
+        "nine": "akubunyuŋ",
+        "ten": "swak"
+      },
+      "numeralSource": "chan2019"
+    },
+    "ayu": {
+      "name": "Ayu",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Plateau > Ninzic",
+      "words": {
+        "one": "ɪdɪ",
+        "two": "ahwa",
+        "three": "ataar",
+        "four": "anaŋaʃ",
+        "five": "atuɡen",
+        "six": "atɛɛr",
+        "seven": "ataraŋaʃ",
+        "eight": "anababoɡ",
+        "nine": "atuluboɡ",
+        "ten": "iʃoɡ"
+      },
+      "numeralSource": "chan2019"
+    },
+    "bade": {
+      "name": "Bade",
+      "classification": "Afro-Asiatic > Chadic > West Chadic > Bade-Ngizim",
+      "words": {
+        "one": "ɡàɗi",
+        "two": "sərən",
+        "three": "kwan",
+        "four": "fəɗu",
+        "five": "vàɗì",
+        "six": "ə̀zdù",
+        "seven": "ɡatkasà",
+        "eight": "ɬədàakwà",
+        "nine": "warayà",
+        "ten": "ɡuumà"
+      },
+      "numeralSource": "chan2019"
+    },
+    "bekwarra": {
+      "name": "Bekwarra",
+      "classification": "Niger-Congo > Atlantic-Congo > Cross River > Bendi",
+      "words": {
+        "one": "kìn",
+        "two": "-hà",
+        "three": "-cià",
+        "four": "-nè",
+        "five": "-dyaŋ",
+        "six": "-dyaàkìn",
+        "seven": "-dièhà",
+        "eight": "-diècià",
+        "nine": "-diènè",
+        "ten": "irifo"
+      },
+      "numeralSource": "chan2019"
+    },
+    "boki": {
+      "name": "Bokyi",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Cross River > Bendi",
+      "words": {
+        "one": "kíbɔ́ŋè",
+        "two": "bìfɛ̀ː",
+        "three": "bìt͡ʃât",
+        "four": "bìɲìː",
+        "five": "bìtáŋɛ̀",
+        "six": "ɲât͡ʃât",
+        "seven": "kát͡ʃákáɲì",
+        "eight": "ɲíríɲì",
+        "nine": "kátáŋɛ̀káɲì",
+        "ten": "děːk͡púː"
+      },
+      "numeralSource": "chan2019"
+    },
+    "bokkos": {
+      "name": "Ron",
+      "classification": "Afro-Asiatic > Chadic > West Chadic > West Chadic A > Ron",
+      "words": {
+        "one": "ɗaŋɡât",
+        "two": "fu᷆l",
+        "three": "yuhún",
+        "four": "púʔ",
+        "five": "hárá",
+        "six": "mako᷆ŋ",
+        "seven": "melo᷆k",
+        "eight": "mafwaráʔ",
+        "nine": "yèlâm",
+        "ten": "hùrè"
+      },
+      "numeralSource": "chan2019"
+    },
+    "boko": {
+      "name": "Boko",
+      "classification": "Niger-Congo > Mande",
+      "words": {
+        "one": "do",
+        "two": "pla",
+        "three": "ʔààɔ̃",
+        "four": "sííɔ̃",
+        "five": "sɔ́o",
+        "six": "soolo",
+        "seven": "sopla",
+        "eight": "swaàɔ̃",
+        "nine": "kɛ̃̀okwi",
+        "ten": "kwi"
+      },
+      "numeralSource": "chan2019"
+    },
+    "burak": {
+      "name": "Burak",
+      "classification": "Niger-Congo > Atlantic-Congo > Adamawa",
+      "words": {
+        "one": "kwín",
+        "two": "ráb",
+        "three": "ɡ͡bunuŋ",
+        "four": "net",
+        "five": "nóob",
+        "six": "naaʃín",
+        "seven": "nááre",
+        "eight": "nátát",
+        "nine": "ninit",
+        "ten": "ʃóób"
+      },
+      "numeralSource": "chan2019"
+    },
+    "cibak": {
+      "name": "Cibak",
+      "classification": "Afro-Asiatic > Chadic > Biu-Mandara",
+      "words": {
+        "one": "tə̀ŋ",
+        "two": "sudæ̀",
+        "three": "makùr̃",
+        "four": "fwòɗu",
+        "five": "tufù",
+        "six": "ŋ̀kwà",
+        "seven": "murɨfwæ̀",
+        "eight": "ntsisù",
+        "nine": "mɨðæ",
+        "ten": "kuma"
+      },
+      "numeralSource": "chan2019"
+    },
+    "dadiya": {
+      "name": "Dadiya",
+      "classification": "Niger-Congo > Atlantic-Congo > Adamawa",
+      "words": {
+        "one": "wiǹ",
+        "two": "yo",
+        "three": "tal",
+        "four": "nal",
+        "five": "nu",
+        "six": "nukuǹ",
+        "seven": "ni̠bi̠l",
+        "eight": "nááli̠b",
+        "nine": "tí̠lku̠b",
+        "ten": "ku̠b"
+      },
+      "numeralSource": "chan2019"
+    },
+    "duguri": {
+      "name": "Jarawa (Nigeria)",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Bantoid > Southern Bantoid > Bantu > Mbam-Bubi-Jarawan > Jarawan",
+      "words": {
+        "one": "mòk",
+        "two": "ɓàri",
+        "three": "tat",
+        "four": "yǐn",
+        "five": "towùn",
+        "six": "təŋsɛlmò",
+        "seven": "təŋsɛlɓàrì",
+        "eight": "kɛsyǐn",
+        "nine": "kɛ̀stowun",
+        "ten": "lùm"
+      },
+      "numeralSource": "chan2019"
+    },
+    "duka": {
+      "name": "Hun-Saare",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Kainji > Northwest Kainji",
+      "words": {
+        "one": "co̠o̠n",
+        "two": "yoor oo=",
+        "three": "tett",
+        "four": "náss",
+        "five": "aː )",
+        "six": "cînd",
+        "seven": "tá'yoor",
+        "eight": "'yéér",
+        "nine": "jírò̠",
+        "ten": "o̠pp"
+      },
+      "numeralSource": "chan2019"
+    },
+    "eggon": {
+      "name": "Eggon",
+      "classification": "Niger-Congo > Atlantic-Congo > Benue-Congo > Plateau",
+      "words": {
+        "one": "ákiə́n",
+        "two": "àhàà",
+        "three": "àtráá",
+        "four": "ùɲí",
+        "five": "òtnó",
+        "six": "ùfín",
+        "seven": "àfóhà",
+        "eight": "àfóté",
+        "nine": "àfúúɲí",
+        "ten": "ókpo"
+      },
+      "numeralSource": "chan2019"
+    },
+    "ejagham": {
+      "name": "Ejagham",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Bantoid > Southern Bantoid > Ekoid",
+      "words": {
+        "one": "yə́t",
+        "two": "éβáé",
+        "three": "ésá",
+        "four": "énî",
+        "five": "érôn",
+        "six": "èsáɡàsá",
+        "seven": "èníɡìsá",
+        "eight": "èníɡànî",
+        "nine": "érôn énî",
+        "ten": "ófó"
+      },
+      "numeralSource": "chan2019"
+    },
+    "engenni": {
+      "name": "Engenni",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Edoid",
+      "words": {
+        "one": "ávʊ̀",
+        "two": "ívà",
+        "three": "ɛ́sàà",
+        "four": "ínìì",
+        "five": "ìsyònì",
+        "six": "ɛ̀nyísà",
+        "seven": "ìsyovà",
+        "eight": "ɛ̀nʊ̀màní",
+        "nine": "àvʊ́mó",
+        "ten": "íɡ͡bèì"
+      },
+      "numeralSource": "chan2019"
+    },
+    "gaanda": {
+      "name": "Ga'anda",
+      "classification": "Afro-Asiatic > Chadic > Biu-Mandara > Teraic",
+      "words": {
+        "one": "ar̃ta",
+        "two": "sur̃r̃i",
+        "three": "mahkə̀n",
+        "four": "fwəɗà",
+        "five": "ɗɨrmən",
+        "six": "mɪca",
+        "seven": "mwùt(n)",
+        "eight": "fwətfwəɗà",
+        "nine": "wə̀nhəhəʔar̃tà",
+        "ten": "kum"
+      },
+      "numeralSource": "chan2019"
+    },
+    "galambi": {
+      "name": "Galambu",
+      "classification": "Afro-Asiatic > Chadic > West Chadic > West Chadic A > Bole-Tangale",
+      "words": {
+        "one": "múuri",
+        "two": "m̀bàál",
+        "three": "kúun",
+        "four": "páryá",
+        "five": "bòorí",
+        "six": "bɪ́címɪ́n",
+        "seven": "bùcù m̀bàl",
+        "eight": "hórró",
+        "nine": "bàryà múuri",
+        "ten": "bár"
+      },
+      "numeralSource": "chan2019"
+    },
+    "gamergu": {
+      "name": "Wandala",
+      "classification": "Afro-Asiatic > Chadic",
+      "words": {
+        "one": "pálle",
+        "two": "búwa",
+        "three": "kəɠyé",
+        "four": "ufáɗe",
+        "five": "iiɮəbé",
+        "six": "unkwé",
+        "seven": "vúye",
+        "eight": "tiise",
+        "nine": "másə́lmane",
+        "ten": "kəláwa"
+      },
+      "numeralSource": "chan2019"
+    },
+    "geji": {
+      "name": "Geji",
+      "classification": "Afro-Asiatic > Chadic > West Chadic > West Chadic B > South Bauchi",
+      "words": {
+        "one": "nə̀m",
+        "two": "lôp",
+        "three": "mèkan",
+        "four": "wupsì",
+        "five": "nàmtan",
+        "six": "mukkà",
+        "seven": "nitɡi",
+        "eight": "wùsupsì",
+        "nine": "topsi",
+        "ten": "kuɬ"
+      },
+      "numeralSource": "chan2019"
+    },
+    "gera": {
+      "name": "Gera",
+      "classification": "Afro-Asiatic > Chadic > West Chadic > West Chadic A > Bole-Tangale",
+      "words": {
+        "one": "móóyi",
+        "two": "mbùlú",
+        "three": "kúnú",
+        "four": "fúɗú",
+        "five": "bàaɗì",
+        "six": "bèeshím",
+        "seven": "bìccìmbùlú",
+        "eight": "húrɗú",
+        "nine": "ɓànìnjà",
+        "ten": "bàrɗí"
+      },
+      "numeralSource": "chan2019"
+    },
+    "geruma": {
+      "name": "Geruma",
+      "classification": "Afro-Asiatic > Chadic > West Chadic > West Chadic A > Bole-Tangale",
+      "words": {
+        "one": "mô",
+        "two": "m̀bàalú",
+        "three": "kúnú",
+        "four": "fúɗú",
+        "five": "bàaɗì",
+        "six": "bècə́m",
+        "seven": "bàzə̀mbàalú",
+        "eight": "húrɗú",
+        "nine": "ɓár jà",
+        "ten": "ɓáráɗì"
+      },
+      "numeralSource": "chan2019"
+    },
+    "ghotuo": {
+      "name": "Ghotuo",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Edoid > North-Central Edoid > Ghotuo-Uneme-Yekhee",
+      "words": {
+        "one": "ɔ̀k͡pā",
+        "two": "èvā",
+        "three": "èēsà",
+        "four": "èēnè",
+        "five": "ìīʒè",
+        "six": "ìjhēhà",
+        "seven": "ìhīɲã̄",
+        "eight": "ènhīē",
+        "nine": "ìsī",
+        "ten": "ìɡ͡bē"
+      },
+      "numeralSource": "chan2019"
+    },
+    "gokana": {
+      "name": "Gokana",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Cross River > Ogoni",
+      "words": {
+        "one": "ɛ̃̀nɛ̃",
+        "two": "bàà",
+        "three": "taa",
+        "four": "ténì",
+        "five": "vòò",
+        "six": "ɔ̀ɔ̀lɛ̀",
+        "seven": "àlàbà",
+        "eight": "aatáá",
+        "nine": "síìna òb",
+        "ten": "òb"
+      },
+      "numeralSource": "chan2019"
+    },
+    "gudu": {
+      "name": "Gudu",
+      "classification": "Afro-Asiatic > Chadic > Biu-Mandara",
+      "words": {
+        "one": "ǰə́ŋ",
+        "two": "bœ̀k",
+        "three": "māːkə́n",
+        "four": "fwád",
+        "five": "tùf",
+        "six": "kwǎ",
+        "seven": "mīskàtā",
+        "eight": "fɔ̄rfwād",
+        "nine": "žīɛ́tə́pə̀n",
+        "ten": "pú"
+      },
+      "numeralSource": "chan2019"
+    },
+    "guruntum": {
+      "name": "Guruntum",
+      "classification": "Afro-Asiatic > Chadic > West Chadic > West Chadic B > South Bauchi",
+      "words": {
+        "one": "ʃàak",
+        "two": "raap",
+        "three": "miyaŋ",
+        "four": "ooso",
+        "five": "kʸuwun",
+        "six": "môon",
+        "seven": "nʸeene",
+        "eight": "ɡèesau",
+        "nine": "ɗáar",
+        "ten": "zùp"
+      },
+      "numeralSource": "chan2019"
+    },
+    "gwandara": {
+      "name": "Gwandara",
+      "classification": "Afro-Asiatic > Chadic > West Chadic",
+      "words": {
+        "one": "da",
+        "two": "bi",
+        "three": "úkù",
+        "four": "huru",
+        "five": "bìyàri",
+        "six": "ʃídà",
+        "seven": "bákwè",
+        "eight": "tákùʃì",
+        "nine": "tárà",
+        "ten": "ɡóm̀"
+      },
+      "numeralSource": "chan2019"
+    },
+    "gwoza": {
+      "name": "Lamang",
+      "classification": "Afro-Asiatic > Chadic > Biu-Mandara",
+      "words": {
+        "one": "tíuwá",
+        "two": "χésá",
+        "three": "χ̀kə́ná",
+        "four": "ùfáɗá",
+        "five": "χẁtáfá",
+        "six": "m̀kwá",
+        "seven": "ə̀lfáŋá",
+        "eight": "tə̀ɣásá",
+        "nine": "tə̀mbáyá",
+        "ten": "ɣwáŋá"
+      },
+      "numeralSource": "chan2019"
+    },
+    "hona": {
+      "name": "Hwana",
+      "classification": "Afro-Asiatic > Chadic > Biu-Mandara > Teraic",
+      "words": {
+        "one": "tìtal",
+        "two": "suɣurì",
+        "three": "maxə̀n",
+        "four": "faɗà",
+        "five": "tuf",
+        "six": "mɪ̀ki",
+        "seven": "mɨɗ(u)",
+        "eight": "(w)ùvwəɗà",
+        "nine": "wùtàrè",
+        "ten": "ɡumdìɗi"
+      },
+      "numeralSource": "chan2019"
+    },
+    "ichen": {
+      "name": "Izere",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Plateau",
+      "words": {
+        "one": "ziníŋ",
+        "two": "fà",
+        "three": "taar",
+        "four": "nààs",
+        "five": "tùwùn",
+        "six": "ìɡàràːr",
+        "seven": "kànàsàtáár",
+        "eight": "ì-kárá",
+        "nine": "kàtúbɔ́k",
+        "ten": "kùsɔ́k"
+      },
+      "numeralSource": "chan2019"
+    },
+    "igede": {
+      "name": "Igede",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Niger > Idomoid",
+      "words": {
+        "one": "óòk͡pók͡póh",
+        "two": "îmíìyèh",
+        "three": "ītā",
+        "four": "īnêh",
+        "five": "ērʊ̄",
+        "six": "īrʷɔ̀nyɛ̀",
+        "seven": "īrùyèh",
+        "eight": "īnêkúh",
+        "nine": "ìhíkítʃú",
+        "ten": "īwō"
+      },
+      "numeralSource": "chan2019"
+    },
+    "iyala": {
+      "name": "Yala",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Idomoid > Akweya > Etulo-Idoma",
+      "words": {
+        "one": "ósè",
+        "two": "ɛ̀pà",
+        "three": "ɛ̀ta",
+        "four": "ɛ̀nɛ̀",
+        "five": "èrwɔ",
+        "six": "èríwi",
+        "seven": "àrapà",
+        "eight": "àratá",
+        "nine": "àranɛ̀",
+        "ten": "ìɡwó"
+      },
+      "numeralSource": "chan2019"
+    },
+    "jaku": {
+      "name": "Labir",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Bantoid > Southern Bantoid > Bantu > Mbam-Bubi-Jarawan > Jarawan",
+      "words": {
+        "one": "mòɣɔʔ",
+        "two": "ɓar",
+        "three": "tat",
+        "four": "yin",
+        "five": "tuwun",
+        "six": "tɪɓa",
+        "seven": "səbɨr",
+        "eight": "nə̌n",
+        "nine": "fuɣu",
+        "ten": "lǔm"
+      },
+      "numeralSource": "chan2019"
+    },
+    "kilba": {
+      "name": "Huba",
+      "classification": "Afro-Asiatic > Chadic",
+      "words": {
+        "one": "dzàŋ",
+        "two": "mətlù",
+        "three": "màkə̀r",
+        "four": "fòɗù",
+        "five": "tùfù",
+        "six": "kwà",
+        "seven": "məɗəfà",
+        "eight": "cìsù",
+        "nine": "dlà",
+        "ten": "kùmà"
+      },
+      "numeralSource": "chan2019"
+    },
+    "kona": {
+      "name": "Jiba",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Jukunoid",
+      "words": {
+        "one": "zũ̀ː",
+        "two": "pyèːnà",
+        "three": "sàːr",
+        "four": "nyè",
+        "five": "són",
+        "six": "sùnʒé",
+        "seven": "sùmpyèːnà",
+        "eight": "húhúnyè",
+        "nine": "zōrhōnnì",
+        "ten": "dùb"
+      },
+      "numeralSource": "chan2019"
+    },
+    "kurama": {
+      "name": "Kurama",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Kainji > East Kainji",
+      "words": {
+        "one": "nìdíi",
+        "two": "tɨɽyá",
+        "three": "tɨtáaɽɔ",
+        "four": "tɨnáazɛ",
+        "five": "úʃii",
+        "six": "útasɛ",
+        "seven": "úsúndèɽì",
+        "eight": "úɽiɽé",
+        "nine": "ùtáɽá",
+        "ten": "níkúɽí"
+      },
+      "numeralSource": "chan2019"
+    },
+    "kuteb": {
+      "name": "Kuteb",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Jukunoid",
+      "words": {
+        "one": "kínzō",
+        "two": "ífaẽ",
+        "three": "ítā",
+        "four": "índʒē",
+        "five": "ítsóŋ",
+        "six": "ítsóŋ-ndʒō",
+        "seven": "ítsóŋ-ífaẽ",
+        "eight": "ítsóŋ-ítā",
+        "nine": "ítsóŋ-ndʒē",
+        "ten": "ridʒwēr"
+      },
+      "numeralSource": "chan2019"
+    },
+    "kyenga": {
+      "name": "Kyenga",
+      "classification": "Mande",
+      "words": {
+        "one": "do",
+        "two": "hia",
+        "three": "ʔà",
+        "four": "ʃí",
+        "five": "sɔɔlu",
+        "six": "sɔɔdu",
+        "seven": "sɔɔhia",
+        "eight": "soowà",
+        "nine": "sooʃí",
+        "ten": "korì"
+      },
+      "numeralSource": "chan2019"
+    },
+    "longuda": {
+      "name": "Longuda",
+      "classification": "Niger-Congo > Adamawa",
+      "words": {
+        "one": "laatwɛ̀",
+        "two": "nààkwɛ̃́",
+        "three": "nààtsə́r",
+        "four": "nèénnyìr",
+        "five": "nàànyɔ́",
+        "six": "tsààtə̀n",
+        "seven": "ínéényìr inààtsə́r",
+        "eight": "nyíítìn",
+        "nine": "énàànyɔ́ ínéényìr",
+        "ten": "koo"
+      },
+      "numeralSource": "chan2019"
+    },
+    "mada": {
+      "name": "Mada",
+      "classification": "Niger-Congo > Atlantic-Congo > Benue-Congo > Plateau",
+      "words": {
+        "one": "ɡyə̄r",
+        "two": "ywā",
+        "three": "tar",
+        "four": "nlyɛ̄",
+        "five": "tun",
+        "six": "tānnɛ̀n",
+        "seven": "tāmɡ͡bā",
+        "eight": "tāndà",
+        "nine": "tīyār",
+        "ten": "ɡùr"
+      },
+      "numeralSource": "chan2019"
+    },
+    "mbembe": {
+      "name": "Mbembe",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Cross River > Upper Cross River",
+      "words": {
+        "one": "wànɔ́",
+        "two": "m̩̀fà",
+        "three": "ǹt̩áːn",
+        "four": "ǹnà",
+        "five": "ǹt͡ʃén",
+        "six": "ǹt͡ʃádànɛ̀",
+        "seven": "ót͡ʃénɔ́m̩fà",
+        "eight": "ót͡ʃénɔ́ntáːn",
+        "nine": "ósówánɛ̀",
+        "ten": "ìd͡ʒòβ̚"
+      },
+      "numeralSource": "chan2019"
+    },
+    "miya": {
+      "name": "Miya",
+      "classification": "Afro-Asiatic > Chadic > West Chadic > West Chadic B > Warji",
+      "words": {
+        "one": "wútə̀",
+        "two": "tsə̀r",
+        "three": "kìdi",
+        "four": "fə̀ɗə",
+        "five": "vàaɬə",
+        "six": "màaha",
+        "seven": "mààtsə̀r",
+        "eight": "fə́rfəɗə",
+        "nine": "kùcìyà",
+        "ten": "də́rɓitim"
+      },
+      "numeralSource": "chan2019"
+    },
+    "mumuye": {
+      "name": "Mumuye",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > North > Adamawa",
+      "words": {
+        "one": "ɡbétè",
+        "two": "ziti",
+        "three": "taːti",
+        "four": "dɛ̃̀ːtì",
+        "five": "mǎːni",
+        "six": "máŋɡbétè",
+        "seven": "mánziti",
+        "eight": "mántaːti",
+        "nine": "mándɛ̃̀ːtì",
+        "ten": "kopi"
+      },
+      "numeralSource": "chan2019"
+    },
+    "mushere": {
+      "name": "Cakfem-Mushere",
+      "classification": "Afro-Asiatic > Chadic > West Chadic > West Chadic A > Angas",
+      "words": {
+        "one": "kume",
+        "two": "vel",
+        "three": "kun",
+        "four": "feer",
+        "five": "paat",
+        "six": "peemee",
+        "seven": "feermeekum",
+        "eight": "feertiit",
+        "nine": "paatmeefeer",
+        "ten": "kakapaat"
+      },
+      "numeralSource": "chan2019"
+    },
+    "ngamo": {
+      "name": "Ngamo",
+      "classification": "Afro-Asiatic > Chadic > West Chadic > West Chadic A > Bole-Tangale",
+      "words": {
+        "one": "mòɗi",
+        "two": "bòlò",
+        "three": "kùnû",
+        "four": "hɔ̀ɗò",
+        "five": "bât",
+        "six": "bàʔàʃìmòɗi",
+        "seven": "babìlò",
+        "eight": "hɔɔrɗò",
+        "nine": "ɓònù",
+        "ten": "bimbaɗ"
+      },
+      "numeralSource": "chan2019"
+    },
+    "ngizim": {
+      "name": "Ngizim",
+      "classification": "Afro-Asiatic > Chadic > West Chadic > Bade-Ngizim",
+      "words": {
+        "one": "kə́ɗə́n",
+        "two": "ʃírín",
+        "three": "kwán",
+        "four": "fə́ɗú",
+        "five": "vàaɗ",
+        "six": "zə̀dù",
+        "seven": "ɡátkásà",
+        "eight": "dándàfə́ɗú",
+        "nine": "kúɗkûvdà",
+        "ten": "ɡúmà"
+      },
+      "numeralSource": "chan2019"
+    },
+    "nzanyi": {
+      "name": "Nzanyi",
+      "classification": "Afro-Asiatic > Chadic > Biu-Mandara",
+      "words": {
+        "one": "hɪɗè",
+        "two": "buk",
+        "three": "mɨ̀dɨfəl",
+        "four": "fwət",
+        "five": "tuf",
+        "six": "kwɔx",
+        "seven": "mɨ̀skatə̀",
+        "eight": "fwəfwaɗè",
+        "nine": "təmɓeɗè",
+        "ten": "pu"
+      },
+      "numeralSource": "chan2019"
+    },
+    "obolo": {
+      "name": "Obolo (Andoni)",
+      "classification": "Niger-Congo > Atlantic-Congo > Cross River > Delta-Cross > Lower Cross",
+      "words": {
+        "one": "ɡê",
+        "two": "íbà",
+        "three": "ítá",
+        "four": "ínî",
+        "five": "ɡò",
+        "six": "ɡʷèrèɡʷèn",
+        "seven": "d͡ʒààbà",
+        "eight": "d͡ʒèètá",
+        "nine": "ónáánɡê",
+        "ten": "àkɔ̀p̚"
+      },
+      "numeralSource": "chan2019"
+    },
+    "ododop": {
+      "name": "Korop",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Cross River > Upper Cross River",
+      "words": {
+        "one": "bú-ní",
+        "two": "búwán",
+        "three": "bú-nàːn",
+        "four": "bù-này",
+        "five": "búnɛ̀ŋ",
+        "six": "kàsákàsá",
+        "seven": "búnáy ná búnâːn",
+        "eight": "cáŋá cáŋá náy",
+        "nine": "búnɛ̀ŋ nà bùnày",
+        "ten": "dyô"
+      },
+      "numeralSource": "chan2019"
+    },
+    "ogbia": {
+      "name": "Ogbia",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Cross River > Central Delta",
+      "words": {
+        "one": "onin",
+        "two": "ɛwal",
+        "three": "ɛsar",
+        "four": "iɲə",
+        "five": "ɔwʊ",
+        "six": "odin",
+        "seven": "oɗuən",
+        "eight": "ɛɲa",
+        "nine": "ɛsuwo",
+        "ten": "iɗioβ"
+      },
+      "numeralSource": "chan2019"
+    },
+    "pero": {
+      "name": "Pero",
+      "classification": "Afro-Asiatic > Chadic > West Chadic > West Chadic A > Bole-Tangale > Tangalic",
+      "words": {
+        "one": "ɗók",
+        "two": "bélòw",
+        "three": "ɡ͡bónòŋ",
+        "four": "béeɗòw",
+        "five": "púat",
+        "six": "páttira múndi",
+        "seven": "páttira bélòw",
+        "eight": "bídìdow",
+        "nine": "kómpòy",
+        "ten": "kó"
+      },
+      "numeralSource": "chan2019"
+    },
+    "polchi": {
+      "name": "Polci",
+      "classification": "Afro-Asiatic > Chadic > West Chadic > West Chadic B > South Bauchi",
+      "words": {
+        "one": "nɨ̀m",
+        "two": "rǒp",
+        "three": "miyèn",
+        "four": "wupsɨ̀",
+        "five": "nə̀mtəm",
+        "six": "maɣà",
+        "seven": "wusɨ̀rmìyen",
+        "eight": "wɨsɨpsɨ̀",
+        "nine": "nàtoropsɨ̀",
+        "ten": "zup"
+      },
+      "numeralSource": "chan2019"
+    },
+    "pongu": {
+      "name": "Pongu",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Kainji > Shiroro",
+      "words": {
+        "one": "hĩ́ː",
+        "two": "ɾêːnù",
+        "three": "tâːtù",
+        "four": "nə̃́ːʃĩ̀",
+        "five": "tá",
+        "six": "tʃíníhì",
+        "seven": "tə̃́ndə́ɾə̀",
+        "eight": "tə̃́ndáːtù",
+        "nine": "tṹndúʃì",
+        "ten": "úpwá"
+      },
+      "numeralSource": "chan2019"
+    },
+    "reshe": {
+      "name": "Reshe",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Kainji",
+      "words": {
+        "one": "tsúnnɛ̀",
+        "two": "rìsə̄",
+        "three": "tàtswā",
+        "four": "nāʃẽ́",
+        "five": "tɔ̃̄",
+        "six": "tēnzɔ̄",
+        "seven": "tànsã̄",
+        "eight": "dálànzɔ̀",
+        "nine": "tānāʃẽ́",
+        "ten": "úpwà"
+      },
+      "numeralSource": "chan2019"
+    },
+    "saya": {
+      "name": "Saya",
+      "classification": "Afro-Asiatic > Chadic > West Chadic > West Chadic B > South Bauchi",
+      "words": {
+        "one": "nàmbə́ŋ",
+        "two": "mbə̀ɬíŋ",
+        "three": "máajìi",
+        "four": "wúpsə̀",
+        "five": "nândə̀m",
+        "six": "lîim",
+        "seven": "wátsə̀maí",
+        "eight": "tántán",
+        "nine": "tɔ́knándə́m",
+        "ten": "zúp"
+      },
+      "numeralSource": "chan2019"
+    },
+    "shanga": {
+      "name": "Shanga",
+      "classification": "Niger-Congo > Mande",
+      "words": {
+        "one": "do",
+        "two": "ʍa",
+        "three": "ʔà",
+        "four": "ʃí",
+        "five": "sɔ́ɔ",
+        "six": "sɔbodo",
+        "seven": "sɔhia",
+        "eight": "sɔboʔà",
+        "nine": "sɔdoʃí",
+        "ten": "wókòì"
+      },
+      "numeralSource": "chan2019"
+    },
+    "sukur": {
+      "name": "Sukur",
+      "classification": "Afro-Asiatic > Chadic > Biu-Mandara",
+      "words": {
+        "one": "kə̀lí",
+        "two": "bák",
+        "three": "ma̋ken",
+        "four": "fwáɗ",
+        "five": "ɮám",
+        "six": "mʊ́kwà",
+        "seven": "máɗáf",
+        "eight": "tə̀kə̀z",
+        "nine": "míçí",
+        "ten": "ʔwàn"
+      },
+      "numeralSource": "chan2019"
+    },
+    "tangale": {
+      "name": "Tangale",
+      "classification": "Afro-Asiatic > Chadic > West Chadic > Tangale-Waja",
+      "words": {
+        "one": "dɔ́k",
+        "two": "ráp",
+        "three": "kúnúŋ",
+        "four": "sɛ́rɛɪ̀",
+        "five": "pʊ́wàd",
+        "six": "páyɪ̀nɗɪ́",
+        "seven": "péelòu",
+        "eight": "párpàɗá",
+        "nine": "lámɓɗà",
+        "ten": "ɡ͡bɔ́mɔ́"
+      },
+      "numeralSource": "chan2019"
+    },
+    "tera": {
+      "name": "Tera",
+      "classification": "Afro-Asiatic > Chadic > Biu-Mandara > Teraic",
+      "words": {
+        "one": "dà",
+        "two": "rāp",
+        "three": "kúnúŋ",
+        "four": "vàt",
+        "five": "qúrmún",
+        "six": "ⁿjòŋ",
+        "seven": "mút",
+        "eight": "mʲāsī",
+        "nine": "mɨ̄ɮām",
+        "ten": "ɡʷàŋ"
+      },
+      "numeralSource": "chan2019"
+    },
+    "tigon": {
+      "name": "Tigon Mbembe",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Jukunoid",
+      "words": {
+        "one": "nzo",
+        "two": "pya",
+        "three": "sra",
+        "four": "nyɛ",
+        "five": "tʃwɔ́",
+        "six": "tʃwɔ́mbazo",
+        "seven": "tʃwɔ́mbapya",
+        "eight": "ɛ́nyɛnyɛ",
+        "nine": "tʃwɔ́mnyɛ",
+        "ten": "dʒé"
+      },
+      "numeralSource": "chan2019"
+    },
+    "tikar": {
+      "name": "Tikar",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Benue-Congo > Bantoid > Southern Bantoid",
+      "words": {
+        "one": "mbɔʔ",
+        "two": "ɓî",
+        "three": "lê",
+        "four": "ɲî",
+        "five": "ʃæ̃̂",
+        "six": "ɸyulu",
+        "seven": "ʃâmɓì",
+        "eight": "nìnì",
+        "nine": "tæ̂nì",
+        "ten": "wûm"
+      },
+      "numeralSource": "chan2019"
+    },
+    "tula": {
+      "name": "Tula",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Adamawa-Ubangi",
+      "words": {
+        "one": "wìːn",
+        "two": "júrau",
+        "three": "jítːà",
+        "four": "jáːnà",
+        "five": "júnù",
+        "six": "júrùkùn",
+        "seven": "jídìbìn",
+        "eight": "nárɨ̀bú",
+        "nine": "túrkùbú",
+        "ten": "kúb"
+      },
+      "numeralSource": "chan2019"
+    },
+    "waja": {
+      "name": "Waja",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > North > Adamawa",
+      "words": {
+        "one": "ɡɛɛn",
+        "two": "rɔɔp",
+        "three": "kunoŋ",
+        "four": "nɩɩ",
+        "five": "nuwo",
+        "six": "nokono",
+        "seven": "nibíyo",
+        "eight": "wunii",
+        "nine": "tɔɔrɔ",
+        "ten": "kwáp"
+      },
+      "numeralSource": "chan2019"
+    },
+    "yandang": {
+      "name": "Yendang",
+      "classification": "Niger-Congo > Atlantic-Congo > Volta-Congo > Adamawa-Ubangi > Leko-Nimbari > Mumuye-Yendang",
+      "words": {
+        "one": "ɓīntī",
+        "two": "ínī",
+        "three": "tâːt",
+        "four": "nâːt",
+        "five": "ɡhìnān",
+        "six": "ɡètīntī",
+        "seven": "ɡéːtìnī",
+        "eight": "ɓɔ̄lánāːt",
+        "nine": "nòkɔ́mtâːt",
+        "ten": "koːb"
+      },
+      "numeralSource": "chan2019"
+    }
+  },
+  "sources": {
+    "chan2019": {
+      "title": "Chan, Eugene (eds.) 2019. Numeral Systems of the World's Languages",
+      "url": "https://mpi-lingweb.shh.mpg.de/numeral",
+      "dataset": "https://github.com/numeralbank/channumerals",
+      "license": "CC-BY-4.0",
+      "note": "Numerals one-ten are given in Chan's phonetic transcription (IPA) so the same notation is used across every language and forms can be compared directly. Where a language previously carried a practical-orthography numeral, that form is kept in its 'orthography' map rather than discarded. Words other than the numerals remain in practical orthography."
     }
   }
 }
