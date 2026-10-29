@@ -2,6 +2,7 @@ import { NavLink, Route, Routes } from 'react-router-dom'
 import Home from './components/tabs/Home'
 import MapExplorer from './components/tabs/MapExplorer'
 import AtlasExplorer from './components/tabs/AtlasExplorer'
+import MapStudio from './components/tabs/MapStudio'
 import CompareLanguages from './components/tabs/CompareLanguages'
 import Blog from './components/tabs/Blog'
 import Admin from './components/tabs/Admin'
@@ -12,6 +13,7 @@ const TABS = [
   { path: '/', label: 'Home', end: true },
   { path: '/atlas', label: 'Africa atlas' },
   { path: '/map', label: 'Nigeria map' },
+  { path: '/studio', label: 'Map Studio' },
   { path: '/compare', label: 'Compare languages' },
   { path: '/blog', label: 'Blog' },
 ]
@@ -71,6 +73,7 @@ function App() {
           <Route path="/atlas" element={<AtlasExplorer />} />
           <Route path="/map" element={<MapExplorer />} />
           <Route path="/map/:stateId" element={<MapExplorer />} />
+          <Route path="/studio" element={<MapStudio />} />
           <Route path="/compare" element={<CompareLanguages />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/blog" element={<Blog />} />

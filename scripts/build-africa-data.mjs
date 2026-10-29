@@ -38,6 +38,13 @@ const SOURCES = {
   'cldr-supplementalMetadata.xml':
     'https://raw.githubusercontent.com/unicode-org/cldr/release-48/common/supplemental/supplementalMetadata.xml',
   'cldr-en.xml': 'https://raw.githubusercontent.com/unicode-org/cldr/release-48/common/main/en.xml',
+  'ne_50m_rivers_lake_centerlines.geojson':
+    'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_50m_rivers_lake_centerlines.geojson',
+  'ne_50m_lakes.geojson':
+    'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_50m_lakes.geojson',
+  // Pew Research Center's 2025 religious composition estimates, as republished by Our World in Data.
+  'owid-religion-shares.csv':
+    'https://ourworldindata.org/grapher/share-of-population-by-religious-affiliation.csv?v=1&csvType=full&useColumnShortNames=true',
 }
 
 // Glottolog pseudo-families that aren't spoken languages or are duplicate
@@ -466,3 +473,130 @@ const nigeriaLinks = JSON.parse(readFileSync(path.join(root, 'src/data/nigeriaGl
 const broken = Object.entries(nigeriaLinks).filter(([, g]) => !included.has(g))
 if (broken.length) console.warn('Nigeria links not in the atlas:', broken.map((b) => b.join('→')).join(', '))
 if (unmappedFamilies.size) console.log('Under "Other languages":', [...unmappedFamilies].sort().join(', '))
+
+// ---------------------------------------------------------------------------
+// Map Studio layers: per-country official languages, writing scripts, religion
+// and labels (public/data/africa/studio.json), plus rivers and lakes
+// (public/data/africa/water.geojson).
+
+const EUROPEAN_LANGUAGES = new Set(['en', 'fr', 'pt', 'es', 'de', 'it'])
+// CLDR lists Yoruba as official in Nigeria but not Hausa or Igbo; the
+// constitution (s. 55) recognises all three alongside English.
+const OFFICIAL_CORRECTIONS = { NG: { ha: 'official_regional', ig: 'official_regional', yo: 'official_regional' } }
+const scriptNames = new Map(
+  [...(await fetchSource('cldr-en.xml')).matchAll(/<script type="([A-Z][a-z]{3})">([^<]+)<\/script>/g)].map((m) => [m[1], m[2]]),
+)
+scriptNames.set('Ethi', "Ge'ez (Ethiopic)")
+
+// Each language's writing systems: the primary entry's first script is how
+// it's usually written; secondary entries are scripts some speakers also use.
+const languageScripts = new Map()
+for (const [, tag] of (await fetchSource('cldr-supplementalData.xml')).matchAll(/<language ([^>]*scripts="[^"]*"[^>]*)\/>/g)) {
+  const { type, scripts, alt } = attrs(tag)
+  const entry = languageScripts.get(type) ?? { primary: [], secondary: [] }
+  entry[alt === 'secondary' ? 'secondary' : 'primary'].push(...scripts.split(' '))
+  languageScripts.set(type, entry)
+}
+
+const religionByIso3 = new Map()
+for (const r of parseCsv(await fetchSource('owid-religion-shares.csv'))) {
+  if (r.year !== '2020' || !r.code) continue
+  const n = (k) => Number(r[`share__religion_${k}`]) || 0
+  religionByIso3.set(r.code, {
+    christian: n('christians'),
+    muslim: n('muslims'),
+    // Folk and traditional religions are most of "other" in Africa.
+    other: n('other_religions') + n('jews') + n('hindus') + n('buddhists'),
+    unaffiliated: n('religiously_unaffiliated'),
+  })
+}
+
+const oneDecimal = (n) => Math.round(n * 10) / 10
+const studioCountries = {}
+for (const [, head, body] of (await fetchSource('cldr-supplementalData.xml')).matchAll(
+  /<territory ([^>]*)>([\s\S]*?)<\/territory>/g,
+)) {
+  const { type: code, population, literacyPercent } = attrs(head)
+  if (!(code in countries)) continue
+  const entries = [...body.matchAll(/<languagePopulation ([^>]*)\/>/g)].map(([, tag]) => attrs(tag))
+
+  const official = entries
+    .filter((l) => (l.officialStatus || OFFICIAL_CORRECTIONS[code]?.[l.type]) && !l.type.includes('_'))
+    .map((l) => ({
+      name: cldrNames.get(l.type) ?? atlasNames.get(glottocodeForCldr(l.type)) ?? l.type,
+      status: { official: 'official', de_facto_official: 'de facto', official_regional: 'regional' }[
+        OFFICIAL_CORRECTIONS[code]?.[l.type] ?? l.officialStatus
+      ],
+      kind: l.type === 'ar' ? 'arabic' : EUROPEAN_LANGUAGES.has(l.type) ? 'european' : 'african',
+    }))
+  // Regionally official African languages count: South Africa's eleven are
+  // provincial in CLDR but every bit as official in practice.
+  const has = (kind) => official.some((o) => o.kind === kind && (o.status !== 'regional' || kind === 'african'))
+  const officialType = [has('arabic') && 'Arabic', has('european') && 'European', has('african') && 'African']
+    .filter(Boolean)
+    .join(' + ') || null
+
+  // Main script: weight each language's usual script by its share of speakers.
+  const weights = new Map()
+  const notable = new Set()
+  // Languages of government alone (English in Ethiopia) don't decide how a
+  // country writes, so the same African-and-heritage filter as the speaker list applies.
+  const counted = entries.filter((l) => isAfricanCldr(l.type.split('_')[0]) || HERITAGE_LANGUAGES[code]?.includes(l.type))
+  for (const l of counted.length ? counted : entries) {
+    const pct = Number(l.populationPercent) || 0
+    const [lang, variant] = l.type.split('_')
+    const scripts = languageScripts.get(lang)
+    if (variant) notable.add(variant)
+    else if (scripts?.primary[0]) weights.set(scripts.primary[0], (weights.get(scripts.primary[0]) ?? 0) + pct)
+    for (const sc of scripts?.primary ?? []) if (pct >= 0.5 || variant) notable.add(sc)
+  }
+  const ranked = [...weights].sort((a, b) => b[1] - a[1])
+  const [first, second] = ranked
+  // A close second makes it a two-script country (Ethiopia: Latin for Oromo, Ge'ez for Amharic).
+  const ORDER = ['Latn', 'Arab', 'Ethi']
+  let mainScript = first?.[0] ?? null
+  if (first && second && second[1] >= first[1] * 0.4) {
+    mainScript = [first[0], second[0]].sort((a, b) => ORDER.indexOf(a) - ORDER.indexOf(b)).join('+')
+  }
+
+  const shape = countryShapes.find((f) => f.properties.ISO_A2_EH === code)
+  const religion = shape && religionByIso3.get(shape.properties.ISO_A3_EH)
+  studioCountries[code] = {
+    ...(shape && { label: [round(shape.properties.LABEL_X), round(shape.properties.LABEL_Y)] }),
+    pop: Number(population),
+    ...(literacyPercent && { literacy: Number(literacyPercent) }),
+    official,
+    officialType,
+    mainScript,
+    // Scripts beyond Latin and Arabic: Ge'ez, Tifinagh, N'Ko, Vai, Adlam, Bamum…
+    otherScripts: [...notable].filter((sc) => sc !== 'Latn' && sc !== 'Arab' && scriptNames.has(sc)).map((sc) => scriptNames.get(sc)),
+    ...(religion && { religion: Object.fromEntries(Object.entries(religion).map(([k, v]) => [k, oneDecimal(v)])) }),
+  }
+}
+writeFileSync(
+  path.join(outDir, 'studio.json'),
+  JSON.stringify({
+    scriptNames: Object.fromEntries(['Latn', 'Arab', 'Ethi'].map((sc) => [sc, scriptNames.get(sc)])),
+    countries: studioCountries,
+  }),
+)
+
+// Rivers and lakes inside Africa's box, for the water overlay.
+const inAfricaBox = ([lon, lat]) => lon > -26 && lon < 64 && lat > -47 && lat < 38
+const waterFeatures = []
+for (const [file, kind] of [['ne_50m_rivers_lake_centerlines.geojson', 'river'], ['ne_50m_lakes.geojson', 'lake']]) {
+  for (const f of JSON.parse(await fetchSource(file)).features) {
+    if (!f.geometry) continue
+    const flat = JSON.stringify(f.geometry.coordinates).match(/-?\d+(\.\d+)?,-?\d+(\.\d+)?/)
+    const firstPoint = flat?.[0].split(',').map(Number)
+    if (!firstPoint || !inAfricaBox(firstPoint)) continue
+    const roundCoords = (c) => (typeof c[0] === 'number' ? [round(c[0]), round(c[1])] : c.map(roundCoords))
+    waterFeatures.push({
+      type: 'Feature',
+      properties: { kind, rank: f.properties.scalerank ?? 5 },
+      geometry: { type: f.geometry.type, coordinates: roundCoords(f.geometry.coordinates) },
+    })
+  }
+}
+writeFileSync(path.join(outDir, 'water.geojson'), JSON.stringify({ type: 'FeatureCollection', features: waterFeatures }))
+

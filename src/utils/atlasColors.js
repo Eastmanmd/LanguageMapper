@@ -17,3 +17,21 @@ export const SIMILARITY = {
   light: ['#104281', '#256abf', '#5598e7', '#86b6ef'],
   dark: ['#b7d3f6', '#6da7ec', '#2a78d6', '#184f95'],
 }
+
+// Five-step ramps for Map Studio's graded layers (density, endangerment,
+// languages per country), lightest = least. Both validated as ordinal ramps.
+export const SEQUENTIAL_BLUE = {
+  light: ['#86b6ef', '#5598e7', '#2a78d6', '#1c5cab', '#104281'],
+  dark: ['#184f95', '#2a78d6', '#5598e7', '#86b6ef', '#b7d3f6'],
+}
+export const SEQUENTIAL_ORANGE = {
+  light: ['#f09d77', '#e97b4a', '#d65c29', '#a6451c', '#723012'],
+  dark: ['#9a3d17', '#c9531f', '#ec7a47', '#f4a582', '#f9cbb5'],
+}
+
+// Two arms and a grey midpoint, for a balance between two shares. The arms
+// reuse the blue and orange ramps so they match the categorical slots 1 and 2.
+export const DIVERGING = {
+  light: ['#1c5cab', '#86b6ef', '#f0efec', '#f09d77', '#a6451c'],
+  dark: ['#86b6ef', '#256abf', '#383835', '#c9531f', '#f4a582'],
+}

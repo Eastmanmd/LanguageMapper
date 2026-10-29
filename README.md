@@ -16,6 +16,17 @@ One dot per language across the continent, built from [Glottolog](https://glotto
 - **Language panel:** where it's spoken, endangerment status, its full family tree, closest relatives, and a word-by-word comparison with any relative. Languages with a Nigeria profile also show its description and link to the state map and the compare tool.
 - State lives in the URL (`/atlas?country=NG&lang=yoru1245&color=similar&vs=igal1242`), so every view can be shared.
 
+### Map Studio (`/studio`)
+
+Make and share maps of Africa. Pick what to colour the map by, add overlays, style it, and download a PNG or copy a link.
+
+- **Layers:** language families (dots), approximate family areas, language density and endangerment (hexagons); languages per country, official languages, main writing script, largest religion, and the Christian–Muslim balance (countries).
+- **Overlays and bases:** language dots, rivers and lakes, borders, country names; light, dark, terrain (hillshade) and streets bases.
+- **Filters:** any language family (down to e.g. Narrow Bantu), endangered languages only, and a country (outlined, and language layers narrowed to it).
+- **Stories:** seven presets (families, mountains as refuges, the Bantu expansion, writing systems, official vs spoken, religion, languages at risk) to start from.
+- **Export:** 1920×1080, 1600×1600 or 1600×2000 PNGs with the title, legend and source credits drawn in. The whole map is in the URL, so links rebuild it exactly.
+- Country-level layers (religion, official languages, scripts) hide variation inside countries; the legends say so.
+
 ### Interactive map (`/map`)
 
 A zoomable MapLibre map of Nigeria's states, rendered on OpenFreeMap tiles.
@@ -152,6 +163,8 @@ All app data lives in these JSON files plus one GeoJSON:
 | `public/data/africa/languages.json` | Generated. Atlas languages (glottocode, name, coordinates, countries, endangerment) and the family tree nodes |
 | `public/data/africa/words.json` | Generated. ASJP 40-concept word lists per glottocode: ASJPcode for scoring, IPA for display |
 | `public/data/africa/borders.geojson` | Generated. Simplified Natural Earth outlines of African countries, for the selected-country border |
+| `public/data/africa/studio.json` | Generated. Per-country official languages (with status), main and other writing scripts, religion shares and label points, for Map Studio |
+| `public/data/africa/water.geojson` | Generated. Natural Earth rivers and lakes in Africa |
 | `src/data/africaStats.json` | Generated. Headline numbers for the home page |
 | `src/data/nigeriaGlottocodes.json` | Nigeria profile id → glottocode, linking the profiles to atlas languages (dialect profiles point to their language) |
 | `src/data/languages.json` | Language profiles keyed by id: name, classification, ethnic groups, similar-language ids, description |
@@ -173,7 +186,7 @@ Language ids are lowercase-kebab-case and must match across all three files. To 
 npm run build-africa-data
 ```
 
-This downloads pinned releases of Glottolog (5.2.1), ASJP (v21), Natural Earth (5.1.2) and Unicode CLDR (48) into `data-raw/` (gitignored) and regenerates `public/data/africa/`. To move to a newer release, bump the tags in `scripts/build-africa-data.mjs` and delete `data-raw/`. The script warns if any Nigeria link no longer matches an atlas language.
+This downloads pinned releases of Glottolog (5.2.1), ASJP (v21), Natural Earth (5.1.2) and Unicode CLDR (48), plus Pew Research Center's 2025 religious composition estimates (via Our World in Data), into `data-raw/` (gitignored) and regenerates `public/data/africa/`. To move to a newer release, bump the tags in `scripts/build-africa-data.mjs` and delete `data-raw/`. The script warns if any Nigeria link no longer matches an atlas language.
 
 ## Crawler (experimental)
 

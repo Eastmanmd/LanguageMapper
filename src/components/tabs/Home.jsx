@@ -5,7 +5,7 @@ import CountUp from '../CountUp'
 import LanguageSearch from '../LanguageSearch'
 import { NigeriaFlagIcon } from '../icons'
 import stats from '../../data/africaStats.json'
-import { buildTree } from '../../utils/atlasTree'
+import { loadAtlas, loadBorders } from '../../utils/loadAtlas'
 import { CATEGORICAL } from '../../utils/atlasColors'
 import { countryName } from '../../utils/countries'
 import { useTheme } from '../../context/ThemeContext'
@@ -55,15 +55,6 @@ const ENDANGERMENT_LABELS = [
   'Extinct',
 ]
 
-// The browser caches this file, so the atlas page opens without fetching it again.
-let atlasPromise = null
-function loadAtlas() {
-  atlasPromise ??= fetch(`${import.meta.env.BASE_URL}data/africa/languages.json`)
-    .then((res) => res.json())
-    .then((data) => ({ ...data, tree: buildTree(data) }))
-  return atlasPromise
-}
-
 export default function Home() {
   const navigate = useNavigate()
   const { dark } = useTheme()
@@ -77,10 +68,7 @@ export default function Home() {
 
   useEffect(() => {
     loadAtlas().then(setAtlas).catch(() => {})
-    fetch(`${import.meta.env.BASE_URL}data/africa/borders.geojson`)
-      .then((res) => res.json())
-      .then(setBorders)
-      .catch(() => {})
+    loadBorders().then(setBorders).catch(() => {})
   }, [])
 
   const languageOptions = useMemo(
