@@ -5,6 +5,9 @@
 //   ASJP (lexibank/asjp) — a 40-item basic vocabulary list for most languages,
 //     used to measure how similar two languages' words are.
 //
+// plus Natural Earth country outlines (public domain), reduced to one bounding
+// box per country for the atlas's zoom-to-country.
+//
 //   npm run build-africa-data
 //
 // Downloads are cached in data-raw/ (gitignored); delete it to refresh. Writes
@@ -27,6 +30,8 @@ const SOURCES = {
   'asjp-languages.csv': 'https://raw.githubusercontent.com/lexibank/asjp/v21/cldf/languages.csv',
   'asjp-parameters.csv': 'https://raw.githubusercontent.com/lexibank/asjp/v21/cldf/parameters.csv',
   'asjp-forms.csv': 'https://raw.githubusercontent.com/lexibank/asjp/v21/cldf/forms.csv',
+  'ne_50m_admin_0_countries.geojson':
+    'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_50m_admin_0_countries.geojson',
 }
 
 // Glottolog pseudo-families that aren't spoken languages or are duplicate
@@ -143,10 +148,25 @@ for (const [groupId, group] of Object.entries(TRADITIONAL_GROUPS)) {
 const nodes = {}
 for (const [id, group] of Object.entries(TRADITIONAL_GROUPS)) nodes[id] = { n: group.name }
 
+// Natural Earth puts a few non-African territories in its Africa region
+// (Australia's Indian Ocean Territories, French Antarctic lands); drop them.
+const NON_AFRICAN_TERRITORIES = new Set(['AU', 'IO', 'TF', 'HM'])
+const countryShapes = JSON.parse(await fetchSource('ne_50m_admin_0_countries.geojson')).features.filter(
+  (f) => f.properties.REGION_UN === 'Africa' && !NON_AFRICAN_TERRITORIES.has(f.properties.ISO_A2_EH),
+)
+// Réunion and Mayotte are African but sit inside France in Natural Earth.
+const africanCountries = new Set([...countryShapes.map((f) => f.properties.ISO_A2_EH), 'RE', 'YT'])
+
+// Glottolog 5.2.1 leaves the macroarea blank for some isolates (Sandawe,
+// Hadza, Bangime…), so an untagged language counts if it's spoken in Africa.
+const isAfrican = (r) =>
+  r.Macroarea === 'Africa' ||
+  (!r.Macroarea && r.Countries.split(';').some((c) => africanCountries.has(c)))
+
 const languages = []
 const unmappedFamilies = new Set()
 for (const r of glottolog) {
-  if (r.Macroarea !== 'Africa' || r.Level !== 'language' || !r.Latitude) continue
+  if (!isAfrican(r) || r.Level !== 'language' || !r.Latitude) continue
   const lineage = classification.get(r.ID) ?? []
   const familyId = lineage[0] ?? r.ID
   const familyName = byId.get(familyId).Name
@@ -212,13 +232,44 @@ for (const [doculect, entry] of doculectWords) {
 }
 for (const lang of languages) if (words[lang.g]) lang.w = 1
 
+// Zoom box per African country that has languages. Far-flung specks (South
+// Africa's Prince Edward Islands, Equatorial Guinea's Annobón) would stretch a
+// box across open ocean, so only polygons ≥ 5% the area of the largest count.
+// Countries Natural Earth folds into another (Réunion, Mayotte) get no box; the
+// page falls back to framing their languages' dots.
+const polygonArea = (ring) =>
+  Math.abs(ring.reduce((sum, [x1, y1], i) => {
+    const [x2, y2] = ring[(i + 1) % ring.length]
+    return sum + x1 * y2 - x2 * y1
+  }, 0)) / 2
+
+const usedCountries = new Set(languages.flatMap((l) => l.c))
+const countries = {}
+for (const f of countryShapes) {
+  const code = f.properties.ISO_A2_EH
+  if (!usedCountries.has(code)) continue
+  const polygons = f.geometry.type === 'Polygon' ? [f.geometry.coordinates] : f.geometry.coordinates
+  const largest = Math.max(...polygons.map((p) => polygonArea(p[0])))
+  const points = polygons.filter((p) => polygonArea(p[0]) >= largest * 0.05).flatMap((p) => p[0])
+  const lons = points.map((p) => p[0])
+  const lats = points.map((p) => p[1])
+  countries[code] = [
+    [round(Math.min(...lons)), round(Math.min(...lats))],
+    [round(Math.max(...lons)), round(Math.max(...lats))],
+  ]
+}
+// No outline for Réunion and Mayotte; the page frames their dots instead.
+for (const code of ['RE', 'YT']) if (usedCountries.has(code)) countries[code] ??= null
+
 writeFileSync(
   path.join(outDir, 'languages.json'),
   JSON.stringify({
     sources: [
       'Hammarström, Forkel, Haspelmath & Bank. 2025. Glottolog 5.2.1. https://glottolog.org (CC BY 4.0)',
       'Wichmann, Holman, Brown, Dryer & Ran (eds.). 2025. The ASJP Database, version 21. https://asjp.clld.org (CC BY 4.0)',
+      'Natural Earth 5.1.2 country boundaries. https://www.naturalearthdata.com (public domain)',
     ],
+    countries,
     nodes,
     languages,
   }),
@@ -232,6 +283,31 @@ writeFileSync(
     ),
   }),
 )
+
+// Headline numbers for the landing page, bundled with the app so it needn't
+// fetch the full atlas. Glottolog's catch-all groupings aren't families.
+const NOT_FAMILIES = new Set(['Pidgin', 'Unclassifiable', 'Unattested'])
+const families = Object.entries(nodes).filter(([, n]) => n.p?.startsWith('x-') && !NOT_FAMILIES.has(n.n))
+const languagesIn = (id) => languages.filter((l) => {
+  for (let cur = l.p; cur; cur = nodes[cur]?.p) if (cur === id) return true
+  return false
+}).length
+const largest = families.map(([id, n]) => ({ name: n.n, count: languagesIn(id) })).sort((a, b) => b.count - a.count)[0]
+const perCountry = {}
+for (const l of languages) for (const c of l.c) perCountry[c] = (perCountry[c] ?? 0) + 1
+const [topCountry, topCountryCount] = Object.entries(perCountry).sort((a, b) => b[1] - a[1])[0]
+const stats = {
+  languages: languages.length,
+  families: families.length,
+  isolates: languages.filter((l) => l.p.startsWith('x-')).length,
+  countries: Object.keys(countries).length,
+  wordLists: Object.keys(words).length,
+  endangered: languages.filter((l) => l.e >= 1 && l.e <= 4).length,
+  extinct: languages.filter((l) => l.e === 5).length,
+  largestFamily: largest,
+  topCountry: { code: topCountry, count: topCountryCount },
+}
+writeFileSync(path.join(root, 'src/data/africaStats.json'), `${JSON.stringify(stats, null, 2)}\n`)
 
 console.log(`${languages.length} languages, ${Object.keys(nodes).length} groups, ${Object.keys(words).length} word lists`)
 

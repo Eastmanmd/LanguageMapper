@@ -1,9 +1,9 @@
 const MESSAGES = [
   { from: 'me', text: 'Hello 👋' },
-  { from: 'them', text: 'Sannu', lang: 'Hausa' },
-  { from: 'them', text: 'Ẹ n lẹ', lang: 'Yoruba' },
-  { from: 'them', text: 'Ndewo', lang: 'Igbo' },
-  { from: 'them', text: 'How far?', lang: 'Nigerian Pidgin' },
+  { from: 'them', text: 'Habari', lang: 'Swahili · East Africa' },
+  { from: 'them', text: 'ሰላም (Selam)', lang: 'Amharic · Ethiopia' },
+  { from: 'them', text: 'Ẹ n lẹ', lang: 'Yoruba · West Africa' },
+  { from: 'them', text: 'Sawubona', lang: 'Zulu · Southern Africa' },
 ]
 
 export default function ChatShowcase() {

@@ -1,6 +1,6 @@
 # LanguageMapper
 
-A map of Africa's languages and how they relate: 2,223 languages placed where they are spoken, coloured by family, with basic-word comparisons for 1,752 of them. Nigeria is covered in depth, with all 37 states (including the FCT) and 239 hand-written language profiles.
+A map of Africa's languages and how they relate: 2,233 languages placed where they are spoken, coloured by family, with basic-word comparisons for 1,759 of them. Nigeria is covered in depth, with all 37 states (including the FCT) and 239 hand-written language profiles.
 
 **Live features:** Africa atlas · family drill-down · similarity map · interactive state map · language profiles · side-by-side word comparison · lexical similarity tree · dark mode
 
@@ -12,8 +12,9 @@ One dot per language across the continent, built from [Glottolog](https://glotto
 
 - **Families:** dots are coloured by family. Click a family in the legend to zoom in and colour its branches, down to the smallest subgroup. The top level uses the four traditional groupings (Niger-Congo, Afro-Asiatic, Nilo-Saharan, Khoisan). Everything below follows Glottolog.
 - **Similarity:** pick a language, then switch the legend to *Similarity*. Every other language is coloured by how much its 40 basic words resemble the selected one's, from "very close" to "no clear similarity". The score is LDND (normalized Levenshtein distance divided by the chance baseline), computed in the browser.
+- **Country filter:** pick a country to zoom to it and fade out languages spoken elsewhere. Legend counts follow the country, and family colours stay the same as Africa-wide. Each language is one dot at the centre of its whole area, so cross-border languages can sit just outside the country.
 - **Language panel:** where it's spoken, endangerment status, its full family tree, closest relatives, and a word-by-word comparison with any relative. Languages with a Nigeria profile also show its description and link to the state map and the compare tool.
-- State lives in the URL (`/atlas?lang=yoru1245&color=similar&vs=igal1242`), so every view can be shared.
+- State lives in the URL (`/atlas?country=NG&lang=yoru1245&color=similar&vs=igal1242`), so every view can be shared.
 
 ### Interactive map (`/map`)
 
@@ -44,15 +45,9 @@ Pick two or more languages and compare them side by side:
 
 The tree is a simple lexical-similarity illustration, not a rigorous historical-linguistic classification.
 
-### Contribute (`/contribute`)
+### Flag a word
 
-Community submissions, all reviewed by the admin before going live:
-
-- **Flag a word** — hover any cell in the comparison table and click the flag to suggest a correction (or propose a value for an empty cell).
-- **Fill in a word list** — pick any of the 239 languages and fill in its missing words from the master list; only new or changed entries are submitted.
-- **Add a new language** — name, classification, ethnic groups, states where spoken, description, and optionally its word list.
-
-Every form takes an optional contributor name, email, and source citation. Submissions are validated client- and server-side, rate-limited per IP, and identical pending suggestions are merged with a counter.
+Hover any cell in the comparison table and click the flag to suggest a correction (or propose a value for an empty cell). The form takes an optional contributor name, email, and source citation. Submissions are validated client- and server-side, rate-limited per IP, identical pending suggestions are merged with a counter, and nothing goes live until the admin approves it.
 
 ### Admin review (`/admin`)
 
@@ -93,7 +88,7 @@ development too, so path bugs surface locally instead of in production.
 
 ### Supabase setup (for community submissions)
 
-Without this, the app runs fine but the contribution forms and `/admin` show a "not configured" notice.
+Without this, the app runs fine but the flag-a-word form and `/admin` show a "not configured" notice.
 
 1. Create a free project at [supabase.com](https://supabase.com/).
 2. In the SQL editor, run [`supabase/schema.sql`](supabase/schema.sql) — first replace the `ADMIN_EMAIL` placeholder comments' address with your admin email if it differs.
@@ -208,7 +203,6 @@ src/
       MapExplorer.jsx         # map + search + info panel layout
       CompareLanguages.jsx    # word table + similarity tree
       PhylogeneticTree.jsx    # SVG dendrogram renderer
-      Contribute.jsx          # fill-words and new-language submission forms
       Admin.jsx               # magic-link login + submission review queue
       Blog.jsx                # placeholder
   context/ThemeContext.jsx    # dark mode state, persisted

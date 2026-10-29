@@ -4,8 +4,7 @@ import nigeriaLanguages from '../data/languages.json'
 import nigeriaGlottocodes from '../data/nigeriaGlottocodes.json'
 import wordComparison from '../data/wordComparison.json'
 import { lookAlikeWords, similarityBand } from '../utils/similarity'
-
-const regionNames = new Intl.DisplayNames(['en'], { type: 'region' })
+import { countryName } from '../utils/countries'
 
 // Glottolog's agglomerated endangerment scale, in plain words.
 const ENDANGERMENT = [
@@ -40,16 +39,27 @@ function SectionTitle({ children }) {
   )
 }
 
-function Intro({ atlas }) {
-  const withWords = atlas ? atlas.languages.filter((l) => l.w).length : null
+function Intro({ atlas, country }) {
+  const shown = atlas ? atlas.languages.filter((l) => !country || l.c.includes(country)) : []
+  const withWords = shown.filter((l) => l.w).length
   return (
     <div className="space-y-5 p-5 text-sm text-gray-700 dark:text-gray-300">
       <div>
-        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Languages of Africa</h2>
-        <p className="mt-1 leading-relaxed">
-          Every dot is a language, placed where it is spoken. Africa is home to around a third of the
-          world's languages.
-        </p>
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+          Languages of {country ? countryName(country) : 'Africa'}
+        </h2>
+        {country ? (
+          <p className="mt-1 leading-relaxed">
+            Every highlighted dot is a language spoken in {countryName(country)}. Each language has one
+            dot, at the centre of the whole area where it's spoken, so a language that crosses a border
+            can sit just outside it.
+          </p>
+        ) : (
+          <p className="mt-1 leading-relaxed">
+            Every dot is a language, placed where it is spoken. Africa is home to around a third of the
+            world's languages.
+          </p>
+        )}
       </div>
 
       {atlas && (
@@ -57,7 +67,7 @@ function Intro({ atlas }) {
           <div className="rounded-lg border border-gray-200 p-3 dark:border-white/10">
             <dt className="text-xs text-gray-500 dark:text-gray-400">Languages mapped</dt>
             <dd className="text-xl font-semibold tabular-nums text-gray-900 dark:text-white">
-              {atlas.languages.length.toLocaleString()}
+              {shown.length.toLocaleString()}
             </dd>
           </div>
           <div className="rounded-lg border border-gray-200 p-3 dark:border-white/10">
@@ -73,6 +83,7 @@ function Intro({ atlas }) {
         <SectionTitle>How to explore</SectionTitle>
         <ol className="list-decimal space-y-1.5 pl-4 leading-relaxed">
           <li>The colours show language families. Click a family in the legend to see its branches.</li>
+          <li>Pick a country next to the search box to zoom in and fade out languages spoken elsewhere.</li>
           <li>Click a dot, or search, to open a language.</li>
           <li>
             Switch the legend to <strong>Similarity</strong> to colour every language by how much its basic
@@ -140,6 +151,7 @@ function WordComparison({ concepts, a, b, nameA, nameB, alike }) {
 
 export default function AtlasPanel({
   atlas,
+  country,
   selected,
   words,
   prepared,
@@ -162,7 +174,7 @@ export default function AtlasPanel({
       .map(([g, score]) => ({ lang: tree.byId.get(g), score }))
   }, [scores, tree])
 
-  if (!selected) return <Intro atlas={atlas} />
+  if (!selected) return <Intro atlas={atlas} country={country} />
 
   const lineage = tree.displayLineage(selected)
   // The profile named like the language leads; dialect profiles follow.
@@ -182,7 +194,7 @@ export default function AtlasPanel({
         <h2 className="text-xl font-semibold text-gray-900 dark:text-white">{selected.n}</h2>
         {selected.c.length > 0 && (
           <p className="mt-1 text-gray-500 dark:text-gray-400">
-            Spoken in {selected.c.map((c) => regionNames.of(c)).join(', ')}
+            Spoken in {selected.c.map(countryName).join(', ')}
           </p>
         )}
         {endangerment && (

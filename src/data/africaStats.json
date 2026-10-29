@@ -1,0 +1,17 @@
+{
+  "languages": 2233,
+  "families": 38,
+  "isolates": 15,
+  "countries": 57,
+  "wordLists": 1759,
+  "endangered": 846,
+  "extinct": 102,
+  "largestFamily": {
+    "name": "Atlantic-Congo",
+    "count": 1408
+  },
+  "topCountry": {
+    "code": "NG",
+    "count": 561
+  }
+}

@@ -13,10 +13,6 @@ const VIEWS = {
     [-19, -35.5],
     [52, 37.5],
   ],
-  nigeria: [
-    [2.6, 4.2],
-    [14.7, 13.9],
-  ],
 }
 
 // Feature properties set by the page: `color`, `emph` (0 faded, 1 normal,

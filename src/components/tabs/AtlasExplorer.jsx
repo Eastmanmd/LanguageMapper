@@ -7,6 +7,7 @@ import LanguageSearch from '../LanguageSearch'
 import { buildTree } from '../../utils/atlasTree'
 import { lexicalSimilarity, prepareWordList, SIMILARITY_BANDS } from '../../utils/similarity'
 import { CATEGORICAL, FADED, OTHER, SIMILARITY } from '../../utils/atlasColors'
+import { boundsOf, countryName } from '../../utils/countries'
 import { useTheme } from '../../context/ThemeContext'
 
 const DATA_URL = `${import.meta.env.BASE_URL}data/africa/`
@@ -31,24 +32,30 @@ export default function AtlasExplorer() {
   const focus = searchParams.get('focus')
   const compareId = searchParams.get('vs')
   const colorBy = searchParams.get('color') === 'similar' ? 'similar' : 'family'
+  const countryParam = searchParams.get('country')
+  const country = atlas && countryParam in atlas.countries ? countryParam : null
+  const inCountry = (lang) => !country || lang.c.includes(country)
 
-  // Drilling into a group also frames its languages on the map.
+  // Natural Earth's box where there is one; Réunion and Mayotte frame their dots.
+  const countryBounds = (code) =>
+    atlas.countries[code] ?? boundsOf(atlas.languages.filter((l) => l.c.includes(code)))
+
+  const selectCountry = (code) => {
+    updateParams({ country: code })
+    setView(code ? { bounds: countryBounds(code) } : { name: 'africa' })
+  }
+
+  // Drilling into a group also frames its languages on the map (within the
+  // chosen country, when it has any there).
   const focusGroup = (id) => {
     updateParams({ focus: id, color: null })
     if (!id) {
-      setView({ name: 'africa' })
+      setView(country ? { bounds: countryBounds(country) } : { name: 'africa' })
       return
     }
     const members = atlas.languages.filter((l) => tree.lineage(l.p).includes(id))
-    if (!members.length) return
-    const lons = members.map((l) => l.lon)
-    const lats = members.map((l) => l.lat)
-    setView({
-      bounds: [
-        [Math.min(...lons), Math.min(...lats)],
-        [Math.max(...lons), Math.max(...lats)],
-      ],
-    })
+    const local = members.filter(inCountry)
+    if (members.length) setView({ bounds: boundsOf(local.length ? local : members) })
   }
 
   const updateParams = (changes) => {
@@ -66,6 +73,12 @@ export default function AtlasExplorer() {
       .then((data) => setAtlas({ ...data, tree: buildTree(data) }))
       .catch(() => setLoadError(true))
   }, [])
+
+  // A shared ?country= link opens framed on that country.
+  useEffect(() => {
+    if (country) setView({ bounds: countryBounds(country) })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [atlas])
 
   // The word lists are ~1 MB, so they load once someone picks a language.
   useEffect(() => {
@@ -91,13 +104,25 @@ export default function AtlasExplorer() {
     return out
   }, [selected, prepared])
 
+  // Colour slots come from the Africa-wide ranking so a family keeps its colour
+  // when the country changes; counts (and which groups are listed) follow the country.
   const branches = useMemo(() => {
     if (!tree) return []
-    return tree.branches(focus && tree.isGroup(focus) ? focus : null).map((branch, i) => ({
+    const all = tree.branches(focus && tree.isGroup(focus) ? focus : null).map((branch, i) => ({
       ...branch,
       slot: i < MAX_COLORED_BRANCHES ? i : null,
     }))
-  }, [tree, focus])
+    if (!country) return all
+    const counts = new Map()
+    for (const lang of atlas.languages) {
+      if (!lang.c.includes(country)) continue
+      for (const id of [...tree.lineage(lang.p), lang.g]) counts.set(id, (counts.get(id) ?? 0) + 1)
+    }
+    return all
+      .map((branch) => ({ ...branch, count: counts.get(branch.id) ?? 0 }))
+      .filter((branch) => branch.count > 0)
+      .sort((a, b) => b.count - a.count)
+  }, [atlas, tree, focus, country])
 
   const showSimilarity = colorBy === 'similar' && scores
   const mapData = useMemo(() => {
@@ -108,7 +133,11 @@ export default function AtlasExplorer() {
       let color
       let label
       let emph = 1
-      if (showSimilarity) {
+      if (!inCountry(lang)) {
+        color = FADED[theme]
+        label = `Not listed for ${countryName(country)}`
+        emph = 0
+      } else if (showSimilarity) {
         const score = lang.g === selected.g ? 1 : scores.get(lang.g)
         if (score == null) {
           color = FADED[theme]
@@ -139,7 +168,8 @@ export default function AtlasExplorer() {
       }
     })
     return { type: 'FeatureCollection', features }
-  }, [atlas, tree, branches, showSimilarity, scores, selected, selectedId, theme])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [atlas, tree, branches, showSimilarity, scores, selected, selectedId, theme, country])
 
   const languageOptions = useMemo(
     () =>
@@ -148,6 +178,16 @@ export default function AtlasExplorer() {
         .sort((a, b) => a.name.localeCompare(b.name)),
     [atlas],
   )
+
+  const countryOptions = useMemo(() => {
+    if (!atlas) return []
+    return Object.keys(atlas.countries)
+      .map((code) => {
+        const count = atlas.languages.filter((l) => l.c.includes(code)).length
+        return { id: code, name: countryName(code), detail: `${count} language${count === 1 ? '' : 's'}` }
+      })
+      .sort((a, b) => a.name.localeCompare(b.name))
+  }, [atlas])
 
   if (loadError) {
     return (
@@ -171,16 +211,17 @@ export default function AtlasExplorer() {
               onClear={() => updateParams({ lang: null, vs: null, color: null })}
             />
           </div>
-          <div className="pointer-events-auto flex rounded-lg border border-gray-200 bg-white/95 p-0.5 text-xs font-medium shadow-sm backdrop-blur dark:border-white/15 dark:bg-black/80">
-            {['africa', 'nigeria'].map((name) => (
-              <button
-                key={name}
-                onClick={() => setView({ name })}
-                className="rounded-md px-2.5 py-1.5 capitalize text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10"
-              >
-                {name}
-              </button>
-            ))}
+          <div className="pointer-events-auto w-full max-w-[13rem]">
+            <LanguageSearch
+              key={atlas ? 'ready' : 'loading'}
+              languageOptions={countryOptions}
+              selectedLanguage={country}
+              onSelect={selectCountry}
+              onClear={() => selectCountry(null)}
+              placeholder="All countries"
+              browsable
+              clearLabel="Show all countries"
+            />
           </div>
         </div>
 
@@ -210,6 +251,7 @@ export default function AtlasExplorer() {
       <aside className="w-full shrink-0 overflow-y-auto border-t border-gray-200 bg-white md:w-[380px] md:border-t-0 md:border-l dark:border-white/10 dark:bg-[#0a0a0a]">
         <AtlasPanel
           atlas={atlas}
+          country={country}
           selected={selected}
           words={words}
           prepared={prepared}
