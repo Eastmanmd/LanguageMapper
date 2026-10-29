@@ -5,6 +5,13 @@ import nigeriaGlottocodes from '../data/nigeriaGlottocodes.json'
 import wordComparison from '../data/wordComparison.json'
 import { lookAlikeWords, similarityBand } from '../utils/similarity'
 import { countryName } from '../utils/countries'
+import { CATEGORICAL, OTHER } from '../utils/atlasColors'
+
+const compact = new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 })
+const FAMILIES_SHOWN = 8
+// When the listed shares add up to less than this, CLDR is clearly missing
+// big languages for the country (Cameroon has no entry for Cameroon Pidgin).
+const THIN_COVERAGE_PERCENT = 50
 
 // Glottolog's agglomerated endangerment scale, in plain words.
 const ENDANGERMENT = [
@@ -39,27 +46,17 @@ function SectionTitle({ children }) {
   )
 }
 
-function Intro({ atlas, country }) {
-  const shown = atlas ? atlas.languages.filter((l) => !country || l.c.includes(country)) : []
+function Intro({ atlas }) {
+  const shown = atlas?.languages ?? []
   const withWords = shown.filter((l) => l.w).length
   return (
     <div className="space-y-5 p-5 text-sm text-gray-700 dark:text-gray-300">
       <div>
-        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
-          Languages of {country ? countryName(country) : 'Africa'}
-        </h2>
-        {country ? (
-          <p className="mt-1 leading-relaxed">
-            Every highlighted dot is a language spoken in {countryName(country)}. Each language has one
-            dot, at the centre of the whole area where it's spoken, so a language that crosses a border
-            can sit just outside it.
-          </p>
-        ) : (
-          <p className="mt-1 leading-relaxed">
-            Every dot is a language, placed where it is spoken. Africa is home to around a third of the
-            world's languages.
-          </p>
-        )}
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Languages of Africa</h2>
+        <p className="mt-1 leading-relaxed">
+          Every dot is a language, placed where it is spoken. Africa is home to around a third of the
+          world's languages.
+        </p>
       </div>
 
       {atlas && (
@@ -99,6 +96,191 @@ function Intro({ atlas, country }) {
           and Khoisan. Linguists agree Afro-Asiatic is one family. The other three are older proposals
           that bring together families whose relationship hasn't been proven. Below the top level,
           every grouping follows Glottolog.
+        </p>
+      </div>
+
+      <Sources atlas={atlas} />
+    </div>
+  )
+}
+
+function Bar({ share, color }) {
+  return (
+    <span className="mt-1 block h-1.5 rounded-full bg-gray-100 dark:bg-white/10">
+      <span
+        className="block h-1.5 rounded-full"
+        style={{ width: `${Math.max(share * 100, 1)}%`, backgroundColor: color }}
+      />
+    </span>
+  )
+}
+
+function CountryOverview({ atlas, country, theme, onSelect }) {
+  const tree = atlas.tree
+  const name = countryName(country)
+  const shown = atlas.languages.filter((l) => l.c.includes(country))
+  const withWords = shown.filter((l) => l.w).length
+  const speakers = atlas.speakers[country]
+  const listedPercent = speakers ? speakers.top.reduce((sum, [, percent]) => sum + percent, 0) : 0
+
+  // Colours match the map's top level: each traditional group keeps its legend
+  // colour, and anything outside Africa's own families (English, French) is grey.
+  const groupSlot = new Map(tree.branches(null).map((b, i) => [b.id, i]))
+  const groupColor = (groupId) => CATEGORICAL[theme][groupSlot.get(groupId)] ?? OTHER[theme]
+
+  const groups = new Map()
+  const families = new Map()
+  for (const lang of shown) {
+    const [group, family] = tree.lineage(lang.p)
+    groups.set(group, (groups.get(group) ?? 0) + 1)
+    const key = family ?? `isolates-${group}`
+    const entry = families.get(key) ?? {
+      key,
+      name: family ? tree.name(family) : 'Isolates',
+      group,
+      count: 0,
+    }
+    entry.count++
+    families.set(key, entry)
+  }
+  const familyRows = [...families.values()].sort((a, b) => b.count - a.count)
+  const rest = familyRows.slice(FAMILIES_SHOWN)
+
+  return (
+    <div className="space-y-6 p-5 text-sm text-gray-700 dark:text-gray-300">
+      <div>
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Languages of {name}</h2>
+        {speakers?.pop > 0 && (
+          <p className="mt-1 text-gray-500 dark:text-gray-400">
+            Population about {compact.format(speakers.pop)}
+          </p>
+        )}
+      </div>
+
+      <dl className="grid grid-cols-2 gap-3">
+        <div className="rounded-lg border border-gray-200 p-3 dark:border-white/10">
+          <dt className="text-xs text-gray-500 dark:text-gray-400">Languages mapped</dt>
+          <dd className="text-xl font-semibold tabular-nums text-gray-900 dark:text-white">
+            {shown.length.toLocaleString()}
+          </dd>
+        </div>
+        <div className="rounded-lg border border-gray-200 p-3 dark:border-white/10">
+          <dt className="text-xs text-gray-500 dark:text-gray-400">With word lists</dt>
+          <dd className="text-xl font-semibold tabular-nums text-gray-900 dark:text-white">
+            {withWords.toLocaleString()}
+          </dd>
+        </div>
+      </dl>
+
+      <div>
+        <SectionTitle>Speaker estimates</SectionTitle>
+        {!speakers?.top.length ? (
+          <p className="text-gray-500 dark:text-gray-400">
+            There are no speaker estimates for {name}&rsquo;s African languages in the data yet.
+          </p>
+        ) : (
+          <>
+            {listedPercent < THIN_COVERAGE_PERCENT && (
+              <p
+                role="note"
+                className="mb-3 rounded-lg border border-ankara-200 bg-ankara-50 px-3 py-2 text-xs leading-relaxed text-ankara-900 dark:border-ankara-400/30 dark:bg-ankara-500/10 dark:text-ankara-200"
+              >
+                <strong className="font-semibold">Incomplete for {name}.</strong> The languages below
+                add up to only about {Math.round(listedPercent)}% of the population, so some of the
+                most widely spoken languages, often the ones people use to talk across groups, are
+                missing from these estimates. Don&rsquo;t read this as a ranking.
+              </p>
+            )}
+            <ul className="space-y-2">
+              {speakers.top.map(([label, percent, g]) => {
+                const lang = g ? tree.byId.get(g) : null
+                const color = lang ? groupColor(tree.lineage(lang.p)[0]) : OTHER[theme]
+                const row = (
+                  <>
+                    <span className="flex items-baseline justify-between gap-2">
+                      <span className={`truncate ${lang ? 'font-medium text-gray-900 dark:text-white' : ''}`}>
+                        {label}
+                      </span>
+                      <span className="shrink-0 text-xs tabular-nums text-gray-500 dark:text-gray-400">
+                        {percent}%
+                      </span>
+                    </span>
+                    <Bar share={percent / 100} color={color} />
+                  </>
+                )
+                return (
+                  <li key={label}>
+                    {lang ? (
+                      <button
+                        onClick={() => onSelect(g)}
+                        title={`Open ${lang.n}`}
+                        className="-mx-1 block w-[calc(100%+0.5rem)] rounded px-1 py-0.5 text-left hover:bg-gray-100 dark:hover:bg-white/5"
+                      >
+                        {row}
+                      </button>
+                    ) : (
+                      <div className="py-0.5">{row}</div>
+                    )}
+                  </li>
+                )
+              })}
+            </ul>
+            <p className="mt-2 text-xs leading-relaxed text-gray-400 dark:text-gray-500">
+              Share of everyone in {name} who speaks each language, as a first or second language, so
+              the shares overlap. Languages from outside Africa are left out where they&rsquo;re only a
+              language of government, and kept where a community descends from their speakers, such as
+              English in South Africa or Portuguese in Cape Verde. Grey bars are those languages and
+              umbrella names covering several languages. Estimates from Unicode CLDR, which covers only
+              a country&rsquo;s larger languages.
+            </p>
+          </>
+        )}
+      </div>
+
+      <div>
+        <SectionTitle>Language families</SectionTitle>
+        <div className="flex h-2.5 gap-0.5 overflow-hidden rounded-full">
+          {[...groups]
+            .sort((a, b) => b[1] - a[1])
+            .map(([group, count]) => (
+              <span
+                key={group}
+                title={`${tree.name(group)}: ${count}`}
+                style={{ flexGrow: count, backgroundColor: groupColor(group) }}
+              />
+            ))}
+        </div>
+        <ul className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs text-gray-500 dark:text-gray-400">
+          {[...groups]
+            .sort((a, b) => b[1] - a[1])
+            .map(([group, count]) => (
+              <li key={group} className="flex items-center gap-1.5">
+                <span className="h-2 w-2 rounded-full" style={{ backgroundColor: groupColor(group) }} />
+                {tree.name(group)} {Math.round((count / shown.length) * 100)}%
+              </li>
+            ))}
+        </ul>
+        <ul className="mt-4 space-y-2">
+          {familyRows.slice(0, FAMILIES_SHOWN).map((family) => (
+            <li key={family.key}>
+              <span className="flex items-baseline justify-between gap-2">
+                <span className="truncate">{family.name}</span>
+                <span className="shrink-0 text-xs tabular-nums text-gray-500 dark:text-gray-400">
+                  {family.count} · {Math.round((family.count / shown.length) * 100)}%
+                </span>
+              </span>
+              <Bar share={family.count / shown.length} color={groupColor(family.group)} />
+            </li>
+          ))}
+          {rest.length > 0 && (
+            <li className="text-xs text-gray-500 dark:text-gray-400">
+              + {rest.length} more famil{rest.length === 1 ? 'y' : 'ies'} with{' '}
+              {rest.reduce((sum, f) => sum + f.count, 0)} languages
+            </li>
+          )}
+        </ul>
+        <p className="mt-2 text-xs leading-relaxed text-gray-400 dark:text-gray-500">
+          Share of the {shown.length} languages spoken in {name}, by the family each belongs to.
         </p>
       </div>
 
@@ -152,6 +334,7 @@ function WordComparison({ concepts, a, b, nameA, nameB, alike }) {
 export default function AtlasPanel({
   atlas,
   country,
+  theme,
   selected,
   words,
   prepared,
@@ -174,7 +357,13 @@ export default function AtlasPanel({
       .map(([g, score]) => ({ lang: tree.byId.get(g), score }))
   }, [scores, tree])
 
-  if (!selected) return <Intro atlas={atlas} country={country} />
+  if (!selected) {
+    return country && atlas ? (
+      <CountryOverview atlas={atlas} country={country} theme={theme} onSelect={onSelect} />
+    ) : (
+      <Intro atlas={atlas} />
+    )
+  }
 
   const lineage = tree.displayLineage(selected)
   // The profile named like the language leads; dialect profiles follow.

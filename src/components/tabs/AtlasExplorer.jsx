@@ -231,6 +231,7 @@ export default function AtlasExplorer() {
           onSelect={(id) => updateParams({ lang: id, vs: null })}
           view={view}
           dark={dark}
+          country={country}
         />
 
         {tree && (
@@ -252,6 +253,7 @@ export default function AtlasExplorer() {
         <AtlasPanel
           atlas={atlas}
           country={country}
+          theme={theme}
           selected={selected}
           words={words}
           prepared={prepared}

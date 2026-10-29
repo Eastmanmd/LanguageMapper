@@ -16,14 +16,18 @@ const TABS = [
   { path: '/blog', label: 'Blog' },
 ]
 
+const COLUMN = 'mx-auto w-full max-w-6xl'
+
 function App() {
   const { dark, toggleDark } = useTheme()
 
   return (
-    <div className="flex h-full flex-col bg-white transition-colors dark:bg-[#0a0a0a]">
+    // Pages sit in a centred column (like LinkedIn) on a grey backdrop; the
+    // header bar spans the window but its contents line up with the column.
+    <div className="flex h-full flex-col bg-gray-100 transition-colors dark:bg-black">
       <div className="fabric-band h-1 shrink-0" />
-      <header className="border-b border-gray-200 dark:border-white/10">
-        <div className="flex items-center justify-between px-6 pt-4">
+      <header className="border-b border-gray-200 bg-white dark:border-white/10 dark:bg-[#0a0a0a]">
+        <div className={`${COLUMN} flex items-center justify-between px-6 pt-4`}>
           <div className="flex items-center gap-2.5">
             <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" className="h-6 w-6" />
             <span className="text-[15px] font-medium tracking-tight text-gray-900 dark:text-white">
@@ -39,7 +43,7 @@ function App() {
           </button>
         </div>
 
-        <nav className="flex gap-6 overflow-x-auto whitespace-nowrap px-6 pt-4">
+        <nav className={`${COLUMN} flex gap-6 overflow-x-auto whitespace-nowrap px-6 pt-4`}>
           {TABS.map((tab) => (
             <NavLink
               key={tab.path}
@@ -59,7 +63,9 @@ function App() {
         </nav>
       </header>
 
-      <main className="flex flex-1 flex-col overflow-hidden">
+      <main
+        className={`${COLUMN} flex flex-1 flex-col overflow-hidden border-gray-200 bg-white min-[72rem]:border-x dark:border-white/10 dark:bg-[#0a0a0a]`}
+      >
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/atlas" element={<AtlasExplorer />} />

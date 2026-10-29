@@ -1,6 +1,6 @@
 # LanguageMapper
 
-A map of Africa's languages and how they relate: 2,233 languages placed where they are spoken, coloured by family, with basic-word comparisons for 1,759 of them. Nigeria is covered in depth, with all 37 states (including the FCT) and 239 hand-written language profiles.
+A map of Africa's languages and how they relate: 2,236 languages placed where they are spoken, coloured by family, with basic-word comparisons for 1,762 of them. Nigeria is covered in depth, with all 37 states (including the FCT) and 239 hand-written language profiles.
 
 **Live features:** Africa atlas · family drill-down · similarity map · interactive state map · language profiles · side-by-side word comparison · lexical similarity tree · dark mode
 
@@ -12,7 +12,7 @@ One dot per language across the continent, built from [Glottolog](https://glotto
 
 - **Families:** dots are coloured by family. Click a family in the legend to zoom in and colour its branches, down to the smallest subgroup. The top level uses the four traditional groupings (Niger-Congo, Afro-Asiatic, Nilo-Saharan, Khoisan). Everything below follows Glottolog.
 - **Similarity:** pick a language, then switch the legend to *Similarity*. Every other language is coloured by how much its 40 basic words resemble the selected one's, from "very close" to "no clear similarity". The score is LDND (normalized Levenshtein distance divided by the chance baseline), computed in the browser.
-- **Country filter:** pick a country to zoom to it and fade out languages spoken elsewhere. Legend counts follow the country, and family colours stay the same as Africa-wide. Each language is one dot at the centre of its whole area, so cross-border languages can sit just outside the country.
+- **Country filter:** pick a country to zoom to it, outline its border, and fade out languages spoken elsewhere. The side panel switches to a country overview: population, languages mapped, the eight most spoken languages (share of the population, from [Unicode CLDR](https://cldr.unicode.org)), and the share of the country's languages in each family. Legend counts follow the country, and family colours stay the same as Africa-wide. Each language is one dot at the centre of its whole area, so cross-border languages can sit just outside the country.
 - **Language panel:** where it's spoken, endangerment status, its full family tree, closest relatives, and a word-by-word comparison with any relative. Languages with a Nigeria profile also show its description and link to the state map and the compare tool.
 - State lives in the URL (`/atlas?country=NG&lang=yoru1245&color=similar&vs=igal1242`), so every view can be shared.
 
@@ -151,6 +151,8 @@ All app data lives in these JSON files plus one GeoJSON:
 |---|---|
 | `public/data/africa/languages.json` | Generated. Atlas languages (glottocode, name, coordinates, countries, endangerment) and the family tree nodes |
 | `public/data/africa/words.json` | Generated. ASJP 40-concept word lists per glottocode: ASJPcode for scoring, IPA for display |
+| `public/data/africa/borders.geojson` | Generated. Simplified Natural Earth outlines of African countries, for the selected-country border |
+| `src/data/africaStats.json` | Generated. Headline numbers for the home page |
 | `src/data/nigeriaGlottocodes.json` | Nigeria profile id → glottocode, linking the profiles to atlas languages (dialect profiles point to their language) |
 | `src/data/languages.json` | Language profiles keyed by id: name, classification, ethnic groups, similar-language ids, description |
 | `src/data/stateLanguages.json` | State id (ISO 3166-2, e.g. `NG-KN`) → array of language ids spoken there |
@@ -171,7 +173,7 @@ Language ids are lowercase-kebab-case and must match across all three files. To 
 npm run build-africa-data
 ```
 
-This downloads pinned releases of Glottolog (5.2.1) and ASJP (v21) into `data-raw/` (gitignored) and regenerates `public/data/africa/`. To move to a newer release, bump the tags in `scripts/build-africa-data.mjs` and delete `data-raw/`. The script warns if any Nigeria link no longer matches an atlas language.
+This downloads pinned releases of Glottolog (5.2.1), ASJP (v21), Natural Earth (5.1.2) and Unicode CLDR (48) into `data-raw/` (gitignored) and regenerates `public/data/africa/`. To move to a newer release, bump the tags in `scripts/build-africa-data.mjs` and delete `data-raw/`. The script warns if any Nigeria link no longer matches an atlas language.
 
 ## Crawler (experimental)
 

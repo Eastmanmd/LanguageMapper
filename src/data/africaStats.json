@@ -1,11 +1,11 @@
 {
-  "languages": 2233,
+  "languages": 2236,
   "families": 38,
-  "isolates": 15,
+  "isolateCount": 15,
   "countries": 57,
-  "wordLists": 1759,
+  "wordLists": 1762,
   "endangered": 846,
-  "extinct": 102,
+  "extinct": 101,
   "largestFamily": {
     "name": "Atlantic-Congo",
     "count": 1408
@@ -13,5 +13,112 @@
   "topCountry": {
     "code": "NG",
     "count": 561
-  }
+  },
+  "groups": [
+    {
+      "id": "x-nc",
+      "name": "Niger-Congo",
+      "count": 1580
+    },
+    {
+      "id": "x-aa",
+      "name": "Afro-Asiatic",
+      "count": 348
+    },
+    {
+      "id": "x-ns",
+      "name": "Nilo-Saharan",
+      "count": 222
+    },
+    {
+      "id": "x-other",
+      "name": "Other languages",
+      "count": 56
+    },
+    {
+      "id": "x-ks",
+      "name": "Khoisan",
+      "count": 30
+    }
+  ],
+  "isolates": [
+    {
+      "g": "bang1363",
+      "name": "Bangime"
+    },
+    {
+      "g": "bert1248",
+      "name": "Berta"
+    },
+    {
+      "g": "gule1241",
+      "name": "Gule"
+    },
+    {
+      "g": "hadz1240",
+      "name": "Hadza"
+    },
+    {
+      "g": "cent2045",
+      "name": "Jalaa"
+    },
+    {
+      "g": "kuja1239",
+      "name": "Kujarge"
+    },
+    {
+      "g": "kuna1268",
+      "name": "Kunama"
+    },
+    {
+      "g": "laal1242",
+      "name": "Laal"
+    },
+    {
+      "g": "mero1237",
+      "name": "Meroitic"
+    },
+    {
+      "g": "mimi1240",
+      "name": "Mimi-Gaudefroy"
+    },
+    {
+      "g": "nara1262",
+      "name": "Nara"
+    },
+    {
+      "g": "bira1253",
+      "name": "Ongota"
+    },
+    {
+      "g": "sand1273",
+      "name": "Sandawe"
+    },
+    {
+      "g": "shab1252",
+      "name": "Shabo"
+    },
+    {
+      "g": "siam1242",
+      "name": "Siamou"
+    }
+  ],
+  "endangeredLevels": [
+    {
+      "label": "Threatened",
+      "count": 421
+    },
+    {
+      "label": "Shifting",
+      "count": 347
+    },
+    {
+      "label": "Moribund",
+      "count": 53
+    },
+    {
+      "label": "Nearly extinct",
+      "count": 25
+    }
+  ]
 }

@@ -5,14 +5,15 @@
 //   ASJP (lexibank/asjp) — a 40-item basic vocabulary list for most languages,
 //     used to measure how similar two languages' words are.
 //
-// plus Natural Earth country outlines (public domain), reduced to one bounding
-// box per country for the atlas's zoom-to-country.
+// plus Natural Earth country outlines (public domain) for zoom-to-country and
+// the highlighted border, and Unicode CLDR's per-country language population
+// estimates (Unicode License v3) for the country panel's speaker shares.
 //
 //   npm run build-africa-data
 //
 // Downloads are cached in data-raw/ (gitignored); delete it to refresh. Writes
-// public/data/africa/languages.json and public/data/africa/words.json, which
-// the /atlas page loads at runtime.
+// public/data/africa/{languages,words}.json and borders.geojson, which the
+// /atlas page loads at runtime, and src/data/africaStats.json for the home page.
 
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
@@ -32,6 +33,11 @@ const SOURCES = {
   'asjp-forms.csv': 'https://raw.githubusercontent.com/lexibank/asjp/v21/cldf/forms.csv',
   'ne_50m_admin_0_countries.geojson':
     'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_50m_admin_0_countries.geojson',
+  'cldr-supplementalData.xml':
+    'https://raw.githubusercontent.com/unicode-org/cldr/release-48/common/supplemental/supplementalData.xml',
+  'cldr-supplementalMetadata.xml':
+    'https://raw.githubusercontent.com/unicode-org/cldr/release-48/common/supplemental/supplementalMetadata.xml',
+  'cldr-en.xml': 'https://raw.githubusercontent.com/unicode-org/cldr/release-48/common/main/en.xml',
 }
 
 // Glottolog pseudo-families that aren't spoken languages or are duplicate
@@ -139,6 +145,9 @@ for (const v of parseCsv(await fetchSource('glottolog-values.csv'))) {
     endangerment.set(v.Language_ID, AES[v.Code_ID])
   }
 }
+// Glottolog 5.2.1 marks Seychellois Creole extinct ("Dormant"), though nearly
+// all of the Seychelles speaks it (CLDR: 98%).
+endangerment.set('sese1246', AES['aes-not_endangered'])
 
 const familyToGroup = new Map()
 for (const [groupId, group] of Object.entries(TRADITIONAL_GROUPS)) {
@@ -159,9 +168,16 @@ const africanCountries = new Set([...countryShapes.map((f) => f.properties.ISO_A
 
 // Glottolog 5.2.1 leaves the macroarea blank for some isolates (Sandawe,
 // Hadza, Bangime…), so an untagged language counts if it's spoken in Africa.
-const isAfrican = (r) =>
-  r.Macroarea === 'Africa' ||
-  (!r.Macroarea && r.Countries.split(';').some((c) => africanCountries.has(c)))
+// Some carry several macroareas: "Africa;Eurasia" covers Egyptian Arabic but
+// also English, whose dot is in England, so those must sit in Africa as well.
+const spokenInAfrica = (r) => r.Countries.split(';').some((c) => africanCountries.has(c))
+const dotInAfrica = (r) => r.Longitude > -26 && r.Longitude < 64 && r.Latitude > -47 && r.Latitude < 38
+const isAfrican = (r) => {
+  const areas = r.Macroarea.split(';').filter(Boolean)
+  if (areas.length === 1) return areas[0] === 'Africa'
+  if (areas.length > 1) return areas.includes('Africa') && spokenInAfrica(r) && dotInAfrica(r)
+  return spokenInAfrica(r)
+}
 
 const languages = []
 const unmappedFamilies = new Set()
@@ -261,6 +277,124 @@ for (const f of countryShapes) {
 // No outline for Réunion and Mayotte; the page frames their dots instead.
 for (const code of ['RE', 'YT']) if (usedCountries.has(code)) countries[code] ??= null
 
+// Outlines for the selected-country border, at ~100 m precision (plenty at the
+// zoom levels a whole country is shown at, and a fraction of the raw size).
+const roundRing = (ring) =>
+  ring
+    .map(([x, y]) => [round(x), round(y)])
+    .filter((pt, i, arr) => i === 0 || pt[0] !== arr[i - 1][0] || pt[1] !== arr[i - 1][1])
+writeFileSync(
+  path.join(outDir, 'borders.geojson'),
+  JSON.stringify({
+    type: 'FeatureCollection',
+    features: countryShapes
+      .filter((f) => f.properties.ISO_A2_EH in countries)
+      .map((f) => ({
+        type: 'Feature',
+        properties: { c: f.properties.ISO_A2_EH },
+        geometry: {
+          type: f.geometry.type,
+          coordinates:
+            f.geometry.type === 'Polygon'
+              ? f.geometry.coordinates.map(roundRing)
+              : f.geometry.coordinates.map((poly) => poly.map(roundRing)),
+        },
+      })),
+  }),
+)
+
+// Speaker shares per country from CLDR: the percentage of the population that
+// speaks each language, first or second language, so shares overlap. CLDR uses
+// two-letter and macrolanguage codes (sw, om, kr); its aliases map those to the
+// individual ISO 639-3 language the atlas has (swh, gaz, knc).
+const attrs = (tag) => Object.fromEntries([...tag.matchAll(/(\w+)="([^"]*)"/g)].map((m) => [m[1], m[2]]))
+// CLDR names one member for every macrolanguage, but for these the umbrella
+// covers several distinct languages (Fula, Kalenjin, Luyia, Akan), so linking to
+// that one member would mislead. They're listed by name without a link.
+const UMBRELLA_CODES = new Set(['ff', 'kln', 'luy', 'ak'])
+const cldrCandidates = new Map()
+for (const [, tag] of (await fetchSource('cldr-supplementalMetadata.xml')).matchAll(/<languageAlias ([^>]*)\/>/g)) {
+  const { type, replacement, reason } = attrs(tag)
+  if (reason !== 'macrolanguage' && reason !== 'overlong') continue
+  if (reason === 'macrolanguage' && UMBRELLA_CODES.has(replacement)) continue
+  if (!cldrCandidates.has(replacement)) cldrCandidates.set(replacement, [])
+  // The individual language behind a macrolanguage is the better match, so it goes first.
+  cldrCandidates.get(replacement)[reason === 'macrolanguage' ? 'unshift' : 'push'](type)
+}
+const atlasByIso = new Map(languages.filter((l) => l.iso).map((l) => [l.iso, l.g]))
+const glottologByIso = new Map(glottolog.filter((r) => r.ISO639P3code).map((r) => [r.ISO639P3code, r]))
+const isoCandidates = (code) => [...(cldrCandidates.get(code) ?? []), code]
+const glottocodeForCldr = (code) => isoCandidates(code).map((iso) => atlasByIso.get(iso)).find(Boolean) ?? null
+
+// Languages from outside Africa are left out where they serve only as a
+// language of government (English in Nigeria, French in Cameroon, Portuguese in
+// Angola), by the same test that decides atlas membership. Codes Glottolog
+// can't resolve are African umbrella names (Kru), so they stay.
+const isAfricanCldr = (code) => {
+  const row = isoCandidates(code).map((iso) => glottologByIso.get(iso)).find(Boolean)
+  return !row || isAfrican(row)
+}
+// …but they stay where a community descends from their speakers: settler,
+// creole and Indian-descended populations, and Arabic in the Arab world.
+const HERITAGE_LANGUAGES = {
+  ZA: ['en', 'hi'],
+  NA: ['de'],
+  CV: ['pt'],
+  ST: ['pt'],
+  RE: ['fr', 'ta'],
+  MU: ['fr', 'bho', 'ur', 'ta'],
+  SC: ['fr'],
+  EG: ['ar'],
+  DZ: ['ar'],
+  MA: ['ar'],
+  TN: ['ar'],
+  MR: ['ar'],
+  SD: ['ar'],
+}
+
+// Where CLDR has only "Arabic" (Modern Standard Arabic) and no entry for the
+// local variety, that figure stands for the Arabic people actually speak.
+const LOCAL_ARABIC = { LY: 'liby1240', TD: 'chad1249', SS: 'suda1237', EH: 'hass1238' }
+
+// CLDR's English names cover umbrella codes (Luyia, Kalenjin) that browsers
+// can't name; otherwise the atlas name is used.
+const cldrNames = new Map(
+  [...(await fetchSource('cldr-en.xml')).matchAll(/<language type="([a-z]+)">([^<]+)<\/language>/g)].map((m) => [m[1], m[2]]),
+)
+const atlasNames = new Map(languages.map((l) => [l.g, l.n]))
+// Extinct languages kept for liturgy (Coptic) have no speakers to count.
+const extinct = new Set(languages.filter((l) => l.e === 5).map((l) => l.g))
+
+const speakers = {}
+for (const [, head, body] of (await fetchSource('cldr-supplementalData.xml')).matchAll(
+  /<territory ([^>]*)>([\s\S]*?)<\/territory>/g,
+)) {
+  const { type: code, population } = attrs(head)
+  if (!(code in countries)) continue
+  const entries = [...body.matchAll(/<languagePopulation ([^>]*)\/>/g)]
+    .map(([, tag]) => attrs(tag))
+    // Script variants (ha_Arab) are the same speakers again.
+    .filter((l) => !l.type.includes('_') && Number(l.populationPercent) > 0)
+    .map((l) => ({ ...l, g: l.type === 'ar' && LOCAL_ARABIC[code] ? LOCAL_ARABIC[code] : glottocodeForCldr(l.type) }))
+  // A local variety substituted for "Arabic" replaces CLDR's own (tiny) entry for it.
+  const top = entries
+    .filter((l) => !extinct.has(l.g))
+    .filter(
+      (l) =>
+        (l.type === 'ar' && LOCAL_ARABIC[code]) ||
+        HERITAGE_LANGUAGES[code]?.includes(l.type) ||
+        (isAfricanCldr(l.type) && !(l.g === LOCAL_ARABIC[code] && entries.some((e) => e.type === 'ar'))),
+    )
+    .map((l) => [
+      (l.type === 'ar' && LOCAL_ARABIC[code] ? atlasNames.get(l.g) : cldrNames.get(l.type)) ?? atlasNames.get(l.g) ?? l.type,
+      Number(l.populationPercent),
+      l.g,
+    ])
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 8)
+  speakers[code] = { pop: Number(population), top }
+}
+
 writeFileSync(
   path.join(outDir, 'languages.json'),
   JSON.stringify({
@@ -268,8 +402,10 @@ writeFileSync(
       'Hammarström, Forkel, Haspelmath & Bank. 2025. Glottolog 5.2.1. https://glottolog.org (CC BY 4.0)',
       'Wichmann, Holman, Brown, Dryer & Ran (eds.). 2025. The ASJP Database, version 21. https://asjp.clld.org (CC BY 4.0)',
       'Natural Earth 5.1.2 country boundaries. https://www.naturalearthdata.com (public domain)',
+      'Unicode CLDR 48 language population estimates. https://cldr.unicode.org (Unicode License v3)',
     ],
     countries,
+    speakers,
     nodes,
     languages,
   }),
@@ -299,13 +435,26 @@ const [topCountry, topCountryCount] = Object.entries(perCountry).sort((a, b) => 
 const stats = {
   languages: languages.length,
   families: families.length,
-  isolates: languages.filter((l) => l.p.startsWith('x-')).length,
+  isolateCount: languages.filter((l) => l.p.startsWith('x-')).length,
   countries: Object.keys(countries).length,
   wordLists: Object.keys(words).length,
   endangered: languages.filter((l) => l.e >= 1 && l.e <= 4).length,
   extinct: languages.filter((l) => l.e === 5).length,
   largestFamily: largest,
   topCountry: { code: topCountry, count: topCountryCount },
+  // Largest first, the same order (and so the same colours) as the atlas legend's top level.
+  groups: Object.keys(TRADITIONAL_GROUPS)
+    .map((id) => ({ id, name: TRADITIONAL_GROUPS[id].name, count: languagesIn(id) }))
+    .sort((a, b) => b.count - a.count),
+  isolates: languages
+    .filter((l) => l.p.startsWith('x-'))
+    .map((l) => ({ g: l.g, name: l.n }))
+    .sort((a, b) => a.name.localeCompare(b.name)),
+  // Glottolog's scale from "threatened" (1) to "nearly extinct" (4).
+  endangeredLevels: ['Threatened', 'Shifting', 'Moribund', 'Nearly extinct'].map((label, i) => ({
+    label,
+    count: languages.filter((l) => l.e === i + 1).length,
+  })),
 }
 writeFileSync(path.join(root, 'src/data/africaStats.json'), `${JSON.stringify(stats, null, 2)}\n`)
 

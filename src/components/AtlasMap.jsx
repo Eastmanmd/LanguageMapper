@@ -4,6 +4,8 @@ import 'maplibre-gl/dist/maplibre-gl.css'
 
 const SOURCE = 'atlas-languages'
 const LAYER = 'atlas-languages-dots'
+const BORDER_SOURCE = 'atlas-borders'
+const BORDER_LAYER = 'atlas-border-selected'
 // Positron is a quiet greyscale basemap, so the coloured dots carry the map.
 const LIGHT_STYLE = 'https://tiles.openfreemap.org/styles/positron'
 const DARK_STYLE = 'https://tiles.openfreemap.org/styles/dark'
@@ -24,6 +26,36 @@ function radiusExpr() {
     6, ['match', ['get', 'emph'], 2, 10, 1, 5.5, 3],
     10, ['match', ['get', 'emph'], 2, 14, 1, 9, 5],
   ]
+}
+
+// Country outlines load the first time someone picks a country.
+let bordersPromise = null
+function loadBorders() {
+  bordersPromise ??= fetch(`${import.meta.env.BASE_URL}data/africa/borders.geojson`).then((res) => res.json())
+  return bordersPromise
+}
+
+const borderFilter = (country) => ['==', ['get', 'c'], country ?? '']
+
+// The selected country's outline, drawn under the dots so they stay clickable.
+function addBorderLayer(map, borders, country, dark) {
+  if (!borders || !map.getLayer(LAYER)) return
+  if (!map.getSource(BORDER_SOURCE)) map.addSource(BORDER_SOURCE, { type: 'geojson', data: borders })
+  if (map.getLayer(BORDER_LAYER)) return
+  map.addLayer(
+    {
+      id: BORDER_LAYER,
+      type: 'line',
+      source: BORDER_SOURCE,
+      filter: borderFilter(country),
+      layout: { 'line-join': 'round' },
+      paint: {
+        'line-color': dark ? '#ffffff' : '#242e57',
+        'line-width': ['interpolate', ['linear'], ['zoom'], 3, 1.75, 7, 3.5],
+      },
+    },
+    LAYER,
+  )
 }
 
 function addLayers(map, data, dark) {
@@ -48,11 +80,13 @@ function addLayers(map, data, dark) {
   })
 }
 
-export default function AtlasMap({ data, selectedId, onSelect, view, dark }) {
+export default function AtlasMap({ data, selectedId, onSelect, view, dark, country }) {
   const containerRef = useRef(null)
   const mapRef = useRef(null)
   const dataRef = useRef(data)
   const darkRef = useRef(dark)
+  const countryRef = useRef(country)
+  const bordersRef = useRef(null)
   const onSelectRef = useRef(onSelect)
   const isFirstStyleRun = useRef(true)
 
@@ -74,8 +108,25 @@ export default function AtlasMap({ data, selectedId, onSelect, view, dark }) {
     const map = mapRef.current
     if (!map) return
     map.setStyle(dark ? DARK_STYLE : LIGHT_STYLE)
-    map.once('styledata', () => addLayers(map, dataRef.current, dark))
+    map.once('styledata', () => {
+      addLayers(map, dataRef.current, dark)
+      addBorderLayer(map, bordersRef.current, countryRef.current, dark)
+    })
   }, [dark])
+
+  useEffect(() => {
+    countryRef.current = country
+    const map = mapRef.current
+    if (map?.getLayer(BORDER_LAYER)) map.setFilter(BORDER_LAYER, borderFilter(country))
+    if (country && !bordersRef.current) {
+      loadBorders()
+        .then((borders) => {
+          bordersRef.current = borders
+          if (mapRef.current) addBorderLayer(mapRef.current, borders, countryRef.current, darkRef.current)
+        })
+        .catch(() => {})
+    }
+  }, [country])
 
   // Bring a newly selected language into view if it's off-screen.
   useEffect(() => {
@@ -111,6 +162,7 @@ export default function AtlasMap({ data, selectedId, onSelect, view, dark }) {
 
     map.on('load', () => {
       addLayers(map, dataRef.current, darkRef.current)
+      addBorderLayer(map, bordersRef.current, countryRef.current, darkRef.current)
 
       map.on('click', LAYER, (e) => {
         const feature = e.features?.[0]
