@@ -18,7 +18,8 @@ const TABS = [
   { path: '/blog', label: 'Blog' },
 ]
 
-const COLUMN = 'mx-auto w-full max-w-6xl'
+// Fills small screens; on larger ones it keeps a gutter either side, up to a cap for very wide monitors.
+const COLUMN = 'mx-auto w-full max-w-[110rem] min-[72rem]:w-[90%]'
 
 function App() {
   const { dark, toggleDark } = useTheme()
