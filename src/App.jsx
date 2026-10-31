@@ -11,10 +11,10 @@ import { useTheme } from './context/ThemeContext'
 
 const TABS = [
   { path: '/', label: 'Home', end: true },
-  { path: '/atlas', label: 'Africa atlas' },
-  { path: '/map', label: 'Nigeria map' },
+  { path: '/atlas', label: 'Africa' },
+  { path: '/map', label: 'Nigeria' },
   { path: '/studio', label: 'Map Studio' },
-  { path: '/compare', label: 'Compare languages' },
+  { path: '/compare', label: 'Compare' },
   { path: '/blog', label: 'Blog' },
 ]
 

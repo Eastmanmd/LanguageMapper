@@ -29,6 +29,7 @@ export const MAIN_LAYERS = [
   { id: 'density', label: 'Language density', group: 'Languages', kind: 'hex' },
   { id: 'endangerment', label: 'Endangered languages', group: 'Languages', kind: 'hex' },
   { id: 'perCountry', label: 'Languages per country', group: 'Countries', kind: 'country' },
+  { id: 'spokenIn', label: 'Where a language or family is spoken', group: 'Countries', kind: 'country' },
   { id: 'official', label: 'Official languages', group: 'Countries', kind: 'country' },
   { id: 'scripts', label: 'Writing scripts', group: 'Countries', kind: 'country' },
   { id: 'religion', label: 'Largest religion', group: 'Countries', kind: 'country' },
@@ -62,6 +63,9 @@ const RELIGIONS = [
   { key: 'other', label: 'Folk and other religions' },
   { key: 'unaffiliated', label: 'Unaffiliated' },
 ]
+
+const SAME_SCALE_NOTE = 'Colours use the same scale on both maps.'
+const SPOKEN_NOTE = 'From Glottolog; second-language use may be missing.'
 
 const pctText = (n) => `${Math.round(n)}%`
 const classOf = (value, breaks) => {
@@ -174,7 +178,7 @@ function buildHex(ctx, layerId) {
       note: 'Each hexagon takes the colour of the family most of its languages belong to. Areas are approximate: languages are points, not territories.',
     }
   } else if (layerId === 'density') {
-    const breaks = quantileBreaks(bins.map((b) => b.members.length), true)
+    const breaks = ctx.breaks ?? quantileBreaks(bins.map((b) => b.members.length), true)
     colorOf = (bin) => ({
       color: SEQUENTIAL_BLUE[theme][classOf(bin.members.length, breaks)],
       tip: `${bin.members.length} language${bin.members.length === 1 ? '' : 's'} here`,
@@ -182,6 +186,7 @@ function buildHex(ctx, layerId) {
     legend = {
       title: 'Languages per area',
       items: countLabels(breaks).map((label, i) => ({ color: SEQUENTIAL_BLUE[theme][i], label })),
+      note: ctx.breaks ? SAME_SCALE_NOTE : undefined,
     }
   } else {
     const share = (bin) => bin.members.filter((l) => l.e >= 1 && l.e <= 4).length / bin.members.length
@@ -215,11 +220,89 @@ function buildHex(ctx, layerId) {
   }
 }
 
+function languagesPerCountry(atlas) {
+  const counts = new Map()
+  for (const l of atlas.languages) for (const c of l.c) counts.set(c, (counts.get(c) ?? 0) + 1)
+  return counts
+}
+
+/** How many of the chosen language or family's languages each mapped country has. */
+function spokenCounts({ spoken, allLanguages, atlas, borders }) {
+  const { tree } = atlas
+  const mapped = new Set(borders.features.map((f) => f.properties.c))
+  const counts = new Map()
+  if (!spoken) return counts
+  const inChoice = tree.isGroup(spoken) ? (l) => tree.lineage(l.p).includes(spoken) : (l) => l.g === spoken
+  for (const l of allLanguages) {
+    if (!inChoice(l)) continue
+    for (const c of l.c) if (mapped.has(c)) counts.set(c, (counts.get(c) ?? 0) + 1)
+  }
+  return counts
+}
+
+function buildSpokenIn(ctx) {
+  const { spoken, atlas, borders, theme } = ctx
+  const { tree } = atlas
+  const counts = spokenCounts(ctx)
+  const name = spoken && tree.name(spoken)
+  const isFamily = spoken && tree.isGroup(spoken)
+  const breaks = isFamily ? (ctx.breaks ?? quantileBreaks([...counts.values()], true)) : null
+
+  const styleOf = (code) => {
+    const country = countryName(code)
+    const n = counts.get(code) ?? 0
+    if (!spoken) return { color: FADED[theme], tip: country }
+    if (!n) return { color: FADED[theme], tip: `${country}\n${name}: none listed here` }
+    if (!isFamily) return { color: SEQUENTIAL_BLUE[theme][3], tip: `${country}\n${name} is spoken here` }
+    return {
+      color: SEQUENTIAL_BLUE[theme][classOf(n, breaks)],
+      tip: `${country}\n${n} ${name} language${n === 1 ? '' : 's'}`,
+    }
+  }
+
+  let legend
+  if (!spoken) {
+    legend = { title: 'Where a language or family is spoken', items: [], note: 'Search for one in the sidebar.' }
+  } else if (isFamily) {
+    // Without a shared scale, drop classes no country falls into.
+    const used = new Set([...counts.values()].map((n) => classOf(n, breaks)))
+    legend = {
+      title: `${name} languages in each country`,
+      items: [
+        ...countLabels(breaks)
+          .map((label, i) => ({ color: SEQUENTIAL_BLUE[theme][i], label, used: ctx.breaks || used.has(i) }))
+          .filter((item) => item.used)
+          .map(({ color, label }) => ({ color, label })),
+        { color: FADED[theme], label: 'None listed' },
+      ],
+      note: [ctx.breaks && SAME_SCALE_NOTE, SPOKEN_NOTE].filter(Boolean).join(' '),
+    }
+  } else {
+    legend = {
+      title: `Where ${name} is spoken`,
+      items: [
+        { color: SEQUENTIAL_BLUE[theme][3], label: 'Spoken here', value: counts.size },
+        { color: FADED[theme], label: 'Not listed' },
+      ],
+      note: SPOKEN_NOTE,
+    }
+  }
+
+  return {
+    kind: 'country',
+    data: {
+      type: 'FeatureCollection',
+      features: borders.features.map((f) => ({ ...f, properties: { ...f.properties, ...styleOf(f.properties.c) } })),
+    },
+    legend,
+    credits: [CREDITS.glottolog],
+  }
+}
+
 function buildCountry(ctx, layerId) {
   const { studio, borders, atlas, theme } = ctx
-  const perCountry = new Map()
-  if (layerId === 'perCountry') for (const l of atlas.languages) for (const c of l.c) perCountry.set(c, (perCountry.get(c) ?? 0) + 1)
-  const perCountryBreaks = quantileBreaks([...perCountry.values()], true)
+  const perCountry = layerId === 'perCountry' ? languagesPerCountry(atlas) : new Map()
+  const perCountryBreaks = ctx.breaks ?? quantileBreaks([...perCountry.values()], true)
 
   const valueOf = (code) => {
     const info = studio.countries[code]
@@ -266,6 +349,7 @@ function buildCountry(ctx, layerId) {
     perCountry: {
       title: 'Languages spoken in each country',
       items: countLabels(perCountryBreaks).map((label, i) => ({ color: SEQUENTIAL_BLUE[theme][i], label })),
+      note: ctx.breaks ? SAME_SCALE_NOTE : undefined,
     },
     official: {
       title: 'Official languages (official or de facto)',
@@ -314,6 +398,27 @@ function buildCountry(ctx, layerId) {
   }
 }
 
+/**
+ * One colour scale for two maps of the same count, so the same blue means the
+ * same number on both. Other layers have fixed classes and return null, and
+ * counts per area can't be compared across different area sizes.
+ */
+export function sharedBreaks(layerId, ctxA, ctxB) {
+  if (layerId === 'spokenIn') {
+    const isFamily = (ctx) => ctx.spoken && ctx.atlas.tree.isGroup(ctx.spoken)
+    if (!isFamily(ctxA) || !isFamily(ctxB)) return null
+    return quantileBreaks([ctxA, ctxB].flatMap((ctx) => [...spokenCounts(ctx).values()]), true)
+  }
+  if (layerId === 'perCountry') {
+    return quantileBreaks([ctxA, ctxB].flatMap((ctx) => [...languagesPerCountry(ctx.atlas).values()]), true)
+  }
+  if (layerId === 'density' && ctxA.hexSize === ctxB.hexSize) {
+    const counts = (ctx) => hexbin(visibleLanguages(ctx), HEX_RADIUS[ctx.hexSize]).map((b) => b.members.length)
+    return quantileBreaks([...counts(ctxA), ...counts(ctxB)], true)
+  }
+  return null
+}
+
 /** Everything the map needs to draw the chosen main layer. */
 export function buildMainLayer(layerId, ctx) {
   const def = MAIN_LAYERS.find((l) => l.id === layerId)
@@ -327,5 +432,6 @@ export function buildMainLayer(layerId, ctx) {
     }
   }
   if (def.kind === 'hex') return buildHex(ctx, layerId)
+  if (layerId === 'spokenIn') return buildSpokenIn(ctx)
   return buildCountry(ctx, layerId)
 }

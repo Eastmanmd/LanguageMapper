@@ -203,7 +203,8 @@ export default function StudioMap({ onReady, onViewChange, view, initialView, ..
       ...(initialView?.center
         ? { center: initialView.center, zoom: initialView.zoom }
         : { bounds: view?.bounds ?? AFRICA, fitBoundsOptions: { padding: view?.padding ?? 16, maxZoom: 7 } }),
-      minZoom: 1.5,
+      // Low enough to fit all of Africa in a short panel when maps are stacked.
+      minZoom: 0,
       maxZoom: 10,
       renderWorldCopies: false,
       attributionControl: false,
@@ -240,7 +241,9 @@ export default function StudioMap({ onReady, onViewChange, view, initialView, ..
       map.on('mousemove', layer, showTip)
       map.on('mouseleave', layer, () => popup.remove())
     }
-    map.on('moveend', () => {
+    map.on('moveend', (e) => {
+      // A linked map following another has nothing new to report.
+      if (e.linked) return
       const c = map.getCenter()
       onViewChangeRef.current?.({ center: [c.lng, c.lat], zoom: map.getZoom() })
     })
@@ -249,6 +252,7 @@ export default function StudioMap({ onReady, onViewChange, view, initialView, ..
     return () => {
       map.remove()
       mapRef.current = null
+      onReady?.(null)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

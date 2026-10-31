@@ -1,14 +1,20 @@
 // Starting points for Map Studio. Each sets every option, so picking one gives
 // a finished map that people can then tweak.
 
-export const DEFAULT_STATE = {
-  base: 'light',
+// What can differ between two compared maps. Everything else is shared.
+export const DEFAULT_MAP = {
   layer: 'families',
-  overlays: ['borders'],
   focus: null,
   endangered: false,
   hex: 'medium',
   country: null,
+  dots: false,
+  spoken: null,
+}
+
+const DEFAULT_SHARED = {
+  base: 'light',
+  overlays: ['borders'],
   title: 'Africa’s language families',
   subtitle: 'Every dot is one of more than 2,200 languages',
   frame: 'wide',
@@ -66,7 +72,8 @@ export const PRESETS = [
     blurb: 'Official languages, with every spoken language on top',
     state: {
       layer: 'official',
-      overlays: ['borders', 'dots'],
+      overlays: ['borders'],
+      dots: true,
       title: 'Official languages, spoken languages',
       subtitle: 'Most countries govern in a European language; each dot is a language people speak',
     },
@@ -96,24 +103,62 @@ export const PRESETS = [
   },
 ]
 
-export const presetState = (id) => {
+function splitPreset(id) {
   const preset = PRESETS.find((p) => p.id === id) ?? PRESETS[0]
-  return { ...DEFAULT_STATE, ...preset.state }
+  const map = { ...DEFAULT_MAP }
+  const shared = { ...DEFAULT_SHARED }
+  for (const [key, value] of Object.entries(preset.state)) (key in DEFAULT_MAP ? map : shared)[key] = value
+  return { map, shared }
+}
+
+export const presetState = (id) => {
+  const { map, shared } = splitPreset(id)
+  return { ...shared, a: map, b: null }
+}
+
+// While comparing, a preset fills one map and sets the shared look, but keeps
+// the title: it no longer describes both maps.
+export const presetOnMap = (state, id, mapId) => {
+  const { map, shared } = splitPreset(id)
+  return { ...state, base: shared.base, overlays: shared.overlays, [mapId]: map }
 }
 
 // ---- Shareable links: the whole map lives in the URL ----
 
-const OVERLAYS = ['dots', 'water', 'borders', 'labels']
+const SHARED_OVERLAYS = ['water', 'borders', 'labels']
+
+function mapToParams(p, map, prefix) {
+  if (map.focus) p.set(`${prefix}focus`, map.focus)
+  if (map.endangered) p.set(`${prefix}endangered`, '1')
+  if (map.hex !== 'medium') p.set(`${prefix}hex`, map.hex)
+  if (map.country) p.set(`${prefix}country`, map.country)
+  if (map.spoken) p.set(`${prefix}spoken`, map.spoken)
+}
+
+function paramsToMap(params, prefix) {
+  return {
+    layer: params.get(`${prefix}layer`),
+    focus: params.get(`${prefix}focus`),
+    endangered: params.get(`${prefix}endangered`) === '1',
+    hex: params.get(`${prefix}hex`) ?? 'medium',
+    country: params.get(`${prefix}country`),
+    dots: false,
+    spoken: params.get(`${prefix}spoken`),
+  }
+}
 
 export function stateToParams(state) {
   const p = new URLSearchParams()
   p.set('base', state.base)
-  p.set('layer', state.layer)
-  p.set('ov', state.overlays.filter((o) => OVERLAYS.includes(o)).join(','))
-  if (state.focus) p.set('focus', state.focus)
-  if (state.endangered) p.set('endangered', '1')
-  if (state.hex !== 'medium') p.set('hex', state.hex)
-  if (state.country) p.set('country', state.country)
+  p.set('layer', state.a.layer)
+  // Map A's dots stay in `ov`, so single-map links read as they always have.
+  p.set('ov', [...state.overlays, ...(state.a.dots ? ['dots'] : [])].join(','))
+  mapToParams(p, state.a, '')
+  if (state.b) {
+    p.set('b.layer', state.b.layer)
+    if (state.b.dots) p.set('b.dots', '1')
+    mapToParams(p, state.b, 'b.')
+  }
   if (state.title) p.set('title', state.title)
   if (state.subtitle) p.set('sub', state.subtitle)
   if (state.frame !== 'wide') p.set('frame', state.frame)
@@ -128,15 +173,13 @@ export function stateToParams(state) {
 export function paramsToState(params) {
   if (!params.has('layer')) return null
   const view = params.get('view')?.split(',').map(Number)
+  const overlays = (params.get('ov') ?? '').split(',')
   return {
-    ...DEFAULT_STATE,
-    base: params.get('base') ?? DEFAULT_STATE.base,
-    layer: params.get('layer'),
-    overlays: (params.get('ov') ?? '').split(',').filter((o) => OVERLAYS.includes(o)),
-    focus: params.get('focus'),
-    endangered: params.get('endangered') === '1',
-    hex: params.get('hex') ?? 'medium',
-    country: params.get('country'),
+    ...DEFAULT_SHARED,
+    base: params.get('base') ?? DEFAULT_SHARED.base,
+    overlays: overlays.filter((o) => SHARED_OVERLAYS.includes(o)),
+    a: { ...paramsToMap(params, ''), dots: overlays.includes('dots') },
+    b: params.has('b.layer') ? { ...paramsToMap(params, 'b.'), dots: params.get('b.dots') === '1' } : null,
     title: params.get('title') ?? '',
     subtitle: params.get('sub') ?? '',
     frame: params.get('frame') ?? 'wide',

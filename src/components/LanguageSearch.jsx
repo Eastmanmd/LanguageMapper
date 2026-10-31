@@ -23,7 +23,13 @@ export default function LanguageSearch({
     // A browsable list (a few dozen countries) opens in full; long lists wait for typing.
     if (!q) return browsable ? languageOptions : []
     const found = languageOptions.filter((lang) => lang.name.toLowerCase().includes(q))
-    return browsable ? found : found.slice(0, 8)
+    if (browsable) return found
+    // Exact names first, so short ones like "Ga" aren't crowded out by longer matches.
+    const rank = (lang) => {
+      const name = lang.name.toLowerCase()
+      return name === q ? 0 : name.startsWith(q) ? 1 : 2
+    }
+    return [...found].sort((a, b) => rank(a) - rank(b)).slice(0, 8)
   }, [query, languageOptions, browsable])
 
   const handleSelect = (lang) => {
