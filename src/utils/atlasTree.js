@@ -3,6 +3,31 @@
 // `p` is the innermost group it belongs to. Ids starting with "x-" are the four
 // traditional macro-groups plus "Other languages", which sit at the root.
 
+export const SPOKEN_NOTE = 'From Glottolog; second-language use may be missing.'
+
+// Families first, largest down, so a search for "Bantu" or "Arabic" finds the
+// group before the many languages named after it. Glottolog's single-child
+// chains would list the same group several times, so each appears once.
+export function spokenOptions(atlas) {
+  const { tree } = atlas
+  const seen = new Set()
+  const families = Object.keys(tree.nodes)
+    .map((id) => ({ id, name: tree.name(id), count: tree.count(id) }))
+    .filter((f) => f.count >= 2)
+    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name))
+    .filter((f) => {
+      const key = `${f.name}|${f.count}`
+      if (seen.has(key)) return false
+      seen.add(key)
+      return true
+    })
+    .map((f) => ({ id: f.id, name: f.name, detail: `Family · ${f.count.toLocaleString('en-US')}` }))
+  const languages = atlas.languages
+    .map((l) => ({ id: l.g, name: l.n, detail: 'Language' }))
+    .sort((a, b) => a.name.localeCompare(b.name))
+  return [...families, ...languages]
+}
+
 export function buildTree({ nodes, languages }) {
   const children = new Map()
   const addChild = (parent, child) => {
@@ -62,6 +87,10 @@ export function buildTree({ nodes, languages }) {
       if (branchIds.has(lang.g)) return lang.g
       for (const id of lineage(lang.p)) if (branchIds.has(id)) return id
       return null
+    },
+    /** Whether a language is `id`, or falls under the group `id`. */
+    contains(id, lang) {
+      return lang.g === id || lineage(lang.p).includes(id)
     },
     /** Readable lineage for a language: duplicate names collapsed (Afro-Asiatic > Afro-Asiatic). */
     displayLineage(lang) {

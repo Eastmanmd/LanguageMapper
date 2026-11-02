@@ -5,6 +5,7 @@ import LanguageSearch from '../LanguageSearch'
 import { buildDots, buildMainLayer, CREDITS, MAIN_LAYERS, sharedBreaks } from '../studio/studioLayers'
 import { paramsToState, presetOnMap, presetState, PRESETS, stateToParams } from '../studio/presets'
 import { exportMapPng, FRAMES, TITLE_BAND } from '../../utils/exportMap'
+import { spokenOptions } from '../../utils/atlasTree'
 import { boundsOf, countryName } from '../../utils/countries'
 import { loadAtlas, loadBorders, loadStudio, loadWater } from '../../utils/loadAtlas'
 
@@ -80,29 +81,6 @@ function focusOptions(tree) {
 const usesLanguages = (map) => {
   const kind = MAIN_LAYERS.find((l) => l.id === map.layer)?.kind
   return kind === 'dots' || kind === 'hex' || map.dots
-}
-
-// Families first, largest down, so a search for "Bantu" or "Arabic" finds the
-// group before the many languages named after it. Glottolog's single-child
-// chains would list the same group several times, so each appears once.
-function spokenOptions(atlas) {
-  const { tree } = atlas
-  const seen = new Set()
-  const families = Object.keys(tree.nodes)
-    .map((id) => ({ id, name: tree.name(id), count: tree.count(id) }))
-    .filter((f) => f.count >= 2)
-    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name))
-    .filter((f) => {
-      const key = `${f.name}|${f.count}`
-      if (seen.has(key)) return false
-      seen.add(key)
-      return true
-    })
-    .map((f) => ({ id: f.id, name: f.name, detail: `Family · ${f.count.toLocaleString('en-US')}` }))
-  const languages = atlas.languages
-    .map((l) => ({ id: l.g, name: l.n, detail: 'Language' }))
-    .sort((a, b) => a.name.localeCompare(b.name))
-  return [...families, ...languages]
 }
 
 // Says what one of two compared maps shows, since the shared title can't.

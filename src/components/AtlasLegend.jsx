@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { CATEGORICAL, FADED, OTHER, SIMILARITY } from '../utils/atlasColors'
 import { SIMILARITY_BANDS } from '../utils/similarity'
+import { SPOKEN_NOTE } from '../utils/atlasTree'
+import LanguageSearch from './LanguageSearch'
 
 function Swatch({ color }) {
   return <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ backgroundColor: color }} />
@@ -14,8 +16,12 @@ export default function AtlasLegend({
   colorBy,
   selected,
   canShowSimilarity,
+  spoken,
+  spokenChoices,
   onFocus,
   onColorBy,
+  onSpoken,
+  onSelectCountry,
 }) {
   // Starts collapsed on phones, where the open legend would cover most of the map.
   const [open, setOpen] = useState(() => window.matchMedia('(min-width: 768px)').matches)
@@ -35,6 +41,7 @@ export default function AtlasLegend({
         {[
           ['family', 'Families'],
           ['similar', 'Similarity'],
+          ['countries', 'Countries'],
         ].map(([mode, label]) => {
           const disabled = mode === 'similar' && !canShowSimilarity
           return (
@@ -63,7 +70,82 @@ export default function AtlasLegend({
         </button>
       </div>
 
-      {!open ? null : colorBy === 'similar' ? (
+      {!open ? null : colorBy === 'countries' ? (
+        <div className="p-3">
+          {/* Keyed so the box empties after a pick; the name shows below it. */}
+          <LanguageSearch
+            key={spoken?.id ?? 'none'}
+            languageOptions={spokenChoices}
+            selectedLanguage={null}
+            onSelect={onSpoken}
+            onClear={() => {}}
+            placeholder={spoken ? 'Search another…' : 'Language or family…'}
+            dropUp
+          />
+          {spoken ? (
+            <>
+              <div className="mt-3 flex items-start gap-2">
+                <span className="mt-1">
+                  <Swatch color={spoken.color} />
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p className="font-medium text-gray-900 dark:text-white">Where {spoken.name} is spoken</p>
+                  <p className="text-gray-400 dark:text-gray-500">
+                    {spoken.rows.length} {spoken.rows.length === 1 ? 'country' : 'countries'} coloured
+                    {spoken.isGroup && ` · ${tree.count(spoken.id).toLocaleString('en-US')} languages`}
+                  </p>
+                </div>
+                <button
+                  onClick={() => onSpoken(null)}
+                  aria-label={`Stop colouring countries for ${spoken.name}`}
+                  className="text-gray-400 hover:text-gray-700 dark:hover:text-white"
+                >
+                  ×
+                </button>
+              </div>
+              <ul className="mt-2 max-h-[20vh] space-y-0.5 overflow-y-auto">
+                {spoken.rows.map(({ code, name, count }) => (
+                  <li key={code}>
+                    <button
+                      onClick={() => onSelectCountry(code)}
+                      title={`Zoom to ${name}`}
+                      className="flex w-full items-center gap-2 rounded px-1 py-0.5 text-left hover:bg-gray-100 dark:hover:bg-white/10"
+                    >
+                      <span className="flex-1 truncate">{name}</span>
+                      {spoken.isGroup && (
+                        <span className="tabular-nums text-gray-400 dark:text-gray-500">{count}</span>
+                      )}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+              {spoken.elsewhere.length > 0 && (
+                <p className="mt-2 text-[11px] leading-snug text-gray-500 dark:text-gray-400">
+                  Also listed, outside the outlines on this map: {spoken.elsewhere.join(', ')}.
+                </p>
+              )}
+              <p className="mt-2 text-[11px] leading-snug text-gray-400 dark:text-gray-500">{SPOKEN_NOTE}</p>
+            </>
+          ) : (
+            <>
+              <p className="mb-1 mt-3 leading-snug">Colour every country where a language or family is spoken.</p>
+              <ul className="space-y-0.5">
+                {tree.branches(null).map((branch, i) => (
+                  <li key={branch.id}>
+                    <button
+                      onClick={() => onSpoken(tree.lineage(branch.id)[0])}
+                      className="flex w-full items-center gap-2 rounded px-1 py-0.5 text-left hover:bg-gray-100 dark:hover:bg-white/10"
+                    >
+                      <Swatch color={CATEGORICAL[theme][i]} />
+                      <span className="flex-1 truncate">{branch.name}</span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </div>
+      ) : colorBy === 'similar' ? (
         <div className="p-3">
           <p className="mb-2 font-medium text-gray-900 dark:text-white">
             How similar are their basic words to {selected.n}?
@@ -140,6 +222,14 @@ export default function AtlasLegend({
           <p className="mt-2 text-[11px] leading-snug text-gray-400 dark:text-gray-500">
             {focus ? 'Click a group to zoom in.' : 'Click a family to see its branches.'}
           </p>
+          {focus && (
+            <button
+              onClick={() => onSpoken(focus)}
+              className="mt-1 text-left text-[11px] text-naija-700 hover:underline dark:text-naija-400"
+            >
+              Colour the countries where {tree.name(focus)} is spoken
+            </button>
+          )}
         </div>
       )}
     </div>

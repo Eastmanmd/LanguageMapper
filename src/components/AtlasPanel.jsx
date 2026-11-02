@@ -86,6 +86,10 @@ function Intro({ atlas }) {
             Switch the legend to <strong>Similarity</strong> to colour every language by how much its basic
             words resemble the one you picked.
           </li>
+          <li>
+            Switch it to <strong>Countries</strong> to colour every country where a language or family is
+            spoken.
+          </li>
         </ol>
       </div>
 
@@ -345,6 +349,8 @@ export default function AtlasPanel({
   onCompare,
   onFocus,
   onShowSimilarity,
+  spokenId,
+  onSpoken,
 }) {
   const tree = atlas?.tree
 
@@ -385,6 +391,14 @@ export default function AtlasPanel({
           <p className="mt-1 text-gray-500 dark:text-gray-400">
             Spoken in {selected.c.map(countryName).join(', ')}
           </p>
+        )}
+        {spokenId !== selected.g && (
+          <button
+            onClick={() => onSpoken(selected.g)}
+            className="mt-1 block text-left text-xs text-naija-700 hover:underline dark:text-naija-400"
+          >
+            Colour these countries on the map
+          </button>
         )}
         {endangerment && (
           <span className={`mt-2 inline-block rounded-full px-2.5 py-0.5 text-xs font-medium ${TONES[endangerment.tone]}`}>

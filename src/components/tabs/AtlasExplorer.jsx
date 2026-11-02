@@ -4,7 +4,7 @@ import AtlasMap from '../AtlasMap'
 import AtlasLegend from '../AtlasLegend'
 import AtlasPanel from '../AtlasPanel'
 import LanguageSearch from '../LanguageSearch'
-import { buildTree } from '../../utils/atlasTree'
+import { buildTree, spokenOptions } from '../../utils/atlasTree'
 import { lexicalSimilarity, prepareWordList, SIMILARITY_BANDS } from '../../utils/similarity'
 import { CATEGORICAL, FADED, OTHER, SIMILARITY } from '../../utils/atlasColors'
 import { boundsOf, countryName } from '../../utils/countries'
@@ -31,7 +31,9 @@ export default function AtlasExplorer() {
   const selectedId = searchParams.get('lang')
   const focus = searchParams.get('focus')
   const compareId = searchParams.get('vs')
-  const colorBy = searchParams.get('color') === 'similar' ? 'similar' : 'family'
+  const colorParam = searchParams.get('color')
+  const colorBy = colorParam === 'similar' || colorParam === 'countries' ? colorParam : 'family'
+  const spokenParam = searchParams.get('spoken')
   const countryParam = searchParams.get('country')
   const country = atlas && countryParam in atlas.countries ? countryParam : null
   const inCountry = (lang) => !country || lang.c.includes(country)
@@ -56,6 +58,12 @@ export default function AtlasExplorer() {
     const members = atlas.languages.filter((l) => tree.lineage(l.p).includes(id))
     const local = members.filter(inCountry)
     if (members.length) setView({ bounds: boundsOf(local.length ? local : members) })
+  }
+
+  // Keeps the legend on the Countries tab; clearing the choice reframes the map.
+  const colorCountries = (id) => {
+    updateParams({ color: 'countries', spoken: id })
+    if (!id) setView(country ? { bounds: countryBounds(country) } : { name: 'africa' })
   }
 
   const updateParams = (changes) => {
@@ -124,6 +132,45 @@ export default function AtlasExplorer() {
       .sort((a, b) => b.count - a.count)
   }, [atlas, tree, focus, country])
 
+  // What the Countries tab colours: every country listed for the chosen language
+  // or family. Réunion, Mayotte and anywhere outside Africa have no outline here,
+  // so they're named instead of coloured.
+  const spoken = useMemo(() => {
+    if (colorBy !== 'countries' || !tree || !(tree.isGroup(spokenParam) || tree.byId.has(spokenParam))) return null
+    const counts = new Map()
+    const members = atlas.languages.filter((l) => tree.contains(spokenParam, l))
+    for (const lang of members) for (const c of lang.c) counts.set(c, (counts.get(c) ?? 0) + 1)
+    const rows = [...counts]
+      .filter(([code]) => atlas.countries[code])
+      .map(([code, count]) => ({ code, count, name: countryName(code) }))
+      .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name))
+    const root = tree.lineage(tree.isGroup(spokenParam) ? spokenParam : tree.byId.get(spokenParam).p)[0]
+    return {
+      id: spokenParam,
+      name: tree.name(spokenParam),
+      isGroup: tree.isGroup(spokenParam),
+      members,
+      rows,
+      elsewhere: [...counts.keys()].filter((code) => !atlas.countries[code]).map(countryName),
+      // Tinted in its top-level family's colour, as in the Families legend.
+      color: CATEGORICAL[theme][tree.branches(null).findIndex((b) => tree.lineage(b.id)[0] === root)],
+    }
+  }, [atlas, tree, colorBy, spokenParam, theme])
+
+  const spokenIn = useMemo(
+    () => spoken && { countries: spoken.rows.map((r) => r.code), color: spoken.color },
+    [spoken],
+  )
+
+  // Frames the coloured countries, including when a shared link opens on them.
+  useEffect(() => {
+    if (!spoken) return
+    const boxes = spoken.rows.map((r) => atlas.countries[r.code])
+    const corners = boxes.flat().map(([lon, lat]) => ({ lon, lat }))
+    setView({ bounds: boundsOf(corners.length ? corners : spoken.members), besideLegend: true })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [spoken?.id])
+
   const showSimilarity = colorBy === 'similar' && scores
   const mapData = useMemo(() => {
     if (!atlas) return { type: 'FeatureCollection', features: [] }
@@ -137,6 +184,15 @@ export default function AtlasExplorer() {
         color = FADED[theme]
         label = `Not listed for ${countryName(country)}`
         emph = 0
+      } else if (spoken) {
+        if (tree.contains(spoken.id, lang)) {
+          color = spoken.color
+          label = spoken.isGroup ? spoken.name : tree.name(lang.p)
+        } else {
+          color = FADED[theme]
+          label = tree.name(tree.lineage(lang.p)[0])
+          emph = 0
+        }
       } else if (showSimilarity) {
         const score = lang.g === selected.g ? 1 : scores.get(lang.g)
         if (score == null) {
@@ -169,7 +225,9 @@ export default function AtlasExplorer() {
     })
     return { type: 'FeatureCollection', features }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [atlas, tree, branches, showSimilarity, scores, selected, selectedId, theme, country])
+  }, [atlas, tree, branches, spoken, showSimilarity, scores, selected, selectedId, theme, country])
+
+  const spokenChoices = useMemo(() => (atlas ? spokenOptions(atlas) : []), [atlas])
 
   const languageOptions = useMemo(
     () =>
@@ -208,7 +266,7 @@ export default function AtlasExplorer() {
               languageOptions={languageOptions}
               selectedLanguage={selectedId}
               onSelect={(id) => updateParams({ lang: id, vs: null })}
-              onClear={() => updateParams({ lang: null, vs: null, color: null })}
+              onClear={() => updateParams({ lang: null, vs: null, color: colorBy === 'countries' ? colorBy : null })}
             />
           </div>
           <div className="pointer-events-auto w-full max-w-[13rem]">
@@ -232,6 +290,7 @@ export default function AtlasExplorer() {
           view={view}
           dark={dark}
           country={country}
+          spokenIn={spokenIn}
         />
 
         {tree && (
@@ -240,11 +299,15 @@ export default function AtlasExplorer() {
             theme={theme}
             focus={focus && tree.isGroup(focus) ? focus : null}
             branches={branches}
-            colorBy={showSimilarity ? 'similar' : 'family'}
+            colorBy={colorBy === 'countries' ? colorBy : showSimilarity ? 'similar' : 'family'}
             selected={selected}
             canShowSimilarity={Boolean(scores)}
+            spoken={spoken}
+            spokenChoices={spokenChoices}
             onFocus={focusGroup}
-            onColorBy={(mode) => updateParams({ color: mode === 'similar' ? 'similar' : null })}
+            onColorBy={(mode) => updateParams({ color: mode === 'family' ? null : mode })}
+            onSpoken={colorCountries}
+            onSelectCountry={selectCountry}
           />
         )}
       </div>
@@ -264,6 +327,8 @@ export default function AtlasExplorer() {
           onCompare={(id) => updateParams({ vs: id })}
           onFocus={focusGroup}
           onShowSimilarity={() => updateParams({ color: 'similar' })}
+          spokenId={spoken?.id}
+          onSpoken={colorCountries}
         />
       </aside>
     </div>

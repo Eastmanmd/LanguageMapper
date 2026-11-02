@@ -8,7 +8,9 @@ export default function LanguageSearch({
   placeholder = 'Search a language…',
   browsable = false,
   clearLabel = 'Clear search',
+  dropUp = false,
 }) {
+  const dropClass = dropUp ? 'bottom-full mb-1' : 'mt-1'
   const [query, setQuery] = useState('')
   const [isOpen, setIsOpen] = useState(false)
 
@@ -72,7 +74,7 @@ export default function LanguageSearch({
       </div>
 
       {isOpen && matches.length > 0 && (
-        <ul className="absolute z-10 mt-1 w-full max-h-64 overflow-y-auto rounded-lg border border-gray-200 bg-white py-1 shadow-lg dark:border-white/15 dark:bg-[#141414]">
+        <ul className={`absolute z-10 ${dropClass} w-full max-h-64 overflow-y-auto rounded-lg border border-gray-200 bg-white py-1 shadow-lg dark:border-white/15 dark:bg-[#141414]`}>
           {matches.map((lang) => (
             <li key={lang.id}>
               <button
@@ -92,7 +94,7 @@ export default function LanguageSearch({
       )}
 
       {isOpen && query && matches.length === 0 && (
-        <div className="absolute z-10 mt-1 w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm text-gray-400 shadow-lg dark:border-white/15 dark:bg-[#141414] dark:text-gray-500">
+        <div className={`absolute z-10 ${dropClass} w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm text-gray-400 shadow-lg dark:border-white/15 dark:bg-[#141414] dark:text-gray-500`}>
           No matches for "{query}"
         </div>
       )}

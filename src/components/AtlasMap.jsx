@@ -6,9 +6,13 @@ const SOURCE = 'atlas-languages'
 const LAYER = 'atlas-languages-dots'
 const BORDER_SOURCE = 'atlas-borders'
 const BORDER_LAYER = 'atlas-border-selected'
+const SPOKEN_LAYER = 'atlas-countries-spoken'
 // Positron is a quiet greyscale basemap, so the coloured dots carry the map.
 const LIGHT_STYLE = 'https://tiles.openfreemap.org/styles/positron'
 const DARK_STYLE = 'https://tiles.openfreemap.org/styles/dark'
+
+const LEGEND_CLEARANCE = 292
+const MIN_WIDTH_BESIDE_LEGEND = 700
 
 const VIEWS = {
   africa: [
@@ -28,7 +32,7 @@ function radiusExpr() {
   ]
 }
 
-// Country outlines load the first time someone picks a country.
+// Country outlines load the first time someone picks a country or colours them.
 let bordersPromise = null
 function loadBorders() {
   bordersPromise ??= fetch(`${import.meta.env.BASE_URL}data/africa/borders.geojson`).then((res) => res.json())
@@ -36,11 +40,26 @@ function loadBorders() {
 }
 
 const borderFilter = (country) => ['==', ['get', 'c'], country ?? '']
+const spokenFilter = (spokenIn) => ['in', ['get', 'c'], ['literal', spokenIn?.countries ?? []]]
 
-// The selected country's outline, drawn under the dots so they stay clickable.
-function addBorderLayer(map, borders, country, dark) {
+// The selected country's outline, drawn under the dots so they stay clickable,
+// and the tint on countries where a language or family is spoken, drawn under
+// the place names so they stay readable.
+function addBorderLayers(map, borders, country, spokenIn, dark) {
   if (!borders || !map.getLayer(LAYER)) return
   if (!map.getSource(BORDER_SOURCE)) map.addSource(BORDER_SOURCE, { type: 'geojson', data: borders })
+  if (!map.getLayer(SPOKEN_LAYER)) {
+    map.addLayer(
+      {
+        id: SPOKEN_LAYER,
+        type: 'fill',
+        source: BORDER_SOURCE,
+        filter: spokenFilter(spokenIn),
+        paint: { 'fill-color': spokenIn?.color ?? '#000000', 'fill-opacity': 0.4 },
+      },
+      map.getStyle().layers.find((layer) => layer.type === 'symbol')?.id ?? LAYER,
+    )
+  }
   if (map.getLayer(BORDER_LAYER)) return
   map.addLayer(
     {
@@ -80,12 +99,13 @@ function addLayers(map, data, dark) {
   })
 }
 
-export default function AtlasMap({ data, selectedId, onSelect, view, dark, country }) {
+export default function AtlasMap({ data, selectedId, onSelect, view, dark, country, spokenIn }) {
   const containerRef = useRef(null)
   const mapRef = useRef(null)
   const dataRef = useRef(data)
   const darkRef = useRef(dark)
   const countryRef = useRef(country)
+  const spokenRef = useRef(spokenIn)
   const bordersRef = useRef(null)
   const onSelectRef = useRef(onSelect)
   const isFirstStyleRun = useRef(true)
@@ -107,26 +127,35 @@ export default function AtlasMap({ data, selectedId, onSelect, view, dark, count
     }
     const map = mapRef.current
     if (!map) return
-    map.setStyle(dark ? DARK_STYLE : LIGHT_STYLE)
-    map.once('styledata', () => {
+    // A full reload, not a diff: updating the tint in the same render would fire
+    // 'styledata' on the old style, and the diff would then drop the re-added layers.
+    map.setStyle(dark ? DARK_STYLE : LIGHT_STYLE, { diff: false })
+    map.once('style.load', () => {
       addLayers(map, dataRef.current, dark)
-      addBorderLayer(map, bordersRef.current, countryRef.current, dark)
+      addBorderLayers(map, bordersRef.current, countryRef.current, spokenRef.current, dark)
     })
   }, [dark])
 
   useEffect(() => {
     countryRef.current = country
+    spokenRef.current = spokenIn
     const map = mapRef.current
     if (map?.getLayer(BORDER_LAYER)) map.setFilter(BORDER_LAYER, borderFilter(country))
-    if (country && !bordersRef.current) {
+    if (map?.getLayer(SPOKEN_LAYER)) {
+      map.setFilter(SPOKEN_LAYER, spokenFilter(spokenIn))
+      if (spokenIn) map.setPaintProperty(SPOKEN_LAYER, 'fill-color', spokenIn.color)
+    }
+    if ((country || spokenIn) && !bordersRef.current) {
       loadBorders()
         .then((borders) => {
           bordersRef.current = borders
-          if (mapRef.current) addBorderLayer(mapRef.current, borders, countryRef.current, darkRef.current)
+          if (mapRef.current) {
+            addBorderLayers(mapRef.current, borders, countryRef.current, spokenRef.current, darkRef.current)
+          }
         })
         .catch(() => {})
     }
-  }, [country])
+  }, [country, spokenIn])
 
   // Bring a newly selected language into view if it's off-screen.
   useEffect(() => {
@@ -138,7 +167,11 @@ export default function AtlasMap({ data, selectedId, onSelect, view, dark, count
   }, [selectedId])
 
   useEffect(() => {
-    if (view) mapRef.current?.fitBounds(view.bounds ?? VIEWS[view.name], { padding: 48, maxZoom: 7 })
+    if (!view) return
+    // The open legend is tall on the Countries tab, so wide maps frame beside it.
+    const besideLegend = view.besideLegend && containerRef.current.clientWidth >= MIN_WIDTH_BESIDE_LEGEND
+    const padding = besideLegend ? { top: 48, right: 48, bottom: 48, left: LEGEND_CLEARANCE } : 48
+    mapRef.current?.fitBounds(view.bounds ?? VIEWS[view.name], { padding, maxZoom: 7 })
   }, [view])
 
   useEffect(() => {
@@ -162,7 +195,7 @@ export default function AtlasMap({ data, selectedId, onSelect, view, dark, count
 
     map.on('load', () => {
       addLayers(map, dataRef.current, darkRef.current)
-      addBorderLayer(map, bordersRef.current, countryRef.current, darkRef.current)
+      addBorderLayers(map, bordersRef.current, countryRef.current, spokenRef.current, darkRef.current)
 
       map.on('click', LAYER, (e) => {
         const feature = e.features?.[0]

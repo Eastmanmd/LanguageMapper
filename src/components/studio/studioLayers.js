@@ -10,6 +10,7 @@ import {
   SEQUENTIAL_BLUE,
   SEQUENTIAL_ORANGE,
 } from '../../utils/atlasColors'
+import { SPOKEN_NOTE } from '../../utils/atlasTree'
 import { countryName } from '../../utils/countries'
 import { hexbin, quantileBreaks } from '../../utils/hexbin'
 
@@ -65,7 +66,6 @@ const RELIGIONS = [
 ]
 
 const SAME_SCALE_NOTE = 'Colours use the same scale on both maps.'
-const SPOKEN_NOTE = 'From Glottolog; second-language use may be missing.'
 
 const pctText = (n) => `${Math.round(n)}%`
 const classOf = (value, breaks) => {
@@ -232,9 +232,8 @@ function spokenCounts({ spoken, allLanguages, atlas, borders }) {
   const mapped = new Set(borders.features.map((f) => f.properties.c))
   const counts = new Map()
   if (!spoken) return counts
-  const inChoice = tree.isGroup(spoken) ? (l) => tree.lineage(l.p).includes(spoken) : (l) => l.g === spoken
   for (const l of allLanguages) {
-    if (!inChoice(l)) continue
+    if (!tree.contains(spoken, l)) continue
     for (const c of l.c) if (mapped.has(c)) counts.set(c, (counts.get(c) ?? 0) + 1)
   }
   return counts
